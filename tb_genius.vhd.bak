@@ -1,0 +1,7 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity tb_alu is
+end tb_alu;
+
+architecture teste of tb_alu is

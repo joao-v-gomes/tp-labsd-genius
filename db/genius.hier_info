@@ -1,0 +1,14 @@
+|genius
+CLK => ~NO_FANOUT~
+entrada_azul => led_azul.DATAB
+entrada_amarelo => led_amarelo.DATAB
+entrada_verde => led_verde.DATAB
+entrada_vermelho => led_vermelho.DATAB
+entrada_ligado => ~NO_FANOUT~
+led_azul <= led_azul.DB_MAX_OUTPUT_PORT_TYPE
+led_amarelo <= led_amarelo.DB_MAX_OUTPUT_PORT_TYPE
+led_verde <= led_verde.DB_MAX_OUTPUT_PORT_TYPE
+led_vermelho <= led_vermelho.DB_MAX_OUTPUT_PORT_TYPE
+led_ligado <= <GND>
+
+
