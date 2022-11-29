@@ -10,9 +10,18 @@ component genius is
    
     port (
 		  
+		  teste : out integer;
+		  teste2 : out integer;
+		  
 		  CLK : in std_logic;
 		  
-		  entrada_azul : in std_logic;
+		  var_1 : out integer;
+		  var_2 : out integer;
+		  var_3 : out integer;
+		  var_4 : out integer;
+		  var_5 : out integer;
+		  
+		  entrada_azul : in std_logic := '0';
 		  entrada_amarelo : in std_logic;
 		  entrada_verde : in std_logic;
 		  entrada_vermelho : in std_logic;
@@ -26,15 +35,34 @@ component genius is
     );
 end component;
 
+signal clk : std_logic;
+
 signal e_azul, e_amarelo, e_verde, e_vermelho, e_ligado : std_logic;
 signal l_azul, l_amarelo, l_verde, l_vermelho, l_ligado : std_logic;
-signal clk : std_logic;
+
+signal teste : integer;
+signal teste2 : integer;
+
+signal var1 : integer;
+signal var2 : integer;
+signal var3 : integer;
+signal var4 : integer;
+signal var5 : integer;
 
 begin
 
 instance_genius: genius port map(
 		CLK => clk,
 
+		teste => teste,
+		teste2 => teste2,
+		
+		var_1 => var1,
+		var_2 => var2,
+		var_3 => var3,
+		var_4 => var4,
+		var_5 => var5,
+		
 		entrada_azul => e_azul,
 		entrada_amarelo => e_amarelo,
 		entrada_verde => e_verde,
@@ -48,13 +76,13 @@ instance_genius: genius port map(
 		led_ligado => l_ligado
 );
 
-e_ligado <= '0', '1' after 5ns,'0' after 8ns, '1' after 10ns;
+--e_ligado <= '0', '1' after 5ns,'0' after 8ns, '1' after 10ns;
 
-e_azul <= '0', '1' after 2ns, '0' after 4ns, '1' after 11ns;
-e_amarelo <= '0', '1' after 4ns, '0' after 6ns, '1' after 13ns;
-e_verde <= '0', '1' after 6ns, '0' after 8ns, '1' after 15ns;
-e_vermelho <= '0', '1' after 8ns, '0' after 10ns, '1' after 17ns;
-
+e_azul <= '0', '1' after 2ns, '0' after 4ns;
+e_amarelo <= '0', '1' after 4ns, '0' after 6ns;
+e_verde <= '0', '1' after 6ns, '0' after 8ns;
+e_vermelho <= '0', '1' after 8ns, '0' after 10ns;
+e_ligado <= '0', '1' after 10ns, '0' after 12ns;
 
 
 

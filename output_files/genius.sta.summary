@@ -2,4 +2,40 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Setup 'entrada_amarelo'
+Slack : -2.775
+TNS   : -30.261
+
+Type  : Slow 1200mV 85C Model Hold 'entrada_amarelo'
+Slack : -0.359
+TNS   : -0.540
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'entrada_amarelo'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Setup 'entrada_amarelo'
+Slack : -2.476
+TNS   : -28.269
+
+Type  : Slow 1200mV 0C Model Hold 'entrada_amarelo'
+Slack : -0.323
+TNS   : -0.417
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'entrada_amarelo'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Setup 'entrada_amarelo'
+Slack : -0.908
+TNS   : -7.942
+
+Type  : Fast 1200mV 0C Model Hold 'entrada_amarelo'
+Slack : -0.214
+TNS   : -0.850
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'entrada_amarelo'
+Slack : -3.000
+TNS   : -3.120
+
 ------------------------------------------------------------
