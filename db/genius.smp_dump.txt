@@ -1,0 +1,10 @@
+
+State Machine - |genius|state
+Name state.FINALIZA_JOGO state.CONTINA_JOGO state.VERIFICA_ENTRADA state.AGUARDA_ENTRADA state.MOSTRA_COR state.PREPARA_JOGO state.INIT 
+state.INIT 0 0 0 0 0 0 0 
+state.PREPARA_JOGO 0 0 0 0 0 1 1 
+state.MOSTRA_COR 0 0 0 0 1 0 1 
+state.AGUARDA_ENTRADA 0 0 0 1 0 0 1 
+state.VERIFICA_ENTRADA 0 0 1 0 0 0 1 
+state.CONTINA_JOGO 0 1 0 0 0 0 1 
+state.FINALIZA_JOGO 1 0 0 0 0 0 1 

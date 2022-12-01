@@ -4,18 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "teste[0]",
-					"strict" : false
-				},
-				{
-					"name" : "teste[1]",
-					"strict" : false
-				},
-				{
-					"name" : "teste[2]",
-					"strict" : false
-				},
-				{
 					"name" : "teste2[0]",
 					"strict" : false
 				},
@@ -32,6 +20,30 @@
 					"strict" : false
 				},
 				{
+					"name" : "teste2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "teste3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "teste3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "teste3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "teste3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "teste3[4]",
+					"strict" : false
+				},
+				{
 					"name" : "var_1[0]",
 					"strict" : false
 				},
@@ -44,91 +56,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "var_2[0]",
-					"strict" : false
-				},
-				{
-					"name" : "var_2[1]",
-					"strict" : false
-				},
-				{
-					"name" : "var_2[2]",
-					"strict" : false
-				},
-				{
-					"name" : "var_3[0]",
-					"strict" : false
-				},
-				{
-					"name" : "var_3[1]",
-					"strict" : false
-				},
-				{
-					"name" : "var_3[2]",
-					"strict" : false
-				},
-				{
-					"name" : "var_4[0]",
-					"strict" : false
-				},
-				{
-					"name" : "var_4[1]",
-					"strict" : false
-				},
-				{
-					"name" : "var_4[2]",
-					"strict" : false
-				},
-				{
-					"name" : "var_5[0]",
-					"strict" : false
-				},
-				{
-					"name" : "var_5[1]",
-					"strict" : false
-				},
-				{
-					"name" : "var_5[2]",
-					"strict" : false
-				},
-				{
-					"name" : "led_azul",
-					"strict" : false
-				},
-				{
-					"name" : "led_amarelo",
-					"strict" : false
-				},
-				{
-					"name" : "led_verde",
-					"strict" : false
-				},
-				{
-					"name" : "led_vermelho",
-					"strict" : false
-				},
-				{
-					"name" : "led_ligado",
-					"strict" : false
-				},
-				{
-					"name" : "entrada_azul",
-					"strict" : false
-				},
-				{
-					"name" : "entrada_amarelo",
-					"strict" : false
-				},
-				{
-					"name" : "entrada_verde",
-					"strict" : false
-				},
-				{
 					"name" : "entrada_ligado",
 					"strict" : false
 				},
 				{
-					"name" : "entrada_vermelho",
+					"name" : "CLOCK",
 					"strict" : false
 				}
 			]

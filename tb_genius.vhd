@@ -12,8 +12,9 @@ component genius is
 		  
 		  teste : out integer;
 		  teste2 : out integer;
+		  teste3 : out integer;
 		  
-		  CLK : in std_logic;
+		  CLOCK : in std_logic;
 		  
 		  var_1 : out integer;
 		  var_2 : out integer;
@@ -35,13 +36,14 @@ component genius is
     );
 end component;
 
-signal clk : std_logic;
+signal clock : std_logic;
 
 signal e_azul, e_amarelo, e_verde, e_vermelho, e_ligado : std_logic;
 signal l_azul, l_amarelo, l_verde, l_vermelho, l_ligado : std_logic;
 
 signal teste : integer;
 signal teste2 : integer;
+signal teste3 : integer;
 
 signal var1 : integer;
 signal var2 : integer;
@@ -51,11 +53,21 @@ signal var5 : integer;
 
 begin
 
+clockprcss: process
+		begin
+			clock <= '0';
+			wait for 1ns;
+			clock <= '1';
+			wait for 1ns;
+		end process;
+
+
 instance_genius: genius port map(
-		CLK => clk,
+		CLOCK => clock,
 
 		teste => teste,
 		teste2 => teste2,
+		teste3 => teste3,
 		
 		var_1 => var1,
 		var_2 => var2,
@@ -76,13 +88,13 @@ instance_genius: genius port map(
 		led_ligado => l_ligado
 );
 
---e_ligado <= '0', '1' after 5ns,'0' after 8ns, '1' after 10ns;
+e_ligado <= '0';
 
-e_azul <= '0', '1' after 2ns, '0' after 4ns;
-e_amarelo <= '0', '1' after 4ns, '0' after 6ns;
-e_verde <= '0', '1' after 6ns, '0' after 8ns;
-e_vermelho <= '0', '1' after 8ns, '0' after 10ns;
-e_ligado <= '0', '1' after 10ns, '0' after 12ns;
+--e_azul <= '0', '1' after 2ns, '0' after 4ns;
+--e_amarelo <= '0', '1' after 4ns, '0' after 6ns;
+--e_verde <= '0', '1' after 6ns, '0' after 8ns;
+--e_vermelho <= '0', '1' after 8ns, '0' after 10ns;
+--e_ligado <= '0', '1' after 10ns, '0' after 12ns;
 
 
 
