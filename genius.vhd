@@ -8,9 +8,9 @@ entity genius is
    
     port (
 		  
-		  teste : out integer  := 0;
-		  teste2 : out integer  := 0;
-		  teste3 : out integer  := 0;
+		  botao_pressionado : out integer  := 0;
+		  valor_contador : out integer  := 0;
+		  estado_fsm : out integer  := 0;
 		  
 		  var_1 : out integer := 0;
 		  var_2 : out integer := 0;
@@ -26,10 +26,12 @@ entity genius is
 		  entrada_vermelho : in std_logic  := '0';
 		  entrada_ligado : in std_logic  := '0';
 		  
-		  led_azul : out std_logic  := '0';
-		  led_amarelo : out std_logic  := '0';
-		  led_verde : out std_logic  := '0';
-		  led_vermelho : out std_logic  := '0';
+		  
+		
+		  led_azul : out std_logic  := '0'; -- Numero da Sequencia: 1
+		  led_amarelo : out std_logic  := '0'; -- Numero da Sequencia: 2
+		  led_verde : out std_logic  := '0'; -- Numero da Sequencia: 3
+		  led_vermelho : out std_logic  := '0'; -- Numero da Sequencia: 4
 		  led_ligado : out std_logic  := '0'
     );
 end genius;
@@ -41,7 +43,7 @@ constant c_CLK_PERIOD : time := 10 ns;
 type array_facil is array (8 downto 0) of integer range 0  to 5;
 type array_dificil is array (15 downto 0) of integer range 0  to 5;
 
-type statetype is ( INIT, PREPARA_JOGO, MOSTRA_COR, AGUARDA_ENTRADA, VERIFICA_ENTRADA, CONTINA_JOGO, FINALIZA_JOGO) ;
+type statetype is ( INIT, PREPARA_JOGO, MOSTRA_COR, VERIFICA_MOSTRA_COR, AGUARDA_ENTRADA, VERIFICA_ENTRADA, CONTINA_JOGO, FINALIZA_JOGO) ;
 signal state, nextstate : statetype := INIT;
 
 --signal jogo_ligado : std_logic := '0';
@@ -77,46 +79,81 @@ begin
 	statemachine_comb: process (state)
 		begin
 			
-			teste3 <= 0;
-			
 			case state is
 				when INIT =>
---					qual_botao <= 0;
-					cont_facil <= 0;
-					cont_dificil <= 0;
+					led_ligado <= '0';
+					cont_facil <= 1;
+					cont_dificil <= 1;
 					sequencia_facil <= (others => 0);
 					sequencia_dificil <= (others => 0);
-					teste3 <= 1;
 					nextstate <= PREPARA_JOGO;
 					
+					estado_fsm <= 1;
+					
 				when PREPARA_JOGO =>
+				
+					led_ligado <= '1';
+				
 					sequencia_facil(1) <= 1;
 					sequencia_facil(2) <= 2;
 					sequencia_facil(3) <= 3;
 					sequencia_facil(4) <= 4;
-					sequencia_facil(5) <= 5;
-					sequencia_facil(6) <= 1;
-					sequencia_facil(7) <= 2;
-					sequencia_facil(8) <= 3;
+					sequencia_facil(5) <= 1;
+					sequencia_facil(6) <= 2;
+					sequencia_facil(7) <= 3;
+					sequencia_facil(8) <= 4;
 					
-					teste3 <= 2;
+					estado_fsm <= 2;
 					
 --					cont <= cont + 1;
 					
 					nextstate <= MOSTRA_COR;
 					
 				when MOSTRA_COR =>
+				
+					led_azul <= '0';
+					led_amarelo <= '0';
+					led_verde <= '0';
+					led_vermelho <= '0';
+				
+					case sequencia_facil(cont) is
+						when 1 =>
+							led_azul <= '1';
+						when 2 =>
+							led_amarelo <= '1';
+						when 3 =>
+							led_verde <= '1';
+						when 4 =>
+							led_vermelho <= '1';
+						
+						when others =>
+							nextstate <= INIT;
+					end case;
+				
+					var_1 <= sequencia_facil(cont);
+					cont <= cont + 1;
+					nextstate <= VERIFICA_MOSTRA_COR;
+					
+					estado_fsm <= 3;
+					
+				when VERIFICA_MOSTRA_COR =>
 					if (cont <= 8 ) then
-						var_1 <= sequencia_facil(cont);
-						cont <= cont + 1;
+--						var_1 <= sequencia_facil(cont);
+--						cont <= cont + 1;
 						nextstate <= MOSTRA_COR;
 					else
+					
 						nextstate <= AGUARDA_ENTRADA;
 					end if;
-					
-					teste3 <= cont;
+				
 					
 				when AGUARDA_ENTRADA =>
+					led_azul <= '0';
+					led_amarelo <= '0';
+					led_verde <= '0';
+					led_vermelho <= '0';
+				
+				
 --					wait for c_CLK_PERIOD/2;
 --					nextstate <= INIT;
 					sequencia_facil(1) <= 0;
@@ -128,7 +165,7 @@ begin
 					sequencia_facil(7) <= 0;
 					sequencia_facil(8) <= 0;
 					
-					teste3 <= 4;
+					estado_fsm <= 4;
 					
 				when others =>
 					nextstate <= INIT;
@@ -187,8 +224,8 @@ begin
 	
 	process(qual_botao,cont)
 		begin
-			teste <= qual_botao;
-			teste2 <= cont;
+			botao_pressionado <= qual_botao;
+			valor_contador <= cont;
 			
 --			var1(cont) <= qual_botao;
 			
