@@ -4,6 +4,18 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "botao_pressionado[0]",
+					"strict" : false
+				},
+				{
+					"name" : "botao_pressionado[1]",
+					"strict" : false
+				},
+				{
+					"name" : "botao_pressionado[2]",
+					"strict" : false
+				},
+				{
 					"name" : "valor_contador[0]",
 					"strict" : false
 				},
@@ -36,38 +48,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "contagem_certa[0]",
-					"strict" : false
-				},
-				{
-					"name" : "contagem_certa[1]",
-					"strict" : false
-				},
-				{
-					"name" : "contagem_certa[2]",
-					"strict" : false
-				},
-				{
-					"name" : "contagem_certa[3]",
-					"strict" : false
-				},
-				{
-					"name" : "contagem_errada[0]",
-					"strict" : false
-				},
-				{
-					"name" : "contagem_errada[1]",
-					"strict" : false
-				},
-				{
-					"name" : "contagem_errada[2]",
-					"strict" : false
-				},
-				{
-					"name" : "contagem_errada[3]",
-					"strict" : false
-				},
-				{
 					"name" : "led_azul",
 					"strict" : false
 				},
@@ -88,7 +68,23 @@
 					"strict" : false
 				},
 				{
+					"name" : "entrada_azul",
+					"strict" : false
+				},
+				{
+					"name" : "entrada_verde",
+					"strict" : false
+				},
+				{
 					"name" : "entrada_ligado",
+					"strict" : false
+				},
+				{
+					"name" : "entrada_vermelho",
+					"strict" : false
+				},
+				{
+					"name" : "entrada_amarelo",
 					"strict" : false
 				},
 				{

@@ -1,7 +1,7 @@
 |genius
-botao_pressionado[0] << <GND>
-botao_pressionado[1] << <GND>
-botao_pressionado[2] << <GND>
+botao_pressionado[0] << qual_botao.DB_MAX_OUTPUT_PORT_TYPE
+botao_pressionado[1] << qual_botao.DB_MAX_OUTPUT_PORT_TYPE
+botao_pressionado[2] << qual_botao.DB_MAX_OUTPUT_PORT_TYPE
 botao_pressionado[3] << <GND>
 botao_pressionado[4] << <GND>
 botao_pressionado[5] << <GND>
@@ -66,7 +66,7 @@ valor_contador[31] << <GND>
 estado_fsm[0] << estado_fsm[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 estado_fsm[1] << estado_fsm[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 estado_fsm[2] << estado_fsm[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
-estado_fsm[3] << <GND>
+estado_fsm[3] << estado_fsm[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
 estado_fsm[4] << <GND>
 estado_fsm[5] << <GND>
 estado_fsm[6] << <GND>
@@ -160,12 +160,22 @@ contagem_errada[29] << <GND>
 contagem_errada[30] << <GND>
 contagem_errada[31] << <GND>
 CLOCK => state~1.DATAIN
-entrada_azul => ~NO_FANOUT~
-entrada_amarelo => ~NO_FANOUT~
-entrada_verde => ~NO_FANOUT~
-entrada_vermelho => ~NO_FANOUT~
+entrada_azul => qual_botao.OUTPUTSELECT
+entrada_azul => qual_botao.OUTPUTSELECT
+entrada_azul => qual_botao.OUTPUTSELECT
+entrada_amarelo => qual_botao.OUTPUTSELECT
+entrada_amarelo => qual_botao.OUTPUTSELECT
+entrada_amarelo => qual_botao.OUTPUTSELECT
+entrada_verde => qual_botao.OUTPUTSELECT
+entrada_verde => qual_botao.OUTPUTSELECT
+entrada_verde => qual_botao.DATAA
+entrada_vermelho => qual_botao.OUTPUTSELECT
+entrada_vermelho => qual_botao.OUTPUTSELECT
+entrada_ligado => qual_botao.DATAA
+entrada_ligado => qual_botao.DATAA
 entrada_ligado => state.CONTINUA_JOGO.OUTPUTSELECT
-entrada_ligado => state.VERIFICA_ENTRADA.OUTPUTSELECT
+entrada_ligado => state.NAO_LEU_NADA.OUTPUTSELECT
+entrada_ligado => state.LE_UMA_ENTRADA.OUTPUTSELECT
 entrada_ligado => state.AGUARDA_ENTRADA.OUTPUTSELECT
 entrada_ligado => state.VERIFICA_MOSTRA_COR.OUTPUTSELECT
 entrada_ligado => state.MOSTRA_COR.OUTPUTSELECT

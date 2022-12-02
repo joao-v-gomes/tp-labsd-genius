@@ -96,8 +96,15 @@ instance_genius: genius port map(
 		led_ligado => l_ligado
 );
 
-e_ligado <= '0';
+--	e_ligado <= '0';
 
+	teste: process(est_fsm)
+		begin
+			if (est_fsm = 5) then
+				e_azul <= '1','0' after 3ns;
+			end if;		
+		end process;
+	
 --e_azul <= '0', '1' after 2ns, '0' after 4ns;
 --e_amarelo <= '0', '1' after 4ns, '0' after 6ns;
 --e_verde <= '0', '1' after 6ns, '0' after 8ns;

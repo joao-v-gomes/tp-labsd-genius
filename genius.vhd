@@ -47,7 +47,7 @@ constant c_CLK_PERIOD : time := 10 ns;
 type array_facil is array (8 downto 0) of integer range 0  to 5;
 type array_dificil is array (15 downto 0) of integer range 0  to 5;
 
-type statetype is ( INIT, PREPARA_JOGO, MOSTRA_COR, VERIFICA_MOSTRA_COR, AGUARDA_ENTRADA, VERIFICA_ENTRADA, CONTINUA_JOGO, FINALIZA_JOGO) ;
+type statetype is ( INIT, PREPARA_JOGO, MOSTRA_COR, VERIFICA_MOSTRA_COR, AGUARDA_ENTRADA, LE_UMA_ENTRADA, NAO_LEU_NADA, VERIFICA_ENTRADA, CONTINUA_JOGO, FINALIZA_JOGO) ;
 signal state, nextstate : statetype := INIT;
 
 --signal jogo_ligado : std_logic := '0';
@@ -64,7 +64,9 @@ signal qual_botao : integer := 0;
 
 
 signal var1 : array_facil := (others => 0);
+
 signal cont : integer range 0 to 16 := 1;
+signal cont_entrada : integer range 0 to 16 := 1;
 
 signal cont_certo : integer range 0 to 16 := 0;
 signal cont_errado : integer range 0 to 16 := 0;
@@ -172,18 +174,59 @@ begin
 					led_verde <= '0';
 					led_vermelho <= '0';
 				
-					sequencia_facil_usuario(1) <= 1;
-					sequencia_facil_usuario(2) <= 2;
-					sequencia_facil_usuario(3) <= 3;
-					sequencia_facil_usuario(4) <= 4;
-					sequencia_facil_usuario(5) <= 1;
-					sequencia_facil_usuario(6) <= 3;
-					sequencia_facil_usuario(7) <= 3;
-					sequencia_facil_usuario(8) <= 3;
+					
+--					if (cont_entrada <= cont) then
+						case qual_botao is
+							when 0 =>
+								nextstate <= NAO_LEU_NADA;
+							when 1 =>
+								sequencia_facil_usuario(cont_entrada) <= 1;
+								led_azul <= '1';
+--								cont_entrada <= cont_entrada + 1;
+								nextstate <= LE_UMA_ENTRADA;
+							when 2 =>
+								sequencia_facil_usuario(cont_entrada) <= 2;
+								led_amarelo <= '1';
+--								cont_entrada <= cont_entrada + 1;
+								nextstate <= LE_UMA_ENTRADA;
+							when 3 =>
+								sequencia_facil_usuario(cont_entrada) <= 3;
+								led_Verde <= '1';
+--								cont_entrada <= cont_entrada + 1;
+								nextstate <= LE_UMA_ENTRADA;
+							when 4 =>
+								sequencia_facil_usuario(cont_entrada) <= 4;
+								led_vermelho <= '1';
+--								cont_entrada <= cont_entrada + 1;
+								nextstate <= LE_UMA_ENTRADA;
+							when others =>
+								nextstate <= NAO_LEU_NADA;
+						end case;
+--					else
+--						nextstate <= VERIFICA_ENTRADA;
+--					end if;
+							
+--					sequencia_facil_usuario(1) <= 1;
+--					sequencia_facil_usuario(2) <= 2;
+--					sequencia_facil_usuario(3) <= 3;
+--					sequencia_facil_usuario(4) <= 4;
+--					sequencia_facil_usuario(5) <= 1;
+--					sequencia_facil_usuario(6) <= 3;
+--					sequencia_facil_usuario(7) <= 3;
+--					sequencia_facil_usuario(8) <= 3;
 					
 					estado_fsm <= 5;
 					
-					nextstate <= VERIFICA_ENTRADA;
+--					nextstate <= VERIFICA_ENTRADA;
+
+				when NAO_LEU_NADA =>
+					nextstate <= AGUARDA_ENTRADA;
+
+				when LE_UMA_ENTRADA =>
+					cont_entrada <= cont_entrada + 1;
+					nextstate <= AGUARDA_ENTRADA;
+					
+					estado_fsm <= 6;
 					
 				when VERIFICA_ENTRADA =>
 					
@@ -203,14 +246,14 @@ begin
 					contagem_certa <= cont_c;
 					contagem_errada <= cont_e;
 					
-					estado_fsm <= 6;
+					estado_fsm <= 7;
 					
 					nextstate <= CONTINUA_JOGO;
 					
 					
 				when CONTINUA_JOGO =>
 				
-					estado_fsm <= 7;
+					estado_fsm <= 8;
 					
 				when others =>
 					nextstate <= INIT;
@@ -220,52 +263,51 @@ begin
 					
 					
 --	process de teste das entradas e saídas do jogo
---	process(entrada_azul,entrada_amarelo,entrada_verde, entrada_vermelho)
---		
---		begin
+	process(entrada_azul,entrada_amarelo,entrada_verde, entrada_vermelho)
+		
+		begin
 --			led_azul <= '0';
 --			led_amarelo <= '0';
 --			led_verde <= '0';
 --			led_vermelho <= '0';
 --			led_ligado <= '0';
-----			
-----			var1(0) <= 0;
-----			var1(1) <= 1;
-----			var1(2) <= 2;
-----			var1(3) <= 3;
-----			var1(4) <= 4;
---		
---			qual_botao <= 0;
 --			
---				if (entrada_azul = '1') then
+--			var1(0) <= 0;
+--			var1(1) <= 1;
+--			var1(2) <= 2;
+--			var1(3) <= 3;
+--			var1(4) <= 4;
+		
+			qual_botao <= 0;
+			
+				if (entrada_azul = '1') then
 --					led_azul <= '1';
---					qual_botao <= 1;
+					qual_botao <= 1;
 --					cont <= cont + 1;
---					
---				elsif (entrada_amarelo = '1') then
+					
+				elsif (entrada_amarelo = '1') then
 --					led_amarelo <= '1';
---					qual_botao <= 2;
+					qual_botao <= 2;
 --					cont <= cont + 1;
---					
---				elsif (entrada_verde = '1') then
+					
+				elsif (entrada_verde = '1') then
 --					led_verde <= '1';
---					qual_botao <= 3;
+					qual_botao <= 3;
 --					cont <= cont + 1;
---
---				elsif (entrada_vermelho = '1') then
+
+				elsif (entrada_vermelho = '1') then
 --					led_vermelho <= '1';
---					qual_botao <= 4;
+					qual_botao <= 4;
 --					cont <= cont + 1;
---
---				elsif (entrada_ligado = '1') then
+
+				elsif (entrada_ligado = '1') then
 --					led_ligado <= '1';
---					qual_botao <= 5;
+					qual_botao <= 5;
 --					cont <= cont + 1;
---					
---				end if;
---				
---
---	end process;
+					
+				end if;
+				
+	end process;
 	
 	process(qual_botao,cont)
 		begin
