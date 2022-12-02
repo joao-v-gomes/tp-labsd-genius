@@ -13,6 +13,9 @@ component genius is
 		  valor_contador : out integer  := 0;
 		  estado_fsm : out integer  := 0;
 		  
+		  contagem_certa : out integer :=  0;
+		  contagem_errada : out integer := 0;
+		  
 		  CLOCK : in std_logic := '0';
 		  
 		  var_1 : out integer := 0;
@@ -44,6 +47,9 @@ signal bot_pressionado : integer;
 signal valor_cont : integer;
 signal est_fsm : integer;
 
+signal cont_certa : integer;
+signal cont_errada : integer;
+
 signal var1 : integer;
 signal var2 : integer;
 signal var3 : integer;
@@ -67,6 +73,9 @@ instance_genius: genius port map(
 		botao_pressionado => bot_pressionado,
 		valor_contador => valor_cont,
 		estado_fsm => est_fsm,
+		
+		contagem_certa => cont_certa,
+		contagem_errada => cont_errada,
 		
 		var_1 => var1,
 		var_2 => var2,

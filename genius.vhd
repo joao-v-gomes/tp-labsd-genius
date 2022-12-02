@@ -12,6 +12,9 @@ entity genius is
 		  valor_contador : out integer  := 0;
 		  estado_fsm : out integer  := 0;
 		  
+		  contagem_certa : out integer := 0;
+		  contagem_errada : out integer := 0;
+		  
 		  var_1 : out integer := 0;
 		  var_2 : out integer := 0;
 		  var_3 : out integer := 0;
@@ -24,9 +27,10 @@ entity genius is
 		  entrada_amarelo : in std_logic  := '0';
 		  entrada_verde : in std_logic  := '0';
 		  entrada_vermelho : in std_logic  := '0';
-		  entrada_ligado : in std_logic  := '0';
+		  entrada_ligado : in std_logic := '0';
 		  
-		  
+		  modo_facil : in std_logic := '1';
+		  modo_dificil : in std_logic := '0';
 		
 		  led_azul : out std_logic  := '0'; -- Numero da Sequencia: 1
 		  led_amarelo : out std_logic  := '0'; -- Numero da Sequencia: 2
@@ -43,14 +47,17 @@ constant c_CLK_PERIOD : time := 10 ns;
 type array_facil is array (8 downto 0) of integer range 0  to 5;
 type array_dificil is array (15 downto 0) of integer range 0  to 5;
 
-type statetype is ( INIT, PREPARA_JOGO, MOSTRA_COR, VERIFICA_MOSTRA_COR, AGUARDA_ENTRADA, VERIFICA_ENTRADA, CONTINA_JOGO, FINALIZA_JOGO) ;
+type statetype is ( INIT, PREPARA_JOGO, MOSTRA_COR, VERIFICA_MOSTRA_COR, AGUARDA_ENTRADA, VERIFICA_ENTRADA, CONTINUA_JOGO, FINALIZA_JOGO) ;
 signal state, nextstate : statetype := INIT;
 
 --signal jogo_ligado : std_logic := '0';
 --signal 	var1 : array1Dc;
 
-signal 	sequencia_facil : array_facil := (others => 0);
-signal 	sequencia_dificil : array_dificil := (others => 0);
+signal 	sequencia_facil_fpga : array_facil := (others => 0);
+signal 	sequencia_dificil_fpga : array_dificil := (others => 0);
+
+signal 	sequencia_facil_usuario : array_facil := (others => 0);
+signal 	sequencia_dificil_usuario : array_dificil := (others => 0);
 
 
 signal qual_botao : integer := 0;
@@ -58,6 +65,9 @@ signal qual_botao : integer := 0;
 
 signal var1 : array_facil := (others => 0);
 signal cont : integer range 0 to 30 := 1;
+
+signal cont_certo : integer range 0 to 30 := 0;
+signal cont_errado : integer range 0 to 30 := 0;
 
 signal cont_facil : integer range 0 to 8 := 0;
 signal cont_dificil : integer range 0 to 15 := 0;
@@ -77,15 +87,25 @@ begin
 	end process;
 
 	statemachine_comb: process (state)
+	
+		variable cont_c : integer range 0 to 8 := 0;
+		variable cont_e : integer range 0 to 8 := 0;
+	
 		begin
 			
 			case state is
 				when INIT =>
+				
 					led_ligado <= '0';
+					
 					cont_facil <= 1;
 					cont_dificil <= 1;
-					sequencia_facil <= (others => 0);
-					sequencia_dificil <= (others => 0);
+					
+					sequencia_facil_fpga <= (others => 0);
+					sequencia_dificil_fpga <= (others => 0);
+					sequencia_facil_usuario <= (others => 0);
+					sequencia_dificil_usuario <= (others => 0);
+					
 					nextstate <= PREPARA_JOGO;
 					
 					estado_fsm <= 1;
@@ -94,18 +114,16 @@ begin
 				
 					led_ligado <= '1';
 				
-					sequencia_facil(1) <= 1;
-					sequencia_facil(2) <= 2;
-					sequencia_facil(3) <= 3;
-					sequencia_facil(4) <= 4;
-					sequencia_facil(5) <= 1;
-					sequencia_facil(6) <= 2;
-					sequencia_facil(7) <= 3;
-					sequencia_facil(8) <= 4;
+					sequencia_facil_fpga(1) <= 1;
+					sequencia_facil_fpga(2) <= 2;
+					sequencia_facil_fpga(3) <= 3;
+					sequencia_facil_fpga(4) <= 4;
+					sequencia_facil_fpga(5) <= 1;
+					sequencia_facil_fpga(6) <= 2;
+					sequencia_facil_fpga(7) <= 3;
+					sequencia_facil_fpga(8) <= 4;
 					
 					estado_fsm <= 2;
-					
---					cont <= cont + 1;
 					
 					nextstate <= MOSTRA_COR;
 					
@@ -116,7 +134,7 @@ begin
 					led_verde <= '0';
 					led_vermelho <= '0';
 				
-					case sequencia_facil(cont) is
+					case sequencia_facil_fpga(cont) is
 						when 1 =>
 							led_azul <= '1';
 						when 2 =>
@@ -130,42 +148,68 @@ begin
 							nextstate <= INIT;
 					end case;
 				
-					var_1 <= sequencia_facil(cont);
+					var_1 <= sequencia_facil_fpga(cont);
+					
 					cont <= cont + 1;
+					
 					nextstate <= VERIFICA_MOSTRA_COR;
 					
 					estado_fsm <= 3;
 					
 				when VERIFICA_MOSTRA_COR =>
 					if (cont <= 8 ) then
---						var_1 <= sequencia_facil(cont);
---						cont <= cont + 1;
 						nextstate <= MOSTRA_COR;
 					else
-					
 						nextstate <= AGUARDA_ENTRADA;
 					end if;
-				
 					
+					estado_fsm <= 4;
+				
 				when AGUARDA_ENTRADA =>
 					led_azul <= '0';
 					led_amarelo <= '0';
 					led_verde <= '0';
 					led_vermelho <= '0';
 				
-				
---					wait for c_CLK_PERIOD/2;
---					nextstate <= INIT;
-					sequencia_facil(1) <= 0;
-					sequencia_facil(2) <= 0;
-					sequencia_facil(3) <= 0;
-					sequencia_facil(4) <= 0;
-					sequencia_facil(5) <= 0;
-					sequencia_facil(6) <= 0;
-					sequencia_facil(7) <= 0;
-					sequencia_facil(8) <= 0;
+					sequencia_facil_usuario(1) <= 1;
+					sequencia_facil_usuario(2) <= 2;
+					sequencia_facil_usuario(3) <= 3;
+					sequencia_facil_usuario(4) <= 4;
+					sequencia_facil_usuario(5) <= 1;
+					sequencia_facil_usuario(6) <= 3;
+					sequencia_facil_usuario(7) <= 3;
+					sequencia_facil_usuario(8) <= 3;
 					
-					estado_fsm <= 4;
+					estado_fsm <= 5;
+					
+					nextstate <= VERIFICA_ENTRADA;
+					
+				when VERIFICA_ENTRADA =>
+					
+					verifica: for i in 1 to 8 loop
+						if(sequencia_facil_fpga(i) = sequencia_facil_usuario(i)) then
+							cont_c := cont_c + 1;
+						else
+							cont_e := cont_e + 1;
+						end if;
+						
+					end loop verifica;
+				
+				
+					cont_certo <= cont_c;
+					cont_errado <= cont_e;
+					
+					contagem_certa <= cont_c;
+					contagem_errada <= cont_e;
+					
+					estado_fsm <= 6;
+					
+					nextstate <= CONTINUA_JOGO;
+					
+					
+				when CONTINUA_JOGO =>
+				
+					estado_fsm <= 7;
 					
 				when others =>
 					nextstate <= INIT;

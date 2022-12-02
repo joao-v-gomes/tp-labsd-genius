@@ -36,6 +36,38 @@
 					"strict" : false
 				},
 				{
+					"name" : "contagem_certa[0]",
+					"strict" : false
+				},
+				{
+					"name" : "contagem_certa[1]",
+					"strict" : false
+				},
+				{
+					"name" : "contagem_certa[2]",
+					"strict" : false
+				},
+				{
+					"name" : "contagem_certa[3]",
+					"strict" : false
+				},
+				{
+					"name" : "contagem_errada[0]",
+					"strict" : false
+				},
+				{
+					"name" : "contagem_errada[1]",
+					"strict" : false
+				},
+				{
+					"name" : "contagem_errada[2]",
+					"strict" : false
+				},
+				{
+					"name" : "contagem_errada[3]",
+					"strict" : false
+				},
+				{
 					"name" : "var_1[0]",
 					"strict" : false
 				},
