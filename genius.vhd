@@ -15,11 +15,11 @@ entity genius is
 		  contagem_certa : out integer := 0;
 		  contagem_errada : out integer := 0;
 		  
-		  var_1 : out integer := 0;
-		  var_2 : out integer := 0;
-		  var_3 : out integer := 0;
-		  var_4 : out integer := 0;
-		  var_5 : out integer := 0;
+--		  var_1 : out integer := 0;
+--		  var_2 : out integer := 0;
+--		  var_3 : out integer := 0;
+--		  var_4 : out integer := 0;
+--		  var_5 : out integer := 0;
 		  
 		  CLOCK : in std_logic;
 		  
@@ -64,13 +64,13 @@ signal qual_botao : integer := 0;
 
 
 signal var1 : array_facil := (others => 0);
-signal cont : integer range 0 to 30 := 1;
+signal cont : integer range 0 to 16 := 1;
 
-signal cont_certo : integer range 0 to 30 := 0;
-signal cont_errado : integer range 0 to 30 := 0;
+signal cont_certo : integer range 0 to 16 := 0;
+signal cont_errado : integer range 0 to 16 := 0;
 
-signal cont_facil : integer range 0 to 8 := 0;
-signal cont_dificil : integer range 0 to 15 := 0;
+signal cont_facil : integer range 0 to 9 := 0;
+signal cont_dificil : integer range 0 to 16 := 0;
 
 signal flag_reset : std_logic := '0';
 
@@ -114,6 +114,7 @@ begin
 				
 					led_ligado <= '1';
 				
+					-- LER AS ENTRADAS DO ARQUIVO
 					sequencia_facil_fpga(1) <= 1;
 					sequencia_facil_fpga(2) <= 2;
 					sequencia_facil_fpga(3) <= 3;
@@ -148,7 +149,7 @@ begin
 							nextstate <= INIT;
 					end case;
 				
-					var_1 <= sequencia_facil_fpga(cont);
+--					var_1 <= sequencia_facil_fpga(cont);
 					
 					cont <= cont + 1;
 					

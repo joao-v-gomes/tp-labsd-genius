@@ -1,5 +1,5 @@
 Analysis & Synthesis report for genius
-Thu Dec 01 21:39:34 2022
+Thu Dec 01 21:44:55 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -47,16 +47,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec 01 21:39:33 2022       ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec 01 21:44:55 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; genius                                      ;
 ; Top-level Entity Name              ; genius                                      ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 91                                          ;
-;     Total combinational functions  ; 91                                          ;
+; Total logic elements               ; 84                                          ;
+;     Total combinational functions  ; 84                                          ;
 ;     Dedicated logic registers      ; 7                                           ;
 ; Total registers                    ; 7                                           ;
-; Total pins                         ; 333                                         ;
+; Total pins                         ; 173                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -165,8 +165,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -184,30 +183,30 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------+
 ; Resource                                    ; Usage            ;
 +---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 91               ;
+; Estimated Total logic elements              ; 84               ;
 ;                                             ;                  ;
-; Total combinational functions               ; 91               ;
+; Total combinational functions               ; 84               ;
 ; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 27               ;
-;     -- 3 input functions                    ; 44               ;
-;     -- <=2 input functions                  ; 20               ;
+;     -- 4 input functions                    ; 26               ;
+;     -- 3 input functions                    ; 42               ;
+;     -- <=2 input functions                  ; 16               ;
 ;                                             ;                  ;
 ; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 88               ;
+;     -- normal mode                          ; 81               ;
 ;     -- arithmetic mode                      ; 3                ;
 ;                                             ;                  ;
 ; Total registers                             ; 7                ;
 ;     -- Dedicated logic registers            ; 7                ;
 ;     -- I/O registers                        ; 0                ;
 ;                                             ;                  ;
-; I/O pins                                    ; 333              ;
+; I/O pins                                    ; 173              ;
 ;                                             ;                  ;
 ; Embedded Multiplier 9-bit elements          ; 0                ;
 ;                                             ;                  ;
 ; Maximum fan-out node                        ; led_ligado$latch ;
-; Maximum fan-out                             ; 30               ;
-; Total fan-out                               ; 649              ;
-; Average fan-out                             ; 0.85             ;
+; Maximum fan-out                             ; 27               ;
+; Total fan-out                               ; 468              ;
+; Average fan-out                             ; 1.07             ;
 +---------------------------------------------+------------------+
 
 
@@ -216,7 +215,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |genius                    ; 91 (91)             ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 333  ; 0            ; 0          ; |genius             ; genius      ; work         ;
+; |genius                    ; 84 (84)             ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 173  ; 0            ; 0          ; |genius             ; genius      ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -256,20 +255,17 @@ Encoding Type:  One-Hot
 ; contagem_errada[1]$latch                            ; state.VERIFICA_ENTRADA       ; yes                    ;
 ; contagem_errada[2]$latch                            ; state.VERIFICA_ENTRADA       ; yes                    ;
 ; contagem_errada[3]$latch                            ; state.VERIFICA_ENTRADA       ; yes                    ;
-; var_1[0]$latch                                      ; state.MOSTRA_COR             ; yes                    ;
-; var_1[1]$latch                                      ; state.MOSTRA_COR             ; yes                    ;
-; var_1[2]$latch                                      ; state.MOSTRA_COR             ; yes                    ;
 ; led_azul$latch                                      ; WideOr15                     ; yes                    ;
 ; led_amarelo$latch                                   ; WideOr15                     ; yes                    ;
 ; led_verde$latch                                     ; WideOr15                     ; yes                    ;
 ; led_vermelho$latch                                  ; WideOr15                     ; yes                    ;
 ; led_ligado$latch                                    ; WideOr0                      ; yes                    ;
-; nextstate.PREPARA_JOGO_2098                         ; state.CONTINUA_JOGO          ; yes                    ;
-; nextstate.VERIFICA_MOSTRA_COR_2082                  ; state.CONTINUA_JOGO          ; yes                    ;
-; nextstate.VERIFICA_ENTRADA_2066                     ; state.CONTINUA_JOGO          ; yes                    ;
-; nextstate.MOSTRA_COR_2090                           ; state.CONTINUA_JOGO          ; yes                    ;
-; nextstate.CONTINUA_JOGO_2058                        ; state.CONTINUA_JOGO          ; yes                    ;
-; nextstate.AGUARDA_ENTRADA_2074                      ; state.CONTINUA_JOGO          ; yes                    ;
+; nextstate.PREPARA_JOGO_1798                         ; state.CONTINUA_JOGO          ; yes                    ;
+; nextstate.VERIFICA_MOSTRA_COR_1782                  ; state.CONTINUA_JOGO          ; yes                    ;
+; nextstate.VERIFICA_ENTRADA_1766                     ; state.CONTINUA_JOGO          ; yes                    ;
+; nextstate.MOSTRA_COR_1790                           ; state.CONTINUA_JOGO          ; yes                    ;
+; nextstate.CONTINUA_JOGO_1758                        ; state.CONTINUA_JOGO          ; yes                    ;
+; nextstate.AGUARDA_ENTRADA_1774                      ; state.CONTINUA_JOGO          ; yes                    ;
 ; \statemachine_comb:cont_c[0]                        ; \statemachine_comb:cont_c[3] ; yes                    ;
 ; sequencia_facil_usuario[7][0]                       ; WideOr1                      ; yes                    ;
 ; sequencia_facil_fpga[7][0]                          ; WideOr0                      ; yes                    ;
@@ -300,7 +296,7 @@ Encoding Type:  One-Hot
 ; \statemachine_comb:cont_e[1]                        ; \statemachine_comb:cont_e[3] ; yes                    ;
 ; \statemachine_comb:cont_e[2]                        ; \statemachine_comb:cont_e[3] ; yes                    ;
 ; \statemachine_comb:cont_e[3]                        ; \statemachine_comb:cont_e[3] ; yes                    ;
-; Number of user-specified and inferred latches = 57  ;                              ;                        ;
+; Number of user-specified and inferred latches = 54  ;                              ;                        ;
 +-----------------------------------------------------+------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -345,22 +341,22 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 333                         ;
+; boundary_port         ; 173                         ;
 ; cycloneiii_ff         ; 7                           ;
 ;     plain             ; 7                           ;
-; cycloneiii_lcell_comb ; 93                          ;
+; cycloneiii_lcell_comb ; 86                          ;
 ;     arith             ; 3                           ;
 ;         2 data inputs ; 2                           ;
 ;         3 data inputs ; 1                           ;
-;     normal            ; 90                          ;
+;     normal            ; 83                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 16                          ;
-;         3 data inputs ; 43                          ;
-;         4 data inputs ; 27                          ;
+;         2 data inputs ; 12                          ;
+;         3 data inputs ; 41                          ;
+;         4 data inputs ; 26                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.90                        ;
+; Average LUT depth     ; 1.89                        ;
 +-----------------------+-----------------------------+
 
 
@@ -379,7 +375,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Dec 01 21:39:23 2022
+    Info: Processing started: Thu Dec 01 21:44:46 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off genius -c genius
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -390,10 +386,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file tb_geni
     Info (12022): Found design unit 1: tb_genius-teste File: C:/tp-labsd-genius/tb_genius.vhd Line: 7
     Info (12023): Found entity 1: tb_genius File: C:/tp-labsd-genius/tb_genius.vhd Line: 4
 Info (12127): Elaborating entity "genius" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at genius.vhd(19): used explicit default value for signal "var_2" because signal was never assigned a value File: C:/tp-labsd-genius/genius.vhd Line: 19
-Warning (10540): VHDL Signal Declaration warning at genius.vhd(20): used explicit default value for signal "var_3" because signal was never assigned a value File: C:/tp-labsd-genius/genius.vhd Line: 20
-Warning (10540): VHDL Signal Declaration warning at genius.vhd(21): used explicit default value for signal "var_4" because signal was never assigned a value File: C:/tp-labsd-genius/genius.vhd Line: 21
-Warning (10540): VHDL Signal Declaration warning at genius.vhd(22): used explicit default value for signal "var_5" because signal was never assigned a value File: C:/tp-labsd-genius/genius.vhd Line: 22
 Warning (10036): Verilog HDL or VHDL warning at genius.vhd(57): object "sequencia_dificil_fpga" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 57
 Warning (10036): Verilog HDL or VHDL warning at genius.vhd(60): object "sequencia_dificil_usuario" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 60
 Warning (10540): VHDL Signal Declaration warning at genius.vhd(63): used explicit default value for signal "qual_botao" because signal was never assigned a value File: C:/tp-labsd-genius/genius.vhd Line: 63
@@ -403,8 +395,6 @@ Warning (10036): Verilog HDL or VHDL warning at genius.vhd(72): object "cont_fac
 Warning (10036): Verilog HDL or VHDL warning at genius.vhd(73): object "cont_dificil" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 73
 Warning (10492): VHDL Process Statement warning at genius.vhd(137): signal "sequencia_facil_fpga" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 137
 Warning (10492): VHDL Process Statement warning at genius.vhd(137): signal "cont" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 137
-Warning (10492): VHDL Process Statement warning at genius.vhd(151): signal "sequencia_facil_fpga" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 151
-Warning (10492): VHDL Process Statement warning at genius.vhd(151): signal "cont" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 151
 Warning (10492): VHDL Process Statement warning at genius.vhd(153): signal "cont" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 153
 Warning (10492): VHDL Process Statement warning at genius.vhd(160): signal "cont" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 160
 Warning (10492): VHDL Process Statement warning at genius.vhd(190): signal "sequencia_facil_fpga" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 190
@@ -418,7 +408,6 @@ Warning (10631): VHDL Process Statement warning at genius.vhd(89): inferring lat
 Warning (10631): VHDL Process Statement warning at genius.vhd(89): inferring latch(es) for signal or variable "led_amarelo", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 89
 Warning (10631): VHDL Process Statement warning at genius.vhd(89): inferring latch(es) for signal or variable "led_verde", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 89
 Warning (10631): VHDL Process Statement warning at genius.vhd(89): inferring latch(es) for signal or variable "led_vermelho", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 89
-Warning (10631): VHDL Process Statement warning at genius.vhd(89): inferring latch(es) for signal or variable "var_1", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 89
 Warning (10631): VHDL Process Statement warning at genius.vhd(89): inferring latch(es) for signal or variable "cont", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 89
 Warning (10631): VHDL Process Statement warning at genius.vhd(89): inferring latch(es) for signal or variable "cont_c", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 89
 Warning (10631): VHDL Process Statement warning at genius.vhd(89): inferring latch(es) for signal or variable "cont_e", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 89
@@ -501,38 +490,6 @@ Info (10041): Inferred latch for "cont[1]" at genius.vhd(89) File: C:/tp-labsd-g
 Info (10041): Inferred latch for "cont[2]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
 Info (10041): Inferred latch for "cont[3]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
 Info (10041): Inferred latch for "cont[4]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[0]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[1]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[2]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[3]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[4]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[5]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[6]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[7]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[8]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[9]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[10]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[11]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[12]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[13]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[14]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[15]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[16]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[17]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[18]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[19]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[20]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[21]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[22]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[23]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[24]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[25]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[26]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[27]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[28]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[29]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[30]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
-Info (10041): Inferred latch for "var_1[31]" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
 Info (10041): Inferred latch for "led_vermelho" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
 Info (10041): Inferred latch for "led_verde" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
 Info (10041): Inferred latch for "led_amarelo" at genius.vhd(89) File: C:/tp-labsd-genius/genius.vhd Line: 89
@@ -643,6 +600,8 @@ Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
     Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[7][0]" merged with LATCH primitive "led_ligado$latch" File: C:/tp-labsd-genius/genius.vhd Line: 89
     Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[7][1]" merged with LATCH primitive "led_ligado$latch" File: C:/tp-labsd-genius/genius.vhd Line: 89
     Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[8][2]" merged with LATCH primitive "led_ligado$latch" File: C:/tp-labsd-genius/genius.vhd Line: 89
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_usuario[8][1]" merged with LATCH primitive "sequencia_facil_usuario[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 89
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_usuario[8][0]" merged with LATCH primitive "sequencia_facil_usuario[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 89
     Info (13026): Duplicate LATCH primitive "sequencia_facil_usuario[7][1]" merged with LATCH primitive "sequencia_facil_usuario[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 89
     Info (13026): Duplicate LATCH primitive "sequencia_facil_usuario[6][1]" merged with LATCH primitive "sequencia_facil_usuario[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 89
     Info (13026): Duplicate LATCH primitive "sequencia_facil_usuario[6][0]" merged with LATCH primitive "sequencia_facil_usuario[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 89
@@ -652,8 +611,6 @@ Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
     Info (13026): Duplicate LATCH primitive "sequencia_facil_usuario[3][0]" merged with LATCH primitive "sequencia_facil_usuario[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 89
     Info (13026): Duplicate LATCH primitive "sequencia_facil_usuario[2][1]" merged with LATCH primitive "sequencia_facil_usuario[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 89
     Info (13026): Duplicate LATCH primitive "sequencia_facil_usuario[1][0]" merged with LATCH primitive "sequencia_facil_usuario[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_usuario[8][1]" merged with LATCH primitive "sequencia_facil_usuario[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_usuario[8][0]" merged with LATCH primitive "sequencia_facil_usuario[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 89
 Warning (13012): Latch led_azul$latch has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 89
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 51
 Warning (13012): Latch led_amarelo$latch has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 89
@@ -827,163 +784,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "contagem_errada[29]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
     Warning (13410): Pin "contagem_errada[30]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
     Warning (13410): Pin "contagem_errada[31]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[3]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[4]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[5]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[6]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[7]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[8]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[9]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[10]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[11]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[12]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[13]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[14]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[15]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[16]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[17]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[18]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[19]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[20]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[21]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[22]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[23]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[24]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[25]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[26]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[27]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[28]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[29]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[30]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_1[31]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 89
-    Warning (13410): Pin "var_2[0]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[1]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[2]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[3]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[4]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[5]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[6]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[7]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[8]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[9]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[10]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[11]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[12]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[13]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[14]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[15]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[16]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[17]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[18]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[19]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[20]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[21]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[22]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[23]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[24]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[25]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[26]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[27]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[28]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[29]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[30]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_2[31]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 19
-    Warning (13410): Pin "var_3[0]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[1]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[2]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[3]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[4]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[5]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[6]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[7]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[8]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[9]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[10]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[11]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[12]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[13]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[14]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[15]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[16]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[17]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[18]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[19]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[20]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[21]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[22]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[23]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[24]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[25]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[26]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[27]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[28]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[29]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[30]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_3[31]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 20
-    Warning (13410): Pin "var_4[0]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[1]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[2]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[3]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[4]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[5]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[6]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[7]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[8]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[9]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[10]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[11]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[12]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[13]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[14]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[15]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[16]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[17]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[18]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[19]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[20]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[21]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[22]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[23]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[24]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[25]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[26]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[27]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[28]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[29]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[30]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_4[31]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 21
-    Warning (13410): Pin "var_5[0]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[1]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[2]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[3]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[4]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[5]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[6]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[7]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[8]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[9]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[10]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[11]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[12]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[13]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[14]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[15]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[16]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[17]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[18]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[19]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[20]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[21]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[22]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[23]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[24]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[25]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[26]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[27]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[28]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[29]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[30]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
-    Warning (13410): Pin "var_5[31]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 22
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -995,14 +795,14 @@ Warning (21074): Design contains 6 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "entrada_vermelho" File: C:/tp-labsd-genius/genius.vhd Line: 29
     Warning (15610): No output dependent on input pin "modo_facil" File: C:/tp-labsd-genius/genius.vhd Line: 32
     Warning (15610): No output dependent on input pin "modo_dificil" File: C:/tp-labsd-genius/genius.vhd Line: 33
-Info (21057): Implemented 424 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 257 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 325 output pins
-    Info (21061): Implemented 91 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 375 warnings
-    Info: Peak virtual memory: 4789 megabytes
-    Info: Processing ended: Thu Dec 01 21:39:34 2022
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:24
+    Info (21059): Implemented 165 output pins
+    Info (21061): Implemented 84 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 211 warnings
+    Info: Peak virtual memory: 4784 megabytes
+    Info: Processing ended: Thu Dec 01 21:44:55 2022
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:21
 
 

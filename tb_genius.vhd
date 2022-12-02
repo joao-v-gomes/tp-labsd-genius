@@ -18,11 +18,11 @@ component genius is
 		  
 		  CLOCK : in std_logic := '0';
 		  
-		  var_1 : out integer := 0;
-		  var_2 : out integer := 0;
-		  var_3 : out integer := 0;
-		  var_4 : out integer := 0;
-		  var_5 : out integer := 0;
+--		  var_1 : out integer := 0;
+--		  var_2 : out integer := 0;
+--		  var_3 : out integer := 0;
+--		  var_4 : out integer := 0;
+--		  var_5 : out integer := 0;
 		  
 		  entrada_azul : in std_logic := '0';
 		  entrada_amarelo : in std_logic := '0';
@@ -50,11 +50,11 @@ signal est_fsm : integer;
 signal cont_certa : integer;
 signal cont_errada : integer;
 
-signal var1 : integer;
-signal var2 : integer;
-signal var3 : integer;
-signal var4 : integer;
-signal var5 : integer;
+--signal var1 : integer;
+--signal var2 : integer;
+--signal var3 : integer;
+--signal var4 : integer;
+--signal var5 : integer;
 
 begin
 
@@ -77,11 +77,11 @@ instance_genius: genius port map(
 		contagem_certa => cont_certa,
 		contagem_errada => cont_errada,
 		
-		var_1 => var1,
-		var_2 => var2,
-		var_3 => var3,
-		var_4 => var4,
-		var_5 => var5,
+--		var_1 => var1,
+--		var_2 => var2,
+--		var_3 => var3,
+--		var_4 => var4,
+--		var_5 => var5,
 		
 		entrada_azul => e_azul,
 		entrada_amarelo => e_amarelo,
