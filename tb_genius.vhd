@@ -13,6 +13,8 @@ component genius is
 		  valor_contador : out integer  := 0;
 		  estado_fsm : out integer  := 0;
 		  
+		  rodada : out integer := 0;
+		  
 		  contagem_certa : out integer :=  0;
 		  contagem_errada : out integer := 0;
 		  
@@ -46,6 +48,7 @@ signal l_azul, l_amarelo, l_verde, l_vermelho, l_ligado : std_logic;
 signal bot_pressionado : integer;
 signal valor_cont : integer;
 signal est_fsm : integer;
+signal cont_rodada : integer;
 
 signal cont_certa : integer;
 signal cont_errada : integer;
@@ -73,6 +76,7 @@ instance_genius: genius port map(
 		botao_pressionado => bot_pressionado,
 		valor_contador => valor_cont,
 		estado_fsm => est_fsm,
+		rodada => cont_rodada,
 		
 		contagem_certa => cont_certa,
 		contagem_errada => cont_errada,
@@ -101,7 +105,22 @@ instance_genius: genius port map(
 	teste: process(est_fsm)
 		begin
 			if (est_fsm = 5) then
-				e_azul <= '1','0' after 3ns;
+				case cont_rodada is
+				
+					when 1 =>
+						e_azul <= '1','0' after 5ns;
+					
+--					when 2 =>
+--						e_amarelo <= '1','0' after 1.5ns;
+					
+					when others =>
+						e_azul <= '0';
+						e_amarelo <= '0';
+						e_verde <= '0';
+						e_vermelho <= '0';
+						
+				end case;
+				
 			end if;		
 		end process;
 	

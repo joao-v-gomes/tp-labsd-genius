@@ -1,5 +1,5 @@
 Analysis & Synthesis report for genius
-Fri Dec 02 17:34:17 2022
+Wed Dec 07 23:01:09 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -15,12 +15,11 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |genius|state
   9. User-Specified and Inferred Latches
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -47,16 +46,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 02 17:34:17 2022       ;
+; Analysis & Synthesis Status        ; Successful - Wed Dec 07 23:01:09 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; genius                                      ;
 ; Top-level Entity Name              ; genius                                      ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 48                                          ;
-;     Total combinational functions  ; 48                                          ;
-;     Dedicated logic registers      ; 7                                           ;
-; Total registers                    ; 7                                           ;
-; Total pins                         ; 173                                         ;
+; Total logic elements               ; 359                                         ;
+;     Total combinational functions  ; 359                                         ;
+;     Dedicated logic registers      ; 10                                          ;
+; Total registers                    ; 10                                          ;
+; Total pins                         ; 205                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -165,7 +164,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processors 3-4         ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -178,36 +178,36 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+-------------------------------+---------+
 
 
-+--------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                        ;
-+---------------------------------------------+----------------------+
-; Resource                                    ; Usage                ;
-+---------------------------------------------+----------------------+
-; Estimated Total logic elements              ; 48                   ;
-;                                             ;                      ;
-; Total combinational functions               ; 48                   ;
-; Logic element usage by number of LUT inputs ;                      ;
-;     -- 4 input functions                    ; 12                   ;
-;     -- 3 input functions                    ; 23                   ;
-;     -- <=2 input functions                  ; 13                   ;
-;                                             ;                      ;
-; Logic elements by mode                      ;                      ;
-;     -- normal mode                          ; 45                   ;
-;     -- arithmetic mode                      ; 3                    ;
-;                                             ;                      ;
-; Total registers                             ; 7                    ;
-;     -- Dedicated logic registers            ; 7                    ;
-;     -- I/O registers                        ; 0                    ;
-;                                             ;                      ;
-; I/O pins                                    ; 173                  ;
-;                                             ;                      ;
-; Embedded Multiplier 9-bit elements          ; 0                    ;
-;                                             ;                      ;
-; Maximum fan-out node                        ; entrada_ligado~input ;
-; Maximum fan-out                             ; 10                   ;
-; Total fan-out                               ; 344                  ;
-; Average fan-out                             ; 0.86                 ;
-+---------------------------------------------+----------------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 359            ;
+;                                             ;                ;
+; Total combinational functions               ; 359            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 183            ;
+;     -- 3 input functions                    ; 132            ;
+;     -- <=2 input functions                  ; 44             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 352            ;
+;     -- arithmetic mode                      ; 7              ;
+;                                             ;                ;
+; Total registers                             ; 10             ;
+;     -- Dedicated logic registers            ; 10             ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 205            ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; cont_rodada[3] ;
+; Maximum fan-out                             ; 30             ;
+; Total fan-out                               ; 1469           ;
+; Average fan-out                             ; 1.89           ;
++---------------------------------------------+----------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -215,7 +215,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |genius                    ; 48 (48)             ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 173  ; 0            ; 0          ; |genius             ; genius      ; work         ;
+; |genius                    ; 359 (359)           ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 205  ; 0            ; 0          ; |genius             ; genius      ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -239,49 +239,96 @@ Encoding Type:  One-Hot
 +---------------------------+---------------------+---------------------+------------------------+--------------------+----------------------+-----------------------+---------------------------+------------------+--------------------+------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; cont[0]                                             ; state.MOSTRA_COR    ; yes                    ;
-; cont[1]                                             ; state.MOSTRA_COR    ; yes                    ;
-; cont[2]                                             ; state.MOSTRA_COR    ; yes                    ;
-; cont[3]                                             ; state.MOSTRA_COR    ; yes                    ;
-; cont[4]                                             ; state.MOSTRA_COR    ; yes                    ;
-; estado_fsm[0]$latch                                 ; state.NAO_LEU_NADA  ; yes                    ;
-; estado_fsm[1]$latch                                 ; state.NAO_LEU_NADA  ; yes                    ;
-; estado_fsm[2]$latch                                 ; state.NAO_LEU_NADA  ; yes                    ;
-; led_azul$latch                                      ; WideOr16            ; yes                    ;
-; led_amarelo$latch                                   ; WideOr16            ; yes                    ;
-; led_verde$latch                                     ; WideOr16            ; yes                    ;
-; led_vermelho$latch                                  ; WideOr16            ; yes                    ;
-; led_ligado$latch                                    ; WideOr0             ; yes                    ;
-; sequencia_facil_fpga[4][2]                          ; WideOr0             ; yes                    ;
-; sequencia_facil_fpga[8][2]                          ; WideOr0             ; yes                    ;
-; sequencia_facil_fpga[6][1]                          ; WideOr0             ; yes                    ;
-; sequencia_facil_fpga[3][1]                          ; WideOr0             ; yes                    ;
-; sequencia_facil_fpga[2][1]                          ; WideOr0             ; yes                    ;
-; sequencia_facil_fpga[7][1]                          ; WideOr0             ; yes                    ;
-; sequencia_facil_fpga[3][0]                          ; WideOr0             ; yes                    ;
-; sequencia_facil_fpga[5][0]                          ; WideOr0             ; yes                    ;
-; sequencia_facil_fpga[1][0]                          ; WideOr0             ; yes                    ;
-; sequencia_facil_fpga[7][0]                          ; WideOr0             ; yes                    ;
-; Number of user-specified and inferred latches = 23  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
++-------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                         ;
++-----------------------------------------------------+------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal          ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------+------------------------+
+; cont[0]                                             ; Selector35                   ; yes                    ;
+; cont[1]                                             ; Selector35                   ; yes                    ;
+; cont[2]                                             ; Selector35                   ; yes                    ;
+; cont[3]                                             ; Selector35                   ; yes                    ;
+; cont[4]                                             ; Selector35                   ; yes                    ;
+; rodada[0]$latch                                     ; WideOr8                      ; yes                    ;
+; rodada[1]$latch                                     ; WideOr8                      ; yes                    ;
+; rodada[2]$latch                                     ; WideOr8                      ; yes                    ;
+; rodada[3]$latch                                     ; WideOr8                      ; yes                    ;
+; contagem_certa[0]$latch                             ; state.VERIFICA_ENTRADA       ; yes                    ;
+; contagem_certa[1]$latch                             ; state.VERIFICA_ENTRADA       ; yes                    ;
+; contagem_certa[2]$latch                             ; state.VERIFICA_ENTRADA       ; yes                    ;
+; contagem_certa[3]$latch                             ; state.VERIFICA_ENTRADA       ; yes                    ;
+; contagem_errada[0]$latch                            ; state.VERIFICA_ENTRADA       ; yes                    ;
+; contagem_errada[1]$latch                            ; state.VERIFICA_ENTRADA       ; yes                    ;
+; contagem_errada[2]$latch                            ; state.VERIFICA_ENTRADA       ; yes                    ;
+; contagem_errada[3]$latch                            ; state.VERIFICA_ENTRADA       ; yes                    ;
+; led_azul$latch                                      ; Selector19                   ; yes                    ;
+; led_amarelo$latch                                   ; Selector19                   ; yes                    ;
+; led_verde$latch                                     ; Selector19                   ; yes                    ;
+; led_vermelho$latch                                  ; Selector19                   ; yes                    ;
+; led_ligado$latch                                    ; WideOr4                      ; yes                    ;
+; cont_rodada[3]                                      ; WideOr7                      ; yes                    ;
+; cont_rodada[2]                                      ; WideOr7                      ; yes                    ;
+; cont_rodada[1]                                      ; WideOr7                      ; yes                    ;
+; cont_rodada[0]                                      ; WideOr7                      ; yes                    ;
+; nextstate.PREPARA_JOGO_2429                         ; state.FINALIZA_JOGO          ; yes                    ;
+; nextstate.VERIFICA_MOSTRA_COR_2413                  ; state.FINALIZA_JOGO          ; yes                    ;
+; nextstate.LE_UMA_ENTRADA_2397                       ; state.FINALIZA_JOGO          ; yes                    ;
+; nextstate.CONTINUA_JOGO_2373                        ; state.FINALIZA_JOGO          ; yes                    ;
+; nextstate.MOSTRA_COR_2421                           ; state.FINALIZA_JOGO          ; yes                    ;
+; nextstate.VERIFICA_ENTRADA_2381                     ; state.FINALIZA_JOGO          ; yes                    ;
+; nextstate.FINALIZA_JOGO_2365                        ; state.FINALIZA_JOGO          ; yes                    ;
+; nextstate.NAO_LEU_NADA_2389                         ; state.FINALIZA_JOGO          ; yes                    ;
+; sequencia_facil_usuario[8][0]                       ; Selector65                   ; yes                    ;
+; sequencia_facil_usuario[8][1]                       ; Selector65                   ; yes                    ;
+; sequencia_facil_usuario[8][2]                       ; Selector65                   ; yes                    ;
+; sequencia_facil_fpga[8][2]                          ; WideOr5                      ; yes                    ;
+; sequencia_facil_usuario[7][2]                       ; Selector63                   ; yes                    ;
+; sequencia_facil_usuario[7][0]                       ; Selector63                   ; yes                    ;
+; sequencia_facil_fpga[7][0]                          ; WideOr5                      ; yes                    ;
+; sequencia_facil_usuario[7][1]                       ; Selector63                   ; yes                    ;
+; sequencia_facil_fpga[7][1]                          ; WideOr5                      ; yes                    ;
+; sequencia_facil_usuario[1][1]                       ; Selector51                   ; yes                    ;
+; sequencia_facil_usuario[1][2]                       ; Selector51                   ; yes                    ;
+; sequencia_facil_usuario[1][0]                       ; Selector51                   ; yes                    ;
+; sequencia_facil_fpga[1][0]                          ; WideOr5                      ; yes                    ;
+; \statemachine_comb:cont_c[0]                        ; \statemachine_comb:cont_c[3] ; yes                    ;
+; sequencia_facil_usuario[5][1]                       ; Selector59                   ; yes                    ;
+; sequencia_facil_usuario[5][2]                       ; Selector59                   ; yes                    ;
+; sequencia_facil_usuario[5][0]                       ; Selector59                   ; yes                    ;
+; sequencia_facil_fpga[5][0]                          ; WideOr5                      ; yes                    ;
+; sequencia_facil_usuario[4][0]                       ; Selector57                   ; yes                    ;
+; sequencia_facil_usuario[4][1]                       ; Selector57                   ; yes                    ;
+; sequencia_facil_usuario[4][2]                       ; Selector57                   ; yes                    ;
+; sequencia_facil_fpga[4][2]                          ; WideOr5                      ; yes                    ;
+; sequencia_facil_usuario[6][0]                       ; Selector61                   ; yes                    ;
+; sequencia_facil_usuario[6][2]                       ; Selector61                   ; yes                    ;
+; sequencia_facil_usuario[6][1]                       ; Selector61                   ; yes                    ;
+; sequencia_facil_fpga[6][1]                          ; WideOr5                      ; yes                    ;
+; sequencia_facil_usuario[3][2]                       ; Selector55                   ; yes                    ;
+; sequencia_facil_usuario[3][0]                       ; Selector55                   ; yes                    ;
+; sequencia_facil_fpga[3][0]                          ; WideOr5                      ; yes                    ;
+; sequencia_facil_usuario[3][1]                       ; Selector55                   ; yes                    ;
+; sequencia_facil_fpga[3][1]                          ; WideOr5                      ; yes                    ;
+; sequencia_facil_usuario[2][0]                       ; Selector53                   ; yes                    ;
+; sequencia_facil_usuario[2][2]                       ; Selector53                   ; yes                    ;
+; sequencia_facil_usuario[2][1]                       ; Selector53                   ; yes                    ;
+; sequencia_facil_fpga[2][1]                          ; WideOr5                      ; yes                    ;
+; \statemachine_comb:cont_c[1]                        ; \statemachine_comb:cont_c[3] ; yes                    ;
+; \statemachine_comb:cont_c[2]                        ; \statemachine_comb:cont_c[3] ; yes                    ;
+; \statemachine_comb:cont_c[3]                        ; \statemachine_comb:cont_c[3] ; yes                    ;
+; \statemachine_comb:cont_e[0]                        ; \statemachine_comb:cont_e[3] ; yes                    ;
+; \statemachine_comb:cont_e[1]                        ; \statemachine_comb:cont_e[3] ; yes                    ;
+; \statemachine_comb:cont_e[2]                        ; \statemachine_comb:cont_e[3] ; yes                    ;
+; \statemachine_comb:cont_e[3]                        ; \statemachine_comb:cont_e[3] ; yes                    ;
+; cont_entrada[4]                                     ; cont_entrada[4]              ; yes                    ;
+; cont_entrada[3]                                     ; cont_entrada[4]              ; yes                    ;
+; cont_entrada[2]                                     ; cont_entrada[4]              ; yes                    ;
+; cont_entrada[1]                                     ; cont_entrada[4]              ; yes                    ;
+; cont_entrada[0]                                     ; cont_entrada[4]              ; yes                    ;
+; nextstate.AGUARDA_ENTRADA_2405                      ; state.FINALIZA_JOGO          ; yes                    ;
+; Number of user-specified and inferred latches = 82  ;                              ;                        ;
++-----------------------------------------------------+------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; state.VERIFICA_ENTRADA                ; Lost fanout        ;
-; state.CONTINUA_JOGO                   ; Lost fanout        ;
-; state.FINALIZA_JOGO                   ; Lost fanout        ;
-; Total Number of Removed Registers = 3 ;                    ;
-+---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -289,7 +336,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 7     ;
+; Total registers                              ; 10    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -299,13 +346,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |genius|qual_botao         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |genius|qual_botao                   ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |genius|Selector30                   ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |genius|\statemachine_comb:cont_c[1] ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |genius|\statemachine_comb:cont_e[2] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -313,22 +363,22 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 173                         ;
-; cycloneiii_ff         ; 7                           ;
-;     plain             ; 7                           ;
-; cycloneiii_lcell_comb ; 49                          ;
-;     arith             ; 3                           ;
-;         2 data inputs ; 2                           ;
+; boundary_port         ; 205                         ;
+; cycloneiii_ff         ; 10                          ;
+;     plain             ; 10                          ;
+; cycloneiii_lcell_comb ; 363                         ;
+;     arith             ; 7                           ;
+;         2 data inputs ; 6                           ;
 ;         3 data inputs ; 1                           ;
-;     normal            ; 46                          ;
+;     normal            ; 356                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 9                           ;
-;         3 data inputs ; 22                          ;
-;         4 data inputs ; 12                          ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 35                          ;
+;         3 data inputs ; 131                         ;
+;         4 data inputs ; 183                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.92                        ;
+; Max LUT depth         ; 12.00                       ;
+; Average LUT depth     ; 5.99                        ;
 +-----------------------+-----------------------------+
 
 
@@ -337,7 +387,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -347,274 +397,352 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Dec 02 17:33:59 2022
+    Info: Processing started: Wed Dec 07 23:00:59 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off genius -c genius
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file genius.vhd
-    Info (12022): Found design unit 1: genius-arch File: C:/tp-labsd-genius/genius.vhd Line: 43
+    Info (12022): Found design unit 1: genius-arch File: C:/tp-labsd-genius/genius.vhd Line: 45
     Info (12023): Found entity 1: genius File: C:/tp-labsd-genius/genius.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file tb_genius.vhd
     Info (12022): Found design unit 1: tb_genius-teste File: C:/tp-labsd-genius/tb_genius.vhd Line: 7
     Info (12023): Found entity 1: tb_genius File: C:/tp-labsd-genius/tb_genius.vhd Line: 4
 Info (12127): Elaborating entity "genius" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at genius.vhd(57): object "sequencia_dificil_fpga" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 57
-Warning (10036): Verilog HDL or VHDL warning at genius.vhd(60): object "sequencia_dificil_usuario" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 60
-Warning (10036): Verilog HDL or VHDL warning at genius.vhd(71): object "cont_certo" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 71
-Warning (10036): Verilog HDL or VHDL warning at genius.vhd(72): object "cont_errado" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 72
-Warning (10036): Verilog HDL or VHDL warning at genius.vhd(74): object "cont_facil" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 74
-Warning (10036): Verilog HDL or VHDL warning at genius.vhd(75): object "cont_dificil" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 75
-Warning (10492): VHDL Process Statement warning at genius.vhd(140): signal "sequencia_facil_fpga" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 140
-Warning (10492): VHDL Process Statement warning at genius.vhd(140): signal "cont" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 140
-Warning (10492): VHDL Process Statement warning at genius.vhd(156): signal "cont" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 156
-Warning (10492): VHDL Process Statement warning at genius.vhd(163): signal "cont" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 163
-Warning (10492): VHDL Process Statement warning at genius.vhd(179): signal "qual_botao" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 179
-Warning (10492): VHDL Process Statement warning at genius.vhd(183): signal "cont_entrada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 183
-Warning (10492): VHDL Process Statement warning at genius.vhd(188): signal "cont_entrada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 188
-Warning (10492): VHDL Process Statement warning at genius.vhd(193): signal "cont_entrada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 193
-Warning (10492): VHDL Process Statement warning at genius.vhd(198): signal "cont_entrada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 198
+Warning (10036): Verilog HDL or VHDL warning at genius.vhd(59): object "sequencia_dificil_fpga" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 59
+Warning (10036): Verilog HDL or VHDL warning at genius.vhd(62): object "sequencia_dificil_usuario" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 62
+Warning (10036): Verilog HDL or VHDL warning at genius.vhd(73): object "cont_certo" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 73
+Warning (10036): Verilog HDL or VHDL warning at genius.vhd(74): object "cont_errado" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 74
+Warning (10036): Verilog HDL or VHDL warning at genius.vhd(76): object "cont_facil" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 76
+Warning (10036): Verilog HDL or VHDL warning at genius.vhd(77): object "cont_dificil" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 77
+Warning (10036): Verilog HDL or VHDL warning at genius.vhd(81): object "cont_jogada" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 81
+Warning (10492): VHDL Process Statement warning at genius.vhd(120): signal "cont_rodada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at genius.vhd(142): signal "cont_rodada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 142
+Warning (10492): VHDL Process Statement warning at genius.vhd(155): signal "sequencia_facil_fpga" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 155
+Warning (10492): VHDL Process Statement warning at genius.vhd(155): signal "cont" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 155
+Warning (10492): VHDL Process Statement warning at genius.vhd(178): signal "cont" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 178
+Warning (10492): VHDL Process Statement warning at genius.vhd(178): signal "cont_rodada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 178
+Warning (10492): VHDL Process Statement warning at genius.vhd(179): signal "cont" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 179
+Warning (10492): VHDL Process Statement warning at genius.vhd(195): signal "qual_botao" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 195
+Warning (10492): VHDL Process Statement warning at genius.vhd(206): signal "cont_entrada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 206
+Warning (10492): VHDL Process Statement warning at genius.vhd(216): signal "cont_entrada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 216
 Warning (10492): VHDL Process Statement warning at genius.vhd(226): signal "cont_entrada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 226
-Warning (10492): VHDL Process Statement warning at genius.vhd(234): signal "sequencia_facil_fpga" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 234
-Warning (10492): VHDL Process Statement warning at genius.vhd(234): signal "sequencia_facil_usuario" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 234
-Warning (10631): VHDL Process Statement warning at genius.vhd(91): inferring latch(es) for signal or variable "led_ligado", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (10631): VHDL Process Statement warning at genius.vhd(91): inferring latch(es) for signal or variable "sequencia_facil_fpga", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (10631): VHDL Process Statement warning at genius.vhd(91): inferring latch(es) for signal or variable "sequencia_facil_usuario", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (10631): VHDL Process Statement warning at genius.vhd(91): inferring latch(es) for signal or variable "nextstate", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (10631): VHDL Process Statement warning at genius.vhd(91): inferring latch(es) for signal or variable "estado_fsm", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (10631): VHDL Process Statement warning at genius.vhd(91): inferring latch(es) for signal or variable "led_azul", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (10631): VHDL Process Statement warning at genius.vhd(91): inferring latch(es) for signal or variable "led_amarelo", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (10631): VHDL Process Statement warning at genius.vhd(91): inferring latch(es) for signal or variable "led_verde", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (10631): VHDL Process Statement warning at genius.vhd(91): inferring latch(es) for signal or variable "led_vermelho", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (10631): VHDL Process Statement warning at genius.vhd(91): inferring latch(es) for signal or variable "cont", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (10631): VHDL Process Statement warning at genius.vhd(91): inferring latch(es) for signal or variable "cont_entrada", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (10631): VHDL Process Statement warning at genius.vhd(91): inferring latch(es) for signal or variable "cont_c", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (10631): VHDL Process Statement warning at genius.vhd(91): inferring latch(es) for signal or variable "cont_e", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (10631): VHDL Process Statement warning at genius.vhd(91): inferring latch(es) for signal or variable "contagem_certa", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (10631): VHDL Process Statement warning at genius.vhd(91): inferring latch(es) for signal or variable "contagem_errada", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (10492): VHDL Process Statement warning at genius.vhd(303): signal "entrada_ligado" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 303
-Info (10041): Inferred latch for "contagem_errada[0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[3]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[4]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[5]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[6]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[7]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[8]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[9]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[10]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[11]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[12]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[13]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[14]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[15]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[16]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[17]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[18]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[19]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[20]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[21]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[22]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[23]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[24]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[25]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[26]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[27]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[28]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[29]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[30]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_errada[31]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[3]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[4]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[5]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[6]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[7]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[8]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[9]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[10]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[11]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[12]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[13]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[14]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[15]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[16]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[17]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[18]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[19]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[20]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[21]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[22]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[23]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[24]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[25]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[26]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[27]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[28]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[29]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[30]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "contagem_certa[31]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "statemachine_comb:cont_e[0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "statemachine_comb:cont_e[1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "statemachine_comb:cont_e[2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "statemachine_comb:cont_e[3]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "statemachine_comb:cont_c[0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "statemachine_comb:cont_c[1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "statemachine_comb:cont_c[2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "statemachine_comb:cont_c[3]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "cont_entrada[0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "cont_entrada[1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "cont_entrada[2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "cont_entrada[3]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "cont_entrada[4]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "cont[0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "cont[1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "cont[2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "cont[3]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "cont[4]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "led_vermelho" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "led_verde" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "led_amarelo" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "led_azul" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[3]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[4]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[5]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[6]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[7]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[8]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[9]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[10]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[11]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[12]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[13]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[14]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[15]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[16]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[17]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[18]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[19]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[20]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[21]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[22]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[23]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[24]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[25]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[26]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[27]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[28]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[29]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[30]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "estado_fsm[31]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "nextstate.FINALIZA_JOGO" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "nextstate.CONTINUA_JOGO" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "nextstate.VERIFICA_ENTRADA" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "nextstate.NAO_LEU_NADA" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "nextstate.LE_UMA_ENTRADA" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "nextstate.AGUARDA_ENTRADA" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "nextstate.VERIFICA_MOSTRA_COR" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "nextstate.MOSTRA_COR" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "nextstate.PREPARA_JOGO" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "nextstate.INIT" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[1][0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[1][1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[1][2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[2][0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[2][1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[2][2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[3][0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[3][1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[3][2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[4][0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[4][1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[4][2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[5][0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[5][1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[5][2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[6][0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[6][1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[6][2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[7][0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[7][1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[7][2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[8][0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[8][1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_usuario[8][2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[0][0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[0][1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[0][2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[1][0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[1][1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[1][2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[2][0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[2][1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[2][2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[3][0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[3][1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[3][2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[4][0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[4][1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[4][2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[5][0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[5][1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[5][2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[6][0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[6][1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[6][2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[7][0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[7][1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[7][2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[8][0]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[8][1]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "sequencia_facil_fpga[8][2]" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Info (10041): Inferred latch for "led_ligado" at genius.vhd(91) File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (14025): LATCH primitive "contagem_certa[0]$latch" is permanently disabled File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (14025): LATCH primitive "contagem_certa[1]$latch" is permanently disabled File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (14025): LATCH primitive "contagem_certa[2]$latch" is permanently disabled File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (14025): LATCH primitive "contagem_certa[3]$latch" is permanently disabled File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (14025): LATCH primitive "contagem_errada[0]$latch" is permanently disabled File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (14025): LATCH primitive "contagem_errada[1]$latch" is permanently disabled File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (14025): LATCH primitive "contagem_errada[2]$latch" is permanently disabled File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (14025): LATCH primitive "contagem_errada[3]$latch" is permanently disabled File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (14025): LATCH primitive "\statemachine_comb:cont_c[0]" is permanently disabled
-Warning (14025): LATCH primitive "\statemachine_comb:cont_c[1]" is permanently disabled
-Warning (14025): LATCH primitive "\statemachine_comb:cont_c[2]" is permanently disabled
-Warning (14025): LATCH primitive "\statemachine_comb:cont_c[3]" is permanently disabled
-Warning (14025): LATCH primitive "\statemachine_comb:cont_e[0]" is permanently disabled
-Warning (14025): LATCH primitive "\statemachine_comb:cont_e[1]" is permanently disabled
-Warning (14025): LATCH primitive "\statemachine_comb:cont_e[2]" is permanently disabled
-Warning (14025): LATCH primitive "\statemachine_comb:cont_e[3]" is permanently disabled
-Warning (14026): LATCH primitive "nextstate.PREPARA_JOGO_2128" is permanently enabled File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (14026): LATCH primitive "nextstate.MOSTRA_COR_2120" is permanently enabled File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (14026): LATCH primitive "nextstate.VERIFICA_MOSTRA_COR_2112" is permanently enabled File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (14026): LATCH primitive "nextstate.AGUARDA_ENTRADA_2104" is permanently enabled File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (14026): LATCH primitive "nextstate.LE_UMA_ENTRADA_2096" is permanently enabled File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (14026): LATCH primitive "nextstate.NAO_LEU_NADA_2088" is permanently enabled File: C:/tp-labsd-genius/genius.vhd Line: 91
+Warning (10492): VHDL Process Statement warning at genius.vhd(236): signal "cont_entrada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 236
+Warning (10492): VHDL Process Statement warning at genius.vhd(253): signal "cont_entrada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 253
+Warning (10492): VHDL Process Statement warning at genius.vhd(253): signal "cont_rodada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 253
+Warning (10492): VHDL Process Statement warning at genius.vhd(269): signal "cont_entrada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 269
+Warning (10492): VHDL Process Statement warning at genius.vhd(269): signal "cont_rodada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 269
+Warning (10492): VHDL Process Statement warning at genius.vhd(270): signal "cont_entrada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 270
+Warning (10492): VHDL Process Statement warning at genius.vhd(292): signal "cont_rodada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 292
+Warning (10492): VHDL Process Statement warning at genius.vhd(293): signal "sequencia_facil_fpga" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 293
+Warning (10492): VHDL Process Statement warning at genius.vhd(293): signal "sequencia_facil_usuario" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 293
+Warning (10492): VHDL Process Statement warning at genius.vhd(324): signal "cont_rodada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 324
+Warning (10492): VHDL Process Statement warning at genius.vhd(326): signal "cont_rodada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 326
+Warning (10492): VHDL Process Statement warning at genius.vhd(330): signal "cont_rodada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 330
+Warning (10631): VHDL Process Statement warning at genius.vhd(96): inferring latch(es) for signal or variable "led_ligado", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at genius.vhd(96): inferring latch(es) for signal or variable "sequencia_facil_fpga", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at genius.vhd(96): inferring latch(es) for signal or variable "sequencia_facil_usuario", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at genius.vhd(96): inferring latch(es) for signal or variable "cont_rodada", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at genius.vhd(96): inferring latch(es) for signal or variable "rodada", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at genius.vhd(96): inferring latch(es) for signal or variable "nextstate", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at genius.vhd(96): inferring latch(es) for signal or variable "led_azul", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at genius.vhd(96): inferring latch(es) for signal or variable "led_amarelo", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at genius.vhd(96): inferring latch(es) for signal or variable "led_verde", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at genius.vhd(96): inferring latch(es) for signal or variable "led_vermelho", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at genius.vhd(96): inferring latch(es) for signal or variable "cont", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at genius.vhd(96): inferring latch(es) for signal or variable "cont_entrada", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at genius.vhd(96): inferring latch(es) for signal or variable "cont_c", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at genius.vhd(96): inferring latch(es) for signal or variable "cont_e", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at genius.vhd(96): inferring latch(es) for signal or variable "contagem_certa", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (10631): VHDL Process Statement warning at genius.vhd(96): inferring latch(es) for signal or variable "contagem_errada", which holds its previous value in one or more paths through the process File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (10492): VHDL Process Statement warning at genius.vhd(373): signal "entrada_ligado" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 373
+Info (10041): Inferred latch for "contagem_errada[0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[3]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[4]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[5]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[6]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[7]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[8]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[9]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[10]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[11]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[12]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[13]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[14]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[15]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[16]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[17]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[18]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[19]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[20]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[21]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[22]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[23]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[24]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[25]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[26]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[27]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[28]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[29]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[30]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_errada[31]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[3]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[4]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[5]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[6]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[7]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[8]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[9]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[10]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[11]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[12]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[13]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[14]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[15]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[16]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[17]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[18]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[19]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[20]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[21]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[22]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[23]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[24]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[25]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[26]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[27]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[28]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[29]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[30]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "contagem_certa[31]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "statemachine_comb:cont_e[0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "statemachine_comb:cont_e[1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "statemachine_comb:cont_e[2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "statemachine_comb:cont_e[3]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "statemachine_comb:cont_c[0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "statemachine_comb:cont_c[1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "statemachine_comb:cont_c[2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "statemachine_comb:cont_c[3]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "cont_entrada[0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "cont_entrada[1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "cont_entrada[2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "cont_entrada[3]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "cont_entrada[4]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "cont[0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "cont[1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "cont[2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "cont[3]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "cont[4]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "led_vermelho" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "led_verde" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "led_amarelo" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "led_azul" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "nextstate.FINALIZA_JOGO" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "nextstate.CONTINUA_JOGO" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "nextstate.VERIFICA_ENTRADA" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "nextstate.NAO_LEU_NADA" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "nextstate.LE_UMA_ENTRADA" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "nextstate.AGUARDA_ENTRADA" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "nextstate.VERIFICA_MOSTRA_COR" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "nextstate.MOSTRA_COR" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "nextstate.PREPARA_JOGO" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "nextstate.INIT" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[3]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[4]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[5]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[6]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[7]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[8]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[9]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[10]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[11]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[12]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[13]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[14]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[15]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[16]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[17]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[18]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[19]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[20]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[21]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[22]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[23]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[24]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[25]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[26]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[27]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[28]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[29]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[30]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "rodada[31]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "cont_rodada[0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "cont_rodada[1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "cont_rodada[2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "cont_rodada[3]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[1][0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[1][1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[1][2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[2][0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[2][1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[2][2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[3][0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[3][1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[3][2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[4][0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[4][1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[4][2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[5][0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[5][1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[5][2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[6][0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[6][1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[6][2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[7][0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[7][1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[7][2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[8][0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[8][1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_usuario[8][2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[0][0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[0][1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[0][2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[1][0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[1][1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[1][2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[2][0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[2][1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[2][2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[3][0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[3][1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[3][2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[4][0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[4][1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[4][2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[5][0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[5][1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[5][2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[6][0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[6][1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[6][2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[7][0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[7][1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[7][2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[8][0]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[8][1]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "sequencia_facil_fpga[8][2]" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
+Info (10041): Inferred latch for "led_ligado" at genius.vhd(96) File: C:/tp-labsd-genius/genius.vhd Line: 96
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[1][0]" merged with LATCH primitive "led_ligado$latch" File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[2][1]" merged with LATCH primitive "led_ligado$latch" File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[3][0]" merged with LATCH primitive "led_ligado$latch" File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[3][1]" merged with LATCH primitive "led_ligado$latch" File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[4][2]" merged with LATCH primitive "led_ligado$latch" File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[5][0]" merged with LATCH primitive "led_ligado$latch" File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[6][1]" merged with LATCH primitive "led_ligado$latch" File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[7][0]" merged with LATCH primitive "led_ligado$latch" File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[7][1]" merged with LATCH primitive "led_ligado$latch" File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[8][2]" merged with LATCH primitive "led_ligado$latch" File: C:/tp-labsd-genius/genius.vhd Line: 91
-Warning (13012): Latch led_azul$latch has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 51
-Warning (13012): Latch led_amarelo$latch has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 51
-Warning (13012): Latch led_verde$latch has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 51
-Warning (13012): Latch led_vermelho$latch has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 51
-Warning (13012): Latch led_ligado$latch has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.PREPARA_JOGO File: C:/tp-labsd-genius/genius.vhd Line: 51
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[1][0]" merged with LATCH primitive "sequencia_facil_fpga[8][2]" File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[2][1]" merged with LATCH primitive "sequencia_facil_fpga[8][2]" File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[3][0]" merged with LATCH primitive "sequencia_facil_fpga[8][2]" File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[3][1]" merged with LATCH primitive "sequencia_facil_fpga[8][2]" File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[4][2]" merged with LATCH primitive "sequencia_facil_fpga[8][2]" File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[5][0]" merged with LATCH primitive "sequencia_facil_fpga[8][2]" File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[6][1]" merged with LATCH primitive "sequencia_facil_fpga[8][2]" File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[7][0]" merged with LATCH primitive "sequencia_facil_fpga[8][2]" File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[7][1]" merged with LATCH primitive "sequencia_facil_fpga[8][2]" File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (13012): Latch cont[0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.CONTINUA_JOGO File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch cont[1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.CONTINUA_JOGO File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch cont[2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.CONTINUA_JOGO File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch cont[3] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.CONTINUA_JOGO File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch cont[4] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.CONTINUA_JOGO File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch led_azul$latch has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch led_amarelo$latch has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch led_verde$latch has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch led_vermelho$latch has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch led_ligado$latch has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.PREPARA_JOGO File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch cont_rodada[3] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.CONTINUA_JOGO File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch cont_rodada[2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.CONTINUA_JOGO File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch cont_rodada[1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.CONTINUA_JOGO File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch cont_rodada[0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.CONTINUA_JOGO File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[8][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[8][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[8][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_fpga[8][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.PREPARA_JOGO File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[7][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[7][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[7][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[1][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[1][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[1][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch \statemachine_comb:cont_c[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cont_rodada[3] File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (13012): Latch sequencia_facil_usuario[5][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[5][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[5][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[4][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[4][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[4][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[6][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[6][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[6][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[3][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[3][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[3][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[2][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[2][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch sequencia_facil_usuario[2][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 53
+Warning (13012): Latch \statemachine_comb:cont_c[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cont_rodada[3] File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (13012): Latch \statemachine_comb:cont_c[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cont_rodada[3] File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (13012): Latch \statemachine_comb:cont_c[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cont_rodada[3] File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (13012): Latch \statemachine_comb:cont_e[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cont_rodada[3] File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (13012): Latch \statemachine_comb:cont_e[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cont_rodada[3] File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (13012): Latch \statemachine_comb:cont_e[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cont_rodada[3] File: C:/tp-labsd-genius/genius.vhd Line: 96
+Warning (13012): Latch \statemachine_comb:cont_e[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cont_rodada[3] File: C:/tp-labsd-genius/genius.vhd Line: 96
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "botao_pressionado[3]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 11
     Warning (13410): Pin "botao_pressionado[4]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 11
@@ -672,114 +800,130 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "valor_contador[29]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 12
     Warning (13410): Pin "valor_contador[30]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 12
     Warning (13410): Pin "valor_contador[31]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 12
-    Warning (13410): Pin "estado_fsm[3]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[4]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[5]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[6]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[7]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[8]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[9]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[10]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[11]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[12]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[13]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[14]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[15]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[16]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[17]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[18]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[19]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[20]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[21]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[22]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[23]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[24]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[25]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[26]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[27]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[28]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[29]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[30]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "estado_fsm[31]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[0]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[1]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[2]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[3]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[4]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[5]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[6]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[7]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[8]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[9]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[10]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[11]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[12]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[13]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[14]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[15]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[16]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[17]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[18]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[19]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[20]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[21]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[22]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[23]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[24]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[25]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[26]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[27]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[28]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[29]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[30]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_certa[31]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[0]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[1]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[2]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[3]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[4]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[5]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[6]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[7]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[8]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[9]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[10]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[11]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[12]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[13]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[14]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[15]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[16]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[17]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[18]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[19]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[20]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[21]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[22]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[23]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[24]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[25]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[26]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[27]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[28]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[29]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[30]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
-    Warning (13410): Pin "contagem_errada[31]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 91
+    Warning (13410): Pin "estado_fsm[6]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[7]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[8]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[9]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[10]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[11]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[12]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[13]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[14]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[15]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[16]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[17]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[18]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[19]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[20]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[21]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[22]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[23]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[24]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[25]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[26]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[27]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[28]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[29]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[30]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "estado_fsm[31]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 13
+    Warning (13410): Pin "rodada[4]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[5]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[6]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[7]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[8]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[9]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[10]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[11]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[12]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[13]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[14]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[15]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[16]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[17]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[18]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[19]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[20]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[21]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[22]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[23]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[24]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[25]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[26]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[27]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[28]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[29]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[30]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "rodada[31]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[4]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[5]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[6]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[7]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[8]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[9]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[10]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[11]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[12]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[13]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[14]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[15]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[16]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[17]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[18]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[19]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[20]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[21]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[22]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[23]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[24]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[25]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[26]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[27]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[28]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[29]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[30]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_certa[31]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[4]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[5]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[6]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[7]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[8]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[9]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[10]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[11]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[12]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[13]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[14]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[15]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[16]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[17]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[18]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[19]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[20]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[21]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[22]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[23]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[24]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[25]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[26]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[27]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[28]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[29]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[30]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
+    Warning (13410): Pin "contagem_errada[31]" is stuck at GND File: C:/tp-labsd-genius/genius.vhd Line: 96
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "modo_facil" File: C:/tp-labsd-genius/genius.vhd Line: 32
-    Warning (15610): No output dependent on input pin "modo_dificil" File: C:/tp-labsd-genius/genius.vhd Line: 33
-Info (21057): Implemented 221 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "modo_facil" File: C:/tp-labsd-genius/genius.vhd Line: 34
+    Warning (15610): No output dependent on input pin "modo_dificil" File: C:/tp-labsd-genius/genius.vhd Line: 35
+Info (21057): Implemented 564 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 165 output pins
-    Info (21061): Implemented 48 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 220 warnings
-    Info: Peak virtual memory: 4788 megabytes
-    Info: Processing ended: Fri Dec 02 17:34:17 2022
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:46
+    Info (21059): Implemented 197 output pins
+    Info (21061): Implemented 359 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 312 warnings
+    Info: Peak virtual memory: 4807 megabytes
+    Info: Processing ended: Wed Dec 07 23:01:09 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:22
 
 

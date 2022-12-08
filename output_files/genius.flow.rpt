@@ -1,5 +1,5 @@
 Flow report for genius
-Fri Dec 02 17:34:17 2022
+Wed Dec 07 23:01:09 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Dec 02 17:34:17 2022       ;
+; Flow Status                        ; Successful - Wed Dec 07 23:01:09 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; genius                                      ;
 ; Top-level Entity Name              ; genius                                      ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 48                                          ;
-;     Total combinational functions  ; 48                                          ;
-;     Dedicated logic registers      ; 7                                           ;
-; Total registers                    ; 7                                           ;
-; Total pins                         ; 173                                         ;
+; Total logic elements               ; 359                                         ;
+;     Total combinational functions  ; 359                                         ;
+;     Dedicated logic registers      ; 10                                          ;
+; Total registers                    ; 10                                          ;
+; Total pins                         ; 205                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/02/2022 17:34:00 ;
+; Start date & time ; 12/07/2022 23:01:00 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; genius              ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 110168739887284.167001324007824        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 110168739887284.167046486003696        ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_genius                         ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
@@ -91,7 +91,7 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TEST_BENCH_FILE                  ; tb_genius.vhd                          ; --            ; --          ; tb_genius                         ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; tb_genius                              ; --            ; --          ; tb_genius                         ;
 ; EDA_TEST_BENCH_NAME                  ; tb_genius                              ; --            ; --          ; eda_simulation                    ;
-; EDA_TEST_BENCH_RUN_SIM_FOR           ; 50 ns                                  ; --            ; --          ; tb_genius                         ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 70 ns                                  ; --            ; --          ; tb_genius                         ;
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --                                ;
@@ -109,8 +109,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:18     ; 1.0                     ; 4788 MB             ; 00:00:46                           ;
-; Total                ; 00:00:18     ; --                      ; --                  ; 00:00:46                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4807 MB             ; 00:00:21                           ;
+; Total                ; 00:00:10     ; --                      ; --                  ; 00:00:21                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
