@@ -111,20 +111,25 @@ instance_genius: genius port map(
 	teste: process(est_fsm)
 		begin
 			if (est_fsm = 5) then
-				case cont_rodada is
+				case cont_entrada is
 				
 					when 1 =>
-						
 						e_azul <= '1','0' after 3ns;
 					
---					when 2 =>
---						e_amarelo <= '1','0' after 1.5ns;
+					when 2 =>
+						e_amarelo <= '1','0' after 3ns;
+					
+					when 3 =>
+						e_verde <= '1','0' after 3ns;
+					
+					when 4 =>
+						e_vermelho <= '1','0' after 3ns;
 					
 					when others =>
-						e_azul <= '0';
-						e_amarelo <= '0';
-						e_verde <= '0';
-						e_vermelho <= '0';
+--						e_azul <= '0';
+--						e_amarelo <= '0';
+--						e_verde <= '0';
+--						e_vermelho <= '0';
 						
 				end case;
 				

@@ -156,15 +156,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "entrada_amarelo",
+					"strict" : false
+				},
+				{
 					"name" : "entrada_ligado",
 					"strict" : false
 				},
 				{
 					"name" : "entrada_vermelho",
-					"strict" : false
-				},
-				{
-					"name" : "entrada_amarelo",
 					"strict" : false
 				},
 				{

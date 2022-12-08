@@ -80,12 +80,16 @@ signal cont_dificil : integer range 0 to 16 := 0;
 
 signal flag_reset : std_logic := '0';
 
-signal cont_jogada : integer range 0 to 9 := 0;
+signal cont_jogada : integer range 0 to 9 := 1;
 signal cont_rodada : integer range 0 to 9 := 1;
 
 begin
 
 	contador_entrada <= cont_entrada;
+	contagem_certa <= cont_certo;
+	contagem_errada <= cont_errado;
+	
+	rodada <= cont_rodada;
 
 	statemachine_seq :process(CLOCK, entrada_ligado)
 		begin
@@ -116,11 +120,10 @@ begin
 					sequencia_facil_usuario <= (others => 0);
 					sequencia_dificil_usuario <= (others => 0);
 					
+					cont_entrada <= 1;
 					
 					cont_rodada <= 1;
-					cont_jogada <= 0;
-					
-					rodada <= cont_rodada;
+					cont_jogada <= 1;
 					
 					nextstate <= PREPARA_JOGO;
 					
@@ -142,7 +145,7 @@ begin
 					
 --					cont_rodada <= cont_rodada + 1;
 					
-					rodada <= cont_rodada;
+--					rodada <= cont_rodada;
 					
 					estado_fsm <= 2;
 					
@@ -213,7 +216,7 @@ begin
 							led_verde <= '0';
 							led_vermelho <= '0';
 							
---							cont_entrada <= cont_entrada + 1;
+							cont_entrada <= cont_entrada + 1;
 							nextstate <= LE_UMA_ENTRADA after 5ns;
 						when 2 =>
 							sequencia_facil_usuario(cont_entrada) <= 2;
@@ -223,7 +226,7 @@ begin
 							led_verde <= '0';
 							led_vermelho <= '0';
 							
---							cont_entrada <= cont_entrada + 1;
+							cont_entrada <= cont_entrada + 1;
 							nextstate <= LE_UMA_ENTRADA after 5ns;
 						when 3 =>
 							sequencia_facil_usuario(cont_entrada) <= 3;
@@ -233,7 +236,7 @@ begin
 							led_amarelo <= '0';
 							led_vermelho <= '0';
 							
---							cont_entrada <= cont_entrada + 1;
+							cont_entrada <= cont_entrada + 1;
 							nextstate <= LE_UMA_ENTRADA after 5ns;
 						when 4 =>
 							sequencia_facil_usuario(cont_entrada) <= 4;
@@ -243,34 +246,17 @@ begin
 							led_amarelo <= '0';
 							led_verde <= '0';
 							
---							cont_entrada <= cont_entrada + 1;
+							cont_entrada <= cont_entrada + 1;
 							nextstate <= LE_UMA_ENTRADA after 5ns;
 						when others =>
-							nextstate <= NAO_LEU_NADA after (c_CLK_PERIOD*10);
+							nextstate <= NAO_LEU_NADA;
 --							nextstate <= NAO_LEU_NADA after (c_CLK_PERIOD*10);
 					end case;
 
 					estado_fsm <= 5;
 
 				when NAO_LEU_NADA =>
-				
-				
-				
-				
-				
 					nextstate <= AGUARDA_ENTRADA;
---					if(cont_entrada < cont_rodada) then
-----						cont_entrada <= cont_entrada + 1;
---						nextstate <= AGUARDA_ENTRADA after (c_CLK_PERIOD*10);
---					else
---						nextstate <= VERIFICA_ENTRADA after (c_CLK_PERIOD*10);
---						
-----						led_azul <= '0';
-----						led_amarelo <= '0';
-----						led_verde <= '0';
-----						led_vermelho <= '0';
---						
---					end if;
 					
 					estado_fsm <= 61;
 
@@ -282,8 +268,8 @@ begin
 					led_vermelho <= '0';
 				
 				
-					if(cont_entrada < cont_rodada) then
-						cont_entrada <= cont_entrada + 1;
+					if(cont_entrada <= cont_rodada) then
+--						cont_entrada <= cont_entrada + 1;
 						nextstate <= AGUARDA_ENTRADA  after (c_CLK_PERIOD*5);
 					else
 						nextstate <= VERIFICA_ENTRADA after (c_CLK_PERIOD*5);
@@ -302,7 +288,7 @@ begin
 					led_vermelho <= '0';
 					
 					verifica: for i in 1 to 8 loop
-						if (i <= cont_rodada) then
+						if (i < cont_rodada) then
 							if(sequencia_facil_fpga(i) = sequencia_facil_usuario(i)) then
 								cont_c := cont_c + 1;
 							else
@@ -316,9 +302,6 @@ begin
 					cont_certo <= cont_c;
 					cont_errado <= cont_e;
 					
-					contagem_certa <= cont_c;
-					contagem_errada <= cont_e;
-				
 					if(cont_e > 0) then
 						nextstate <= FINALIZA_JOGO;
 					else
@@ -336,7 +319,12 @@ begin
 					
 					cont_rodada <= cont_rodada + 1;
 					
-					rodada <= cont_rodada;
+--					rodada <= cont_rodada;
+
+					cont_certo <= 0;
+					cont_errado <= 0;
+					
+					cont_entrada <= 1;
 					
 					cont <= 0;
 					
