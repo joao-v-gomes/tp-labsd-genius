@@ -12,6 +12,8 @@ entity genius is
 		  valor_contador : out integer  := 0;
 		  estado_fsm : out integer  := 0;
 		  
+		  contador_entrada : out integer :=0;
+		  
 		  rodada : out integer := 0;
 		  
 		  contagem_certa : out integer := 0;
@@ -83,6 +85,7 @@ signal cont_rodada : integer range 0 to 9 := 1;
 
 begin
 
+	contador_entrada <= cont_entrada;
 
 	statemachine_seq :process(CLOCK, entrada_ligado)
 		begin
@@ -170,7 +173,7 @@ begin
 
 --					wait for 3ns;
 					
-					nextstate <= VERIFICA_MOSTRA_COR;
+					nextstate <= VERIFICA_MOSTRA_COR after (c_CLK_PERIOD*5);
 					
 					estado_fsm <= 3;
 					
@@ -185,7 +188,7 @@ begin
 						led_verde <= '0';
 						led_vermelho <= '0';
 					
-						nextstate <= AGUARDA_ENTRADA after (c_CLK_PERIOD*5);
+						nextstate <= AGUARDA_ENTRADA;
 					end if;
 					
 					estado_fsm <= 4;
@@ -211,7 +214,7 @@ begin
 							led_vermelho <= '0';
 							
 --							cont_entrada <= cont_entrada + 1;
-							nextstate <= LE_UMA_ENTRADA;
+							nextstate <= LE_UMA_ENTRADA after 5ns;
 						when 2 =>
 							sequencia_facil_usuario(cont_entrada) <= 2;
 							
@@ -221,7 +224,7 @@ begin
 							led_vermelho <= '0';
 							
 --							cont_entrada <= cont_entrada + 1;
-							nextstate <= LE_UMA_ENTRADA;
+							nextstate <= LE_UMA_ENTRADA after 5ns;
 						when 3 =>
 							sequencia_facil_usuario(cont_entrada) <= 3;
 							
@@ -231,7 +234,7 @@ begin
 							led_vermelho <= '0';
 							
 --							cont_entrada <= cont_entrada + 1;
-							nextstate <= LE_UMA_ENTRADA;
+							nextstate <= LE_UMA_ENTRADA after 5ns;
 						when 4 =>
 							sequencia_facil_usuario(cont_entrada) <= 4;
 							
@@ -241,41 +244,51 @@ begin
 							led_verde <= '0';
 							
 --							cont_entrada <= cont_entrada + 1;
-							nextstate <= LE_UMA_ENTRADA;
+							nextstate <= LE_UMA_ENTRADA after 5ns;
 						when others =>
 							nextstate <= NAO_LEU_NADA after (c_CLK_PERIOD*10);
+--							nextstate <= NAO_LEU_NADA after (c_CLK_PERIOD*10);
 					end case;
 
 					estado_fsm <= 5;
 
 				when NAO_LEU_NADA =>
---					nextstate <= AGUARDA_ENTRADA;
-					if(cont_entrada < cont_rodada) then
---						cont_entrada <= cont_entrada + 1;
-						nextstate <= AGUARDA_ENTRADA after (c_CLK_PERIOD*10);
-					else
-						nextstate <= VERIFICA_ENTRADA after (c_CLK_PERIOD*10);
-						
---						led_azul <= '0';
---						led_amarelo <= '0';
---						led_verde <= '0';
---						led_vermelho <= '0';
-						
-					end if;
+				
+				
+				
+				
+				
+					nextstate <= AGUARDA_ENTRADA;
+--					if(cont_entrada < cont_rodada) then
+----						cont_entrada <= cont_entrada + 1;
+--						nextstate <= AGUARDA_ENTRADA after (c_CLK_PERIOD*10);
+--					else
+--						nextstate <= VERIFICA_ENTRADA after (c_CLK_PERIOD*10);
+--						
+----						led_azul <= '0';
+----						led_amarelo <= '0';
+----						led_verde <= '0';
+----						led_vermelho <= '0';
+--						
+--					end if;
 					
 					estado_fsm <= 61;
 
 				when LE_UMA_ENTRADA =>
+				
+					led_azul <= '0';
+					led_amarelo <= '0';
+					led_verde <= '0';
+					led_vermelho <= '0';
+				
+				
 					if(cont_entrada < cont_rodada) then
 						cont_entrada <= cont_entrada + 1;
-						nextstate <= AGUARDA_ENTRADA  after (c_CLK_PERIOD*10);
+						nextstate <= AGUARDA_ENTRADA  after (c_CLK_PERIOD*5);
 					else
-						nextstate <= VERIFICA_ENTRADA after (c_CLK_PERIOD*10);
+						nextstate <= VERIFICA_ENTRADA after (c_CLK_PERIOD*5);
 						
---						led_azul <= '0';
---						led_amarelo <= '0';
---						led_verde <= '0';
---						led_vermelho <= '0';
+--						
 						
 					end if;
 					
