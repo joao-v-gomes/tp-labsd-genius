@@ -12,6 +12,8 @@ entity genius is
 		  valor_contador : out integer  := 0;
 		  estado_fsm : out integer  := 0;
 		  
+		  trava_leitura_botao : out integer := 0;
+		  
 		  contador_entrada : out integer :=0;
 		  
 		  rodada : out integer := 0;
@@ -83,11 +85,15 @@ signal flag_reset : std_logic := '0';
 signal cont_jogada : integer range 0 to 9 := 1;
 signal cont_rodada : integer range 0 to 9 := 1;
 
+signal trava_leitura_bot : integer range 0 to 1 := 0;
+
 begin
 
 	contador_entrada <= cont_entrada;
 	contagem_certa <= cont_certo;
 	contagem_errada <= cont_errado;
+	
+	trava_leitura_botao <= trava_leitura_bot;
 	
 	rodada <= cont_rodada;
 
@@ -102,8 +108,8 @@ begin
 
 	statemachine_comb: process (state)
 	
-		variable cont_c : integer range 0 to 8 := 0;
-		variable cont_e : integer range 0 to 8 := 0;
+		variable cont_c : integer range 0 to 9 := 0;
+		variable cont_e : integer range 0 to 9 := 0;
 	
 		begin
 			
@@ -200,7 +206,6 @@ begin
 					
 					case qual_botao is
 						when 0 =>
-							
 --							led_azul <= '0';
 --							led_amarelo <= '0';
 --							led_verde <= '0';
@@ -208,16 +213,24 @@ begin
 							
 							nextstate <= NAO_LEU_NADA;
 							
+							trava_leitura_bot <= 0;
+							
 						when 1 =>
-							sequencia_facil_usuario(cont_entrada) <= 1;
-							
-							led_azul <= '1';
-							led_amarelo <= '0';
-							led_verde <= '0';
-							led_vermelho <= '0';
-							
-							cont_entrada <= cont_entrada + 1;
-							nextstate <= LE_UMA_ENTRADA after 5ns;
+							if(trava_leitura_bot = 0) then
+								sequencia_facil_usuario(cont_entrada) <= 1;
+								
+								led_azul <= '1';
+								led_amarelo <= '0';
+								led_verde <= '0';
+								led_vermelho <= '0';
+								
+								cont_entrada <= cont_entrada + 1;
+								nextstate <= LE_UMA_ENTRADA after 5ns;
+								
+								trava_leitura_bot <= 1;
+							else
+								nextstate <= NAO_LEU_NADA;
+							end if;
 						when 2 =>
 							sequencia_facil_usuario(cont_entrada) <= 2;
 							
@@ -270,11 +283,11 @@ begin
 				
 					if(cont_entrada <= cont_rodada) then
 --						cont_entrada <= cont_entrada + 1;
-						nextstate <= AGUARDA_ENTRADA  after (c_CLK_PERIOD*5);
+--						nextstate <= AGUARDA_ENTRADA  after (c_CLK_PERIOD*5);
+						nextstate <= AGUARDA_ENTRADA;
 					else
-						nextstate <= VERIFICA_ENTRADA after (c_CLK_PERIOD*5);
-						
---						
+--						nextstate <= VERIFICA_ENTRADA after (c_CLK_PERIOD*5);
+						nextstate <= VERIFICA_ENTRADA;
 						
 					end if;
 					
@@ -287,8 +300,10 @@ begin
 					led_verde <= '0';
 					led_vermelho <= '0';
 					
+					trava_leitura_bot <= 0;
+					
 					verifica: for i in 1 to 8 loop
-						if (i < cont_rodada) then
+						if (i <= cont_rodada) then
 							if(sequencia_facil_fpga(i) = sequencia_facil_usuario(i)) then
 								cont_c := cont_c + 1;
 							else
@@ -324,11 +339,14 @@ begin
 					cont_certo <= 0;
 					cont_errado <= 0;
 					
+					cont_c := 0;
+					cont_e := 0;
+					
 					cont_entrada <= 1;
 					
 					cont <= 0;
 					
-					if(cont_rodada <= 8) then
+					if(cont_rodada < 8) then
 						nextstate <= MOSTRA_COR;
 					else 
 						nextstate <= FINALIZA_JOGO;

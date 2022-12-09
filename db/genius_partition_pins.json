@@ -60,6 +60,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "trava_leitura_botao[0]",
+					"strict" : false
+				},
+				{
 					"name" : "contador_entrada[0]",
 					"strict" : false
 				},
@@ -156,15 +160,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "entrada_amarelo",
-					"strict" : false
-				},
-				{
 					"name" : "entrada_ligado",
 					"strict" : false
 				},
 				{
 					"name" : "entrada_vermelho",
+					"strict" : false
+				},
+				{
+					"name" : "entrada_amarelo",
 					"strict" : false
 				},
 				{
