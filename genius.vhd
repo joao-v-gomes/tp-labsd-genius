@@ -31,8 +31,8 @@ entity genius is
 		  entrada_vermelho : in std_logic  := '0';
 		  entrada_ligado : in std_logic := '0';
 		  
-		  modo_facil : in std_logic := '1';
-		  modo_dificil : in std_logic := '0';
+--		  modo_facil : in std_logic := '0';
+--		  modo_dificil : in std_logic := '0';
 		
 		  led_azul : out std_logic  := '0'; -- Numero da Sequencia: 1
 		  led_amarelo : out std_logic  := '0'; -- Numero da Sequencia: 2
@@ -50,7 +50,7 @@ constant c_CLK_PERIOD : time := 1ns;
 type array_facil is array (8 downto 0) of integer range 0  to 5;
 type array_dificil is array (15 downto 0) of integer range 0  to 5;
 
-type statetype is ( INIT, PREPARA_JOGO, AGUARDA_PREPARA_JOGO, MOSTRA_COR, VERIFICA_MOSTRA_COR, AGUARDA_ENTRADA, LE_UMA_ENTRADA, NAO_LEU_NADA, VERIFICA_ENTRADA, CONTINUA_JOGO, FINALIZA_JOGO) ;
+type statetype is ( INIT, PREPARA_JOGO, AGUARDA_PREPARA_JOGO, MOSTRA_COR, CONTA_5_CLK_MOSTRA_COR, VERIFICA_MOSTRA_COR, AGUARDA_ENTRADA, LE_UMA_ENTRADA, NAO_LEU_NADA, VERIFICA_ENTRADA, CONTINUA_JOGO, FINALIZA_JOGO) ;
 signal state, nextstate : statetype := INIT;
 
 --signal jogo_ligado : std_logic := '0';
@@ -86,6 +86,8 @@ signal comeca_jogo : integer range 0 to 1 := 0;
 
 signal CLOCK_1Hz : std_logic := '0';
 
+signal cont_clock : integer range 0 to 10 := 0;
+
 --signal trava_comeca_jogo : integer range 0 to 1 := 0;
 
 begin
@@ -102,8 +104,6 @@ begin
 	trava_leitura_botao <= trava_leitura_bot;
 	
 	rodada <= cont_rodada;
-	
-	
 	
 	divisor_clock : process(CLOCK)
 			variable cnt: integer range 0 to 25000000;
@@ -126,24 +126,11 @@ begin
 			if ( entrada_ligado = '1' and rising_edge(CLOCK) ) then
 			
 				state <= INIT;
---				comeca_jogo <= 0;
-				
---				if (trava_comeca_jogo = 0) then
-					comeca_jogo <= 1;
---					trava_comeca_jogo <= 1;
---				else
---					comeca_jogo <= 0;
---					trava_comeca_jogo <= 0;
---				end if;
---				comeca_jogo <= 1;
+				comeca_jogo <= 1;
 				
 			elsif (rising_edge(CLOCK)) then
 			
 				state <= nextstate;
-				
---				comeca_jogo <= 0;
---				trava_comeca_jogo <= 0;
---				comeca_jogo <= 0;
 
 			end if;
 	end process;
@@ -209,7 +196,7 @@ begin
 				
 					led_ligado <= '1';
 				
-					if (modo_facil = '1') then
+--					if (modo_facil = '1') then
 					
 						sequencia_facil_fpga(1) <= 1;
 						sequencia_facil_fpga(2) <= 2;
@@ -220,25 +207,25 @@ begin
 						sequencia_facil_fpga(7) <= 3;
 						sequencia_facil_fpga(8) <= 4;
 						
-					elsif (modo_dificil = '1') then
-					
-						sequencia_dificil_fpga(1) <= 1;
-						sequencia_dificil_fpga(2) <= 2;
-						sequencia_dificil_fpga(3) <= 3;
-						sequencia_dificil_fpga(4) <= 4;
-						sequencia_dificil_fpga(5) <= 1;
-						sequencia_dificil_fpga(6) <= 2;
-						sequencia_dificil_fpga(7) <= 3;
-						sequencia_dificil_fpga(8) <= 4;
-						sequencia_dificil_fpga(9) <= 1;
-						sequencia_dificil_fpga(10) <= 2;
-						sequencia_dificil_fpga(11) <= 3;
-						sequencia_dificil_fpga(12) <= 4;
-						sequencia_dificil_fpga(13) <= 1;
-						sequencia_dificil_fpga(14) <= 2;
-						sequencia_dificil_fpga(15) <= 3;
-					
-					end if;
+--					elsif (modo_dificil = '1') then
+--					
+--						sequencia_dificil_fpga(1) <= 1;
+--						sequencia_dificil_fpga(2) <= 2;
+--						sequencia_dificil_fpga(3) <= 3;
+--						sequencia_dificil_fpga(4) <= 4;
+--						sequencia_dificil_fpga(5) <= 1;
+--						sequencia_dificil_fpga(6) <= 2;
+--						sequencia_dificil_fpga(7) <= 3;
+--						sequencia_dificil_fpga(8) <= 4;
+--						sequencia_dificil_fpga(9) <= 1;
+--						sequencia_dificil_fpga(10) <= 2;
+--						sequencia_dificil_fpga(11) <= 3;
+--						sequencia_dificil_fpga(12) <= 4;
+--						sequencia_dificil_fpga(13) <= 1;
+--						sequencia_dificil_fpga(14) <= 2;
+--						sequencia_dificil_fpga(15) <= 3;
+--					
+--					end if;
 					
 --					cont_rodada <= cont_rodada + 1;
 					
@@ -273,9 +260,19 @@ begin
 
 --					wait for 3ns;
 					
-					nextstate <= VERIFICA_MOSTRA_COR after (c_CLK_PERIOD*5);
+					if (cont_clock < 5) then
+						cont_clock <= cont_clock + 1;
+						nextstate <= CONTA_5_CLK_MOSTRA_COR;
+					else
+						cont_clock <= 0;
+--						nextstate <= VERIFICA_MOSTRA_COR after (c_CLK_PERIOD*5);
+						nextstate <= VERIFICA_MOSTRA_COR;
+					end if;
 					
 					estado_fsm <= 3;
+					
+				when CONTA_5_CLK_MOSTRA_COR =>
+					nextstate <= MOSTRA_COR;
 					
 				when VERIFICA_MOSTRA_COR =>
 					if (cont_jogada < cont_rodada ) then
@@ -316,13 +313,23 @@ begin
 								led_vermelho <= '0';
 								
 								cont_entrada <= cont_entrada + 1;
-								nextstate <= LE_UMA_ENTRADA after (c_CLK_PERIOD*5);
+--								nextstate <= LE_UMA_ENTRADA after (c_CLK_PERIOD*5);
+								
+								if (cont_clock < 5) then
+									cont_clock <= cont_clock + 1;
+									nextstate <= AGUARDA_ENTRADA;
+								else
+									cont_clock <= 0;
+									nextstate <= LE_UMA_ENTRADA;
+								end if;
 								
 								trava_leitura_bot <= 1;
 							else
 								nextstate <= NAO_LEU_NADA;
 							end if;
+							
 						when 2 =>
+						if(trava_leitura_bot = 0) then
 							sequencia_facil_usuario(cont_entrada) <= 2;
 							
 							led_amarelo <= '1';
@@ -331,8 +338,23 @@ begin
 							led_vermelho <= '0';
 							
 							cont_entrada <= cont_entrada + 1;
-							nextstate <= LE_UMA_ENTRADA after (c_CLK_PERIOD*5);
+--								nextstate <= LE_UMA_ENTRADA after (c_CLK_PERIOD*5);
+								
+								if (cont_clock < 5) then
+									cont_clock <= cont_clock + 1;
+									nextstate <= AGUARDA_ENTRADA;
+								else
+									cont_clock <= 0;
+									nextstate <= LE_UMA_ENTRADA;
+								end if;
+								
+								trava_leitura_bot <= 1;
+							else
+								nextstate <= NAO_LEU_NADA;
+							end if;
+							
 						when 3 =>
+						if(trava_leitura_bot = 0) then
 							sequencia_facil_usuario(cont_entrada) <= 3;
 							
 							led_verde <= '1';
@@ -341,8 +363,23 @@ begin
 							led_vermelho <= '0';
 							
 							cont_entrada <= cont_entrada + 1;
-							nextstate <= LE_UMA_ENTRADA after (c_CLK_PERIOD*5);
+							--								nextstate <= LE_UMA_ENTRADA after (c_CLK_PERIOD*5);
+								
+								if (cont_clock < 5) then
+									cont_clock <= cont_clock + 1;
+									nextstate <= AGUARDA_ENTRADA;
+								else
+									cont_clock <= 0;
+									nextstate <= LE_UMA_ENTRADA;
+								end if;
+								
+								trava_leitura_bot <= 1;
+							else
+								nextstate <= NAO_LEU_NADA;
+							end if;
+							
 						when 4 =>
+						if(trava_leitura_bot = 0) then
 							sequencia_facil_usuario(cont_entrada) <= 4;
 							
 							led_vermelho <= '1';
@@ -351,7 +388,21 @@ begin
 							led_verde <= '0';
 							
 							cont_entrada <= cont_entrada + 1;
-							nextstate <= LE_UMA_ENTRADA after (c_CLK_PERIOD*5);
+							--								nextstate <= LE_UMA_ENTRADA after (c_CLK_PERIOD*5);
+								
+								if (cont_clock < 5) then
+									cont_clock <= cont_clock + 1;
+									nextstate <= AGUARDA_ENTRADA;
+								else
+									cont_clock <= 0;
+									nextstate <= LE_UMA_ENTRADA;
+								end if;
+								
+								trava_leitura_bot <= 1;
+							else
+								nextstate <= NAO_LEU_NADA;
+							end if;
+							
 						when others =>
 							nextstate <= NAO_LEU_NADA;
 --							nextstate <= NAO_LEU_NADA after (c_CLK_PERIOD*10);

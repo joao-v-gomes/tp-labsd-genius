@@ -78,4 +78,7 @@ set_location_assignment PIN_AB17 -to led_ligado
 set_location_assignment PIN_AB19 -to led_amarelo
 set_location_assignment PIN_Y19 -to led_azul
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_genius.vhd -section_id tb_genius
+set_location_assignment PIN_N14 -to CLOCK
+set_location_assignment PIN_Y10 -to modo_facil
+set_location_assignment PIN_AA11 -to modo_dificil
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

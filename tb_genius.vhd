@@ -28,6 +28,9 @@ component genius is
 		  
 		  RESET : in std_logic;
 		  
+--		  modo_facil : in std_logic := '0';
+--		  modo_dificil : in std_logic := '0';
+		  
 		  entrada_azul : in std_logic := '0';
 		  entrada_amarelo : in std_logic := '0';
 		  entrada_verde : in std_logic := '0';
