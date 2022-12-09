@@ -14,4 +14,4 @@ vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfiven
 add wave *
 view structure
 view signals
-run 100 ns
+run 1 us

@@ -1,5 +1,5 @@
 Flow report for genius
-Fri Dec 09 10:29:19 2022
+Fri Dec 09 14:59:10 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Dec 09 10:29:19 2022       ;
+; Flow Status                        ; Successful - Fri Dec 09 14:59:10 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; genius                                      ;
 ; Top-level Entity Name              ; genius                                      ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 375                                         ;
-;     Total combinational functions  ; 375                                         ;
+; Total logic elements               ; 377                                         ;
+;     Total combinational functions  ; 377                                         ;
 ;     Dedicated logic registers      ; 12                                          ;
 ; Total registers                    ; 12                                          ;
 ; Total pins                         ; 302                                         ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/09/2022 10:29:10 ;
+; Start date & time ; 12/09/2022 14:59:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; genius              ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 110168739887284.167059255014016        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 110168739887284.167060874116628        ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_genius                         ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
@@ -91,7 +91,7 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TEST_BENCH_FILE                  ; tb_genius.vhd                          ; --            ; --          ; tb_genius                         ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; tb_genius                              ; --            ; --          ; tb_genius                         ;
 ; EDA_TEST_BENCH_NAME                  ; tb_genius                              ; --            ; --          ; eda_simulation                    ;
-; EDA_TEST_BENCH_RUN_SIM_FOR           ; 100 ns                                 ; --            ; --          ; tb_genius                         ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 1 us                                   ; --            ; --          ; tb_genius                         ;
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --                                ;

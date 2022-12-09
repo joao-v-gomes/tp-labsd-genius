@@ -71,166 +71,166 @@ CHIP  "genius"  ASSIGNED TO AN: 10M50DAF484C7G
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 GND                          : A1        : gnd    :                   :         :           :                
-var_5[6]                     : A2        : output : 2.5 V             :         : 8         : N              
-var_3[9]                     : A3        : output : 2.5 V             :         : 8         : N              
-var_2[5]                     : A4        : output : 2.5 V             :         : 8         : N              
-var_2[9]                     : A5        : output : 2.5 V             :         : 8         : N              
-var_2[22]                    : A6        : output : 2.5 V             :         : 8         : N              
-var_3[14]                    : A7        : output : 2.5 V             :         : 7         : N              
+estado_fsm[25]               : A2        : output : 2.5 V             :         : 8         : N              
+rodada[9]                    : A3        : output : 2.5 V             :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A4        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : A5        :        :                   :         : 8         :                
+botao_pressionado[18]        : A6        : output : 2.5 V             :         : 8         : N              
+contador_jogada[24]          : A7        : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A8        :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A9        :        :                   :         : 7         :                
-var_4[31]                    : A10       : output : 2.5 V             :         : 7         : N              
-var_4[23]                    : A11       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : A12       :        :                   :         : 7         :                
-var_5[19]                    : A13       : output : 2.5 V             :         : 7         : N              
-var_4[13]                    : A14       : output : 2.5 V             :         : 7         : N              
-teste[5]                     : A15       : output : 2.5 V             :         : 7         : N              
-var_3[10]                    : A16       : output : 2.5 V             :         : 7         : N              
-var_3[27]                    : A17       : output : 2.5 V             :         : 7         : N              
-teste2[7]                    : A18       : output : 2.5 V             :         : 7         : N              
-var_1[18]                    : A19       : output : 2.5 V             :         : 7         : N              
-var_3[15]                    : A20       : output : 2.5 V             :         : 7         : N              
-var_4[9]                     : A21       : output : 2.5 V             :         : 6         : N              
+contador_entrada[31]         : A9        : output : 2.5 V             :         : 7         : N              
+rodada[8]                    : A10       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A11       :        :                   :         : 7         :                
+teste[15]                    : A12       : output : 2.5 V             :         : 7         : N              
+contagem_certa[26]           : A13       : output : 2.5 V             :         : 7         : N              
+contador_entrada[21]         : A14       : output : 2.5 V             :         : 7         : N              
+teste[21]                    : A15       : output : 2.5 V             :         : 7         : N              
+contador_entrada[5]          : A16       : output : 2.5 V             :         : 7         : N              
+contador_jogada[12]          : A17       : output : 2.5 V             :         : 7         : N              
+contagem_errada[10]          : A18       : output : 2.5 V             :         : 7         : N              
+botao_pressionado[19]        : A19       : output : 2.5 V             :         : 7         : N              
+contador_jogada[28]          : A20       : output : 2.5 V             :         : 7         : N              
+rodada[18]                   : A21       : output : 2.5 V             :         : 6         : N              
 GND                          : A22       : gnd    :                   :         :           :                
-var_4[22]                    : AA1       : output : 2.5 V             :         : 3         : N              
-teste[22]                    : AA2       : output : 2.5 V             :         : 3         : N              
-teste[1]                     : AA3       : output : 2.5 V             :         : 3         : N              
+contagem_errada[24]          : AA1       : output : 2.5 V             :         : 3         : N              
+contagem_errada[27]          : AA2       : output : 2.5 V             :         : 3         : N              
+contagem_certa[3]            : AA3       : output : 2.5 V             :         : 3         : N              
 GND                          : AA4       : gnd    :                   :         :           :                
-var_5[2]                     : AA5       : output : 2.5 V             :         : 3         : N              
-teste2[0]                    : AA6       : output : 2.5 V             :         : 3         : N              
-var_1[2]                     : AA7       : output : 2.5 V             :         : 3         : N              
-var_4[0]                     : AA8       : output : 2.5 V             :         : 3         : N              
-teste[2]                     : AA9       : output : 2.5 V             :         : 3         : N              
-var_3[1]                     : AA10      : output : 2.5 V             :         : 3         : N              
-var_3[26]                    : AA11      : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA12      :        :                   :         : 4         :                
-var_1[15]                    : AA13      : output : 2.5 V             :         : 4         : N              
-var_2[23]                    : AA14      : output : 2.5 V             :         : 4         : N              
-var_2[24]                    : AA15      : output : 2.5 V             :         : 4         : N              
-var_5[18]                    : AA16      : output : 2.5 V             :         : 4         : N              
+teste[12]                    : AA5       : output : 2.5 V             :         : 3         : N              
+botao_pressionado[0]         : AA6       : output : 2.5 V             :         : 3         : N              
+contagem_errada[2]           : AA7       : output : 2.5 V             :         : 3         : N              
+trava_leitura_botao[0]       : AA8       : output : 2.5 V             :         : 3         : N              
+botao_pressionado[1]         : AA9       : output : 2.5 V             :         : 3         : N              
+contagem_certa[0]            : AA10      : output : 2.5 V             :         : 3         : N              
+rodada[0]                    : AA11      : output : 2.5 V             :         : 4         : N              
+rodada[3]                    : AA12      : output : 2.5 V             :         : 4         : N              
+contagem_errada[0]           : AA13      : output : 2.5 V             :         : 4         : N              
+rodada[4]                    : AA14      : output : 2.5 V             :         : 4         : N              
+estado_fsm[4]                : AA15      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA16      :        :                   :         : 4         :                
 led_verde                    : AA17      : output : 2.5 V             :         : 4         : Y              
 GND                          : AA18      : gnd    :                   :         :           :                
 led_vermelho                 : AA19      : output : 2.5 V             :         : 4         : Y              
-var_4[12]                    : AA20      : output : 2.5 V             :         : 4         : N              
-teste[3]                     : AA21      : output : 2.5 V             :         : 5         : N              
-var_1[28]                    : AA22      : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA20      :        :                   :         : 4         :                
+estado_fsm[29]               : AA21      : output : 2.5 V             :         : 5         : N              
+contador_entrada[22]         : AA22      : output : 2.5 V             :         : 5         : N              
 GND                          : AB1       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB2       :        :                   :         : 3         :                
-teste[13]                    : AB3       : output : 2.5 V             :         : 3         : N              
-var_3[2]                     : AB4       : output : 2.5 V             :         : 3         : N              
+estado_fsm[10]               : AB2       : output : 2.5 V             :         : 3         : N              
+rodada[19]                   : AB3       : output : 2.5 V             :         : 3         : N              
+contador_entrada[1]          : AB4       : output : 2.5 V             :         : 3         : N              
 entrada_ligado               : AB5       : input  : 2.5 V             :         : 3         : Y              
 entrada_verde                : AB6       : input  : 2.5 V             :         : 3         : Y              
 entrada_amarelo              : AB7       : input  : 2.5 V             :         : 3         : Y              
 entrada_vermelho             : AB8       : input  : 2.5 V             :         : 3         : Y              
 entrada_azul                 : AB9       : input  : 2.5 V             :         : 3         : Y              
-var_2[15]                    : AB10      : output : 2.5 V             :         : 4         : N              
-teste[16]                    : AB11      : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB12      :        :                   :         : 4         :                
-var_4[10]                    : AB13      : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB14      :        :                   :         : 4         :                
-teste2[21]                   : AB15      : output : 2.5 V             :         : 4         : N              
-var_3[20]                    : AB16      : output : 2.5 V             :         : 4         : N              
+contagem_certa[2]            : AB10      : output : 2.5 V             :         : 4         : N              
+contagem_certa[1]            : AB11      : output : 2.5 V             :         : 4         : N              
+contador_jogada[2]           : AB12      : output : 2.5 V             :         : 4         : N              
+contagem_errada[3]           : AB13      : output : 2.5 V             :         : 4         : N              
+contador_jogada[0]           : AB14      : output : 2.5 V             :         : 4         : N              
+estado_fsm[5]                : AB15      : output : 2.5 V             :         : 4         : N              
+contador_jogada[14]          : AB16      : output : 2.5 V             :         : 4         : N              
 led_ligado                   : AB17      : output : 2.5 V             :         : 4         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB18      :        :                   :         : 4         :                
+estado_fsm[23]               : AB18      : output : 2.5 V             :         : 4         : N              
 led_amarelo                  : AB19      : output : 2.5 V             :         : 4         : Y              
-CLK                          : AB20      : input  : 2.5 V             :         : 4         : N              
-teste2[6]                    : AB21      : output : 2.5 V             :         : 4         : N              
+botao_pressionado[11]        : AB20      : output : 2.5 V             :         : 4         : N              
+trava_leitura_botao[11]      : AB21      : output : 2.5 V             :         : 4         : N              
 GND                          : AB22      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B1        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B2        :        :                   :         : 8         :                
+trava_leitura_botao[19]      : B1        : output : 2.5 V             :         : 8         : N              
+contador_jogada[15]          : B2        : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : B3        :        :                   :         : 8         :                
-teste[10]                    : B4        : output : 2.5 V             :         : 8         : N              
-var_1[22]                    : B5        : output : 2.5 V             :         : 8         : N              
+rodada[6]                    : B4        : output : 2.5 V             :         : 8         : N              
+contador_jogada[29]          : B5        : output : 2.5 V             :         : 8         : N              
 GND                          : B6        : gnd    :                   :         :           :                
-var_5[28]                    : B7        : output : 2.5 V             :         : 8         : N              
-teste[31]                    : B8        : output : 2.5 V             :         : 7         : N              
+contador_jogada[23]          : B7        : output : 2.5 V             :         : 8         : N              
+estado_fsm[9]                : B8        : output : 2.5 V             :         : 7         : N              
 GND                          : B9        : gnd    :                   :         :           :                
-teste[21]                    : B10       : output : 2.5 V             :         : 7         : N              
-teste[6]                     : B11       : output : 2.5 V             :         : 7         : N              
-var_2[27]                    : B12       : output : 2.5 V             :         : 7         : N              
+estado_fsm[27]               : B10       : output : 2.5 V             :         : 7         : N              
+contador_jogada[26]          : B11       : output : 2.5 V             :         : 7         : N              
+botao_pressionado[13]        : B12       : output : 2.5 V             :         : 7         : N              
 GND                          : B13       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B14       :        :                   :         : 7         :                
-var_5[5]                     : B15       : output : 2.5 V             :         : 7         : N              
+botao_pressionado[10]        : B14       : output : 2.5 V             :         : 7         : N              
+rodada[20]                   : B15       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : B16       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B17       :        :                   :         : 7         :                
+trava_leitura_botao[8]       : B17       : output : 2.5 V             :         : 7         : N              
 GND                          : B18       : gnd    :                   :         :           :                
-var_5[16]                    : B19       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : B20       :        :                   :         : 6         :                
-var_4[24]                    : B21       : output : 2.5 V             :         : 6         : N              
-var_4[4]                     : B22       : output : 2.5 V             :         : 6         : N              
-var_3[17]                    : C1        : output : 2.5 V             :         : 1B        : N              
-var_2[18]                    : C2        : output : 2.5 V             :         : 8         : N              
+teste[23]                    : B19       : output : 2.5 V             :         : 7         : N              
+botao_pressionado[14]        : B20       : output : 2.5 V             :         : 6         : N              
+contador_entrada[28]         : B21       : output : 2.5 V             :         : 6         : N              
+contagem_certa[12]           : B22       : output : 2.5 V             :         : 6         : N              
+contagem_errada[14]          : C1        : output : 2.5 V             :         : 1B        : N              
+contagem_errada[5]           : C2        : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C3        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C4        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C5        :        :                   :         : 8         :                
-var_1[16]                    : C6        : output : 2.5 V             :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C7        :        :                   :         : 8         :                
-var_2[28]                    : C8        : output : 2.5 V             :         : 8         : N              
-teste2[13]                   : C9        : output : 2.5 V             :         : 7         : N              
-teste[23]                    : C10       : output : 2.5 V             :         : 7         : N              
-var_3[23]                    : C11       : output : 2.5 V             :         : 7         : N              
-var_1[14]                    : C12       : output : 2.5 V             :         : 7         : N              
-var_2[10]                    : C13       : output : 2.5 V             :         : 7         : N              
-var_1[26]                    : C14       : output : 2.5 V             :         : 7         : N              
-var_4[21]                    : C15       : output : 2.5 V             :         : 7         : N              
-var_5[20]                    : C16       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C17       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C18       :        :                   :         : 7         :                
-teste[14]                    : C19       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C20       :        :                   :         : 6         :                
-teste2[8]                    : C21       : output : 2.5 V             :         : 6         : N              
-teste[19]                    : C22       : output : 2.5 V             :         : 6         : N              
-var_4[5]                     : D1        : output : 2.5 V             :         : 1B        : N              
+contador_entrada[6]          : C4        : output : 2.5 V             :         : 8         : N              
+estado_fsm[19]               : C5        : output : 2.5 V             :         : 8         : N              
+rodada[24]                   : C6        : output : 2.5 V             :         : 8         : N              
+trava_leitura_botao[4]       : C7        : output : 2.5 V             :         : 8         : N              
+contagem_certa[24]           : C8        : output : 2.5 V             :         : 8         : N              
+estado_fsm[7]                : C9        : output : 2.5 V             :         : 7         : N              
+contador_entrada[17]         : C10       : output : 2.5 V             :         : 7         : N              
+estado_fsm[14]               : C11       : output : 2.5 V             :         : 7         : N              
+contagem_errada[30]          : C12       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C13       :        :                   :         : 7         :                
+contador_entrada[16]         : C14       : output : 2.5 V             :         : 7         : N              
+botao_pressionado[20]        : C15       : output : 2.5 V             :         : 7         : N              
+contagem_certa[28]           : C16       : output : 2.5 V             :         : 7         : N              
+teste[25]                    : C17       : output : 2.5 V             :         : 7         : N              
+contador_jogada[30]          : C18       : output : 2.5 V             :         : 7         : N              
+trava_leitura_botao[20]      : C19       : output : 2.5 V             :         : 7         : N              
+contador_jogada[31]          : C20       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C21       :        :                   :         : 6         :                
+contador_jogada[5]           : C22       : output : 2.5 V             :         : 6         : N              
+contador_entrada[18]         : D1        : output : 2.5 V             :         : 1B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D2        :        :                   :         : 1B        :                
-var_2[7]                     : D3        : output : 2.5 V             :         : 1B        : N              
+contagem_errada[8]           : D3        : output : 2.5 V             :         : 1B        : N              
 GND                          : D4        : gnd    :                   :         :           :                
-var_4[29]                    : D5        : output : 2.5 V             :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D6        :        :                   :         : 8         :                
-teste2[20]                   : D7        : output : 2.5 V             :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D8        :        :                   :         : 8         :                
-var_2[26]                    : D9        : output : 2.5 V             :         : 8         : N              
-var_5[30]                    : D10       : output : 2.5 V             :         : 8         : N              
+contador_entrada[7]          : D5        : output : 2.5 V             :         : 8         : N              
+contagem_errada[7]           : D6        : output : 2.5 V             :         : 8         : N              
+teste[2]                     : D7        : output : 2.5 V             :         : 8         : N              
+estado_fsm[28]               : D8        : output : 2.5 V             :         : 8         : N              
+contador_entrada[20]         : D9        : output : 2.5 V             :         : 8         : N              
+trava_leitura_botao[3]       : D10       : output : 2.5 V             :         : 8         : N              
 GND                          : D11       : gnd    :                   :         :           :                
-var_4[26]                    : D12       : output : 2.5 V             :         : 7         : N              
-var_3[18]                    : D13       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D14       :        :                   :         : 7         :                
-var_1[11]                    : D15       : output : 2.5 V             :         : 7         : N              
+botao_pressionado[7]         : D12       : output : 2.5 V             :         : 7         : N              
+rodada[11]                   : D13       : output : 2.5 V             :         : 7         : N              
+contador_entrada[10]         : D14       : output : 2.5 V             :         : 7         : N              
+estado_fsm[8]                : D15       : output : 2.5 V             :         : 7         : N              
 GND                          : D16       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D17       :        :                   :         : 7         :                
-teste[20]                    : D18       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D19       :        :                   :         : 6         :                
+trava_leitura_botao[14]      : D17       : output : 2.5 V             :         : 7         : N              
+contagem_certa[19]           : D18       : output : 2.5 V             :         : 6         : N              
+botao_pressionado[9]         : D19       : output : 2.5 V             :         : 6         : N              
 GND                          : D20       : gnd    :                   :         :           :                
-var_1[9]                     : D21       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D22       :        :                   :         : 6         :                
-var_4[7]                     : E1        : output : 2.5 V             :         : 1B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D21       :        :                   :         : 6         :                
+teste[4]                     : D22       : output : 2.5 V             :         : 6         : N              
+contagem_errada[22]          : E1        : output : 2.5 V             :         : 1B        : N              
 GND                          : E2        : gnd    :                   :         :           :                
-var_2[13]                    : E3        : output : 2.5 V             :         : 1A        : N              
-var_1[10]                    : E4        : output : 2.5 V             :         : 1A        : N              
+teste[22]                    : E3        : output : 2.5 V             :         : 1A        : N              
+trava_leitura_botao[31]      : E4        : output : 2.5 V             :         : 1A        : N              
 NC                           : E5        :        :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E6        :        :                   :         : 8         :                
+contador_jogada[11]          : E6        : output : 2.5 V             :         : 8         : N              
 GND                          : E7        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E8        :        :                   :         : 8         :                
-var_1[27]                    : E9        : output : 2.5 V             :         : 8         : N              
+contador_jogada[17]          : E8        : output : 2.5 V             :         : 8         : N              
+contador_entrada[14]         : E9        : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E10       :        :                   :         : 8         :                
-teste[18]                    : E11       : output : 2.5 V             :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E12       :        :                   :         : 7         :                
-var_5[22]                    : E13       : output : 2.5 V             :         : 7         : N              
-teste2[23]                   : E14       : output : 2.5 V             :         : 7         : N              
-var_5[15]                    : E15       : output : 2.5 V             :         : 7         : N              
-var_2[14]                    : E16       : output : 2.5 V             :         : 7         : N              
-var_3[13]                    : E17       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E18       :        :                   :         : 6         :                
+botao_pressionado[25]        : E11       : output : 2.5 V             :         : 8         : N              
+teste[28]                    : E12       : output : 2.5 V             :         : 7         : N              
+contador_entrada[30]         : E13       : output : 2.5 V             :         : 7         : N              
+rodada[14]                   : E14       : output : 2.5 V             :         : 7         : N              
+trava_leitura_botao[1]       : E15       : output : 2.5 V             :         : 7         : N              
+contagem_errada[29]          : E16       : output : 2.5 V             :         : 7         : N              
+contagem_errada[12]          : E17       : output : 2.5 V             :         : 6         : N              
+estado_fsm[31]               : E18       : output : 2.5 V             :         : 6         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E19       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E20       :        :                   :         : 6         :                
-var_3[5]                     : E21       : output : 2.5 V             :         : 6         : N              
-var_1[30]                    : E22       : output : 2.5 V             :         : 6         : N              
-var_3[31]                    : F1        : output : 2.5 V             :         : 1B        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : F2        :        :                   :         : 1B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F3        :        :                   :         : 1A        :                
-var_5[27]                    : F4        : output : 2.5 V             :         : 1A        : N              
-var_1[8]                     : F5        : output : 2.5 V             :         : 1A        : N              
+botao_pressionado[31]        : E21       : output : 2.5 V             :         : 6         : N              
+trava_leitura_botao[16]      : E22       : output : 2.5 V             :         : 6         : N              
+trava_leitura_botao[23]      : F1        : output : 2.5 V             :         : 1B        : N              
+contador_entrada[23]         : F2        : output : 2.5 V             :         : 1B        : N              
+botao_pressionado[5]         : F3        : output : 2.5 V             :         : 1A        : N              
+estado_fsm[16]               : F4        : output : 2.5 V             :         : 1A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F5        :        :                   :         : 1A        :                
 NC                           : F6        :        :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F7        :        :                   :         : 8         :                
+contagem_certa[18]           : F7        : output : 2.5 V             :         : 8         : N              
 ~ALTERA_CONF_DONE~ / RESERVED_INPUT : F8        : input  : 2.5 V Schmitt Trigger :         : 8         : N              
 VCCIO8                       : F9        : power  :                   : 2.5V    : 8         :                
 GND                          : F10       : gnd    :                   :         :           :                
@@ -238,18 +238,18 @@ VCCIO8                       : F11       : power  :                   : 2.5V    
 VCCIO7                       : F12       : power  :                   : 2.5V    : 7         :                
 GND                          : F13       : gnd    :                   :         :           :                
 VCCIO7                       : F14       : power  :                   : 2.5V    : 7         :                
-teste2[19]                   : F15       : output : 2.5 V             :         : 7         : N              
-var_5[11]                    : F16       : output : 2.5 V             :         : 7         : N              
-var_4[6]                     : F17       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : F18       :        :                   :         : 6         :                
-teste2[9]                    : F19       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : F20       :        :                   :         : 6         :                
-var_1[7]                     : F21       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : F22       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G1        :        :                   :         : 1B        :                
+estado_fsm[21]               : F15       : output : 2.5 V             :         : 7         : N              
+RESET                        : F16       : input  : 2.5 V             :         : 7         : N              
+teste[27]                    : F17       : output : 2.5 V             :         : 6         : N              
+botao_pressionado[4]         : F18       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F19       :        :                   :         : 6         :                
+botao_pressionado[17]        : F20       : output : 2.5 V             :         : 6         : N              
+trava_leitura_botao[15]      : F21       : output : 2.5 V             :         : 6         : N              
+contagem_errada[15]          : F22       : output : 2.5 V             :         : 6         : N              
+contador_entrada[29]         : G1        : output : 2.5 V             :         : 1B        : N              
 ~ALTERA_TCK~ / RESERVED_INPUT : G2        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
-var_3[16]                    : G3        : output : 2.5 V             :         : 1A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : G4        :        :                   :         : 1A        :                
+rodada[15]                   : G3        : output : 2.5 V             :         : 1A        : N              
+contador_jogada[18]          : G4        : output : 2.5 V             :         : 1A        : N              
 ANAIN1                       : G5        :        :                   :         :           :                
 GND                          : G6        : gnd    :                   :         :           :                
 VCCD_PLL3                    : G7        : power  :                   : 1.2V    :           :                
@@ -262,194 +262,194 @@ VCCIO7                       : G13       : power  :                   : 2.5V    
 VCCIO7                       : G14       : power  :                   : 2.5V    : 7         :                
 GND                          : G15       : gnd    :                   :         :           :                
 VCCD_PLL2                    : G16       : power  :                   : 1.2V    :           :                
-teste2[14]                   : G17       : output : 2.5 V             :         : 6         : N              
+trava_leitura_botao[18]      : G17       : output : 2.5 V             :         : 6         : N              
 GND                          : G18       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G19       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G20       :        :                   :         : 6         :                
+modo_dificil                 : G19       : input  : 2.5 V             :         : 6         : N              
+trava_leitura_botao[30]      : G20       : output : 2.5 V             :         : 6         : N              
 GND                          : G21       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G22       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H1        :        :                   :         : 1B        :                
 ~ALTERA_TMS~ / RESERVED_INPUT_WITH_WEAK_PULLUP : H2        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
-var_3[19]                    : H3        : output : 2.5 V             :         : 1A        : N              
-var_1[3]                     : H4        : output : 2.5 V             :         : 1A        : N              
+contagem_errada[17]          : H3        : output : 2.5 V             :         : 1A        : N              
+contador_entrada[12]         : H4        : output : 2.5 V             :         : 1A        : N              
 REFGND                       : H5        :        :                   :         :           :                
 ADC_VREF                     : H6        :        :                   :         :           :                
 VCCA_ADC                     : H7        : power  :                   : 2.5V    :           :                
 VCCA3                        : H8        : power  :                   : 2.5V    :           :                
 ~ALTERA_nCONFIG~ / RESERVED_INPUT : H9        : input  : 2.5 V Schmitt Trigger :         : 8         : N              
 ~ALTERA_CONFIG_SEL~ / RESERVED_INPUT : H10       : input  : 2.5 V             :         : 8         : N              
-teste2[5]                    : H11       : output : 2.5 V             :         : 8         : N              
-teste2[10]                   : H12       : output : 2.5 V             :         : 7         : N              
-teste2[29]                   : H13       : output : 2.5 V             :         : 7         : N              
-var_4[14]                    : H14       : output : 2.5 V             :         : 7         : N              
+contador_entrada[13]         : H11       : output : 2.5 V             :         : 8         : N              
+rodada[10]                   : H12       : output : 2.5 V             :         : 7         : N              
+teste[29]                    : H13       : output : 2.5 V             :         : 7         : N              
+teste[30]                    : H14       : output : 2.5 V             :         : 7         : N              
 VCCA2                        : H15       : power  :                   : 2.5V    :           :                
 VCCIO6                       : H16       : power  :                   : 2.5V    : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H17       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H18       :        :                   :         : 6         :                
-var_1[21]                    : H19       : output : 2.5 V             :         : 6         : N              
-var_5[3]                     : H20       : output : 2.5 V             :         : 6         : N              
-var_2[11]                    : H21       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : H22       :        :                   :         : 6         :                
-var_4[28]                    : J1        : output : 2.5 V             :         : 1B        : N              
+contador_jogada[8]           : H18       : output : 2.5 V             :         : 6         : N              
+contagem_errada[19]          : H19       : output : 2.5 V             :         : 6         : N              
+contagem_certa[21]           : H20       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H21       :        :                   :         : 6         :                
+teste[5]                     : H22       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : J1        :        :                   :         : 1B        :                
 GND                          : J2        : gnd    :                   :         :           :                
-teste2[25]                   : J3        : output : 2.5 V             :         : 1A        : N              
-var_4[3]                     : J4        : output : 2.5 V             :         : 1A        : N              
+teste[20]                    : J3        : output : 2.5 V             :         : 1A        : N              
+rodada[22]                   : J4        : output : 2.5 V             :         : 1A        : N              
 ANAIN2                       : J5        :        :                   :         :           :                
 GND                          : J6        : gnd    :                   :         :           :                
 VCCINT                       : J7        : power  :                   : 1.2V    :           :                
-teste[12]                    : J8        : output : 2.5 V             :         : 1A        : N              
-var_2[6]                     : J9        : output : 2.5 V             :         : 1A        : N              
-teste[25]                    : J10       : output : 2.5 V             :         : 8         : N              
-var_2[8]                     : J11       : output : 2.5 V             :         : 7         : N              
-var_1[19]                    : J12       : output : 2.5 V             :         : 7         : N              
-var_1[5]                     : J13       : output : 2.5 V             :         : 7         : N              
-var_2[4]                     : J14       : output : 2.5 V             :         : 6         : N              
+contador_jogada[27]          : J8        : output : 2.5 V             :         : 1A        : N              
+estado_fsm[18]               : J9        : output : 2.5 V             :         : 1A        : N              
+teste[7]                     : J10       : output : 2.5 V             :         : 8         : N              
+contagem_errada[23]          : J11       : output : 2.5 V             :         : 7         : N              
+teste[17]                    : J12       : output : 2.5 V             :         : 7         : N              
+contagem_certa[31]           : J13       : output : 2.5 V             :         : 7         : N              
+trava_leitura_botao[5]       : J14       : output : 2.5 V             :         : 6         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : J15       :        :                   :         : 6         :                
 GND                          : J16       : gnd    :                   :         :           :                
 VCCIO6                       : J17       : power  :                   : 2.5V    : 6         :                
-var_3[22]                    : J18       : output : 2.5 V             :         : 6         : N              
+trava_leitura_botao[25]      : J18       : output : 2.5 V             :         : 6         : N              
 GND                          : J19       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J20       :        :                   :         : 6         :                
-teste[28]                    : J21       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : J22       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K1        :        :                   :         : 1B        :                
-var_1[24]                    : K2        : output : 2.5 V             :         : 1B        : N              
+trava_leitura_botao[7]       : J20       : output : 2.5 V             :         : 6         : N              
+botao_pressionado[15]        : J21       : output : 2.5 V             :         : 6         : N              
+contagem_certa[14]           : J22       : output : 2.5 V             :         : 6         : N              
+contador_entrada[26]         : K1        : output : 2.5 V             :         : 1B        : N              
+botao_pressionado[3]         : K2        : output : 2.5 V             :         : 1B        : N              
 GND                          : K3        : gnd    :                   :         :           :                
-var_1[13]                    : K4        : output : 2.5 V             :         : 1A        : N              
+estado_fsm[12]               : K4        : output : 2.5 V             :         : 1A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : K5        :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K6        :        :                   :         : 1A        :                
+teste[13]                    : K6        : output : 2.5 V             :         : 1A        : N              
 VCCIO1A                      : K7        : power  :                   : 2.5V    : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K8        :        :                   :         : 1B        :                
+botao_pressionado[30]        : K8        : output : 2.5 V             :         : 1B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : K9        :        :                   :         : 1B        :                
 GND                          : K10       : gnd    :                   :         :           :                
 VCC                          : K11       : power  :                   : 1.2V    :           :                
 GND                          : K12       : gnd    :                   :         :           :                
 VCC                          : K13       : power  :                   : 1.2V    :           :                
-teste2[12]                   : K14       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : K15       :        :                   :         : 6         :                
+estado_fsm[30]               : K14       : output : 2.5 V             :         : 6         : N              
+contagem_certa[23]           : K15       : output : 2.5 V             :         : 6         : N              
 VCCIO6                       : K16       : power  :                   : 2.5V    : 6         :                
 VCCIO6                       : K17       : power  :                   : 2.5V    : 6         :                
-var_4[30]                    : K18       : output : 2.5 V             :         : 6         : N              
-var_1[23]                    : K19       : output : 2.5 V             :         : 6         : N              
-var_4[16]                    : K20       : output : 2.5 V             :         : 6         : N              
-var_4[18]                    : K21       : output : 2.5 V             :         : 6         : N              
-var_5[31]                    : K22       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : L1        :        :                   :         : 1B        :                
-teste[11]                    : L2        : output : 2.5 V             :         : 1B        : N              
+botao_pressionado[8]         : K18       : output : 2.5 V             :         : 6         : N              
+estado_fsm[6]                : K19       : output : 2.5 V             :         : 6         : N              
+contador_jogada[4]           : K20       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K21       :        :                   :         : 6         :                
+teste[18]                    : K22       : output : 2.5 V             :         : 6         : N              
+rodada[30]                   : L1        : output : 2.5 V             :         : 1B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L2        :        :                   :         : 1B        :                
 DNU                          : L3        :        :                   :         :           :                
 ~ALTERA_TDI~ / RESERVED_INPUT_WITH_WEAK_PULLUP : L4        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
 GND                          : L5        : gnd    :                   :         :           :                
 VCCIO1A                      : L6        : power  :                   : 2.5V    : 1A        :                
 VCCIO1B                      : L7        : power  :                   : 2.5V    : 1B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L8        :        :                   :         : 1B        :                
+estado_fsm[17]               : L8        : output : 2.5 V             :         : 1B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : L9        :        :                   :         : 1B        :                
 VCC                          : L10       : power  :                   : 1.2V    :           :                
 VCC                          : L11       : power  :                   : 1.2V    :           :                
 VCC                          : L12       : power  :                   : 1.2V    :           :                
 GND                          : L13       : gnd    :                   :         :           :                
-var_5[14]                    : L14       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : L15       :        :                   :         : 6         :                
+botao_pressionado[21]        : L14       : output : 2.5 V             :         : 6         : N              
+contagem_errada[26]          : L15       : output : 2.5 V             :         : 6         : N              
 VCCIO6                       : L16       : power  :                   : 2.5V    : 6         :                
 GND                          : L17       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L18       :        :                   :         : 6         :                
-var_4[25]                    : L19       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : L20       :        :                   :         : 6         :                
+rodada[5]                    : L18       : output : 2.5 V             :         : 6         : N              
+teste[9]                     : L19       : output : 2.5 V             :         : 6         : N              
+rodada[16]                   : L20       : output : 2.5 V             :         : 6         : N              
 GND                          : L21       : gnd    :                   :         :           :                
-var_4[19]                    : L22       : output : 2.5 V             :         : 5         : N              
-var_5[23]                    : M1        : output : 2.5 V             :         : 2         : N              
-var_3[7]                     : M2        : output : 2.5 V             :         : 2         : N              
-var_4[8]                     : M3        : output : 2.5 V             :         : 1B        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : M4        :        :                   :         : 1B        :                
+teste[8]                     : L22       : output : 2.5 V             :         : 5         : N              
+contador_entrada[15]         : M1        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M2        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M3        :        :                   :         : 1B        :                
+teste[10]                    : M4        : output : 2.5 V             :         : 1B        : N              
 ~ALTERA_TDO~                 : M5        : output : 2.5 V             :         : 1B        : N              
 VCCIO1B                      : M6        : power  :                   : 2.5V    : 1B        :                
 GND                          : M7        : gnd    :                   :         :           :                
-var_1[12]                    : M8        : output : 2.5 V             :         : 2         : N              
-teste2[11]                   : M9        : output : 2.5 V             :         : 2         : N              
+contagem_certa[16]           : M8        : output : 2.5 V             :         : 2         : N              
+teste[14]                    : M9        : output : 2.5 V             :         : 2         : N              
 GND                          : M10       : gnd    :                   :         :           :                
 VCC                          : M11       : power  :                   : 1.2V    :           :                
 VCC                          : M12       : power  :                   : 1.2V    :           :                
 VCC                          : M13       : power  :                   : 1.2V    :           :                
-teste[9]                     : M14       : output : 2.5 V             :         : 6         : N              
-var_3[21]                    : M15       : output : 2.5 V             :         : 6         : N              
+contagem_certa[29]           : M14       : output : 2.5 V             :         : 6         : N              
+contagem_errada[11]          : M15       : output : 2.5 V             :         : 6         : N              
 GND                          : M16       : gnd    :                   :         :           :                
 VCCIO6                       : M17       : power  :                   : 2.5V    : 6         :                
-var_2[16]                    : M18       : output : 2.5 V             :         : 6         : N              
+teste[31]                    : M18       : output : 2.5 V             :         : 6         : N              
 GND                          : M19       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M20       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M21       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M22       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N1        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N2        :        :                   :         : 2         :                
-teste[15]                    : N3        : output : 2.5 V             :         : 2         : N              
+contagem_errada[25]          : M20       : output : 2.5 V             :         : 6         : N              
+rodada[23]                   : M21       : output : 2.5 V             :         : 5         : N              
+teste[26]                    : M22       : output : 2.5 V             :         : 5         : N              
+contador_entrada[25]         : N1        : output : 2.5 V             :         : 2         : N              
+contador_entrada[11]         : N2        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N3        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N4        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N5        :        :                   :         : 2         :                
+trava_leitura_botao[26]      : N5        : output : 2.5 V             :         : 2         : N              
 VCCIO2                       : N6        : power  :                   : 2.5V    : 2         :                
 VCCIO2                       : N7        : power  :                   : 2.5V    : 2         :                
-var_3[30]                    : N8        : output : 2.5 V             :         : 2         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : N9        :        :                   :         : 2         :                
+rodada[17]                   : N8        : output : 2.5 V             :         : 2         : N              
+contador_jogada[9]           : N9        : output : 2.5 V             :         : 2         : N              
 VCC                          : N10       : power  :                   : 1.2V    :           :                
 GND                          : N11       : gnd    :                   :         :           :                
 VCC                          : N12       : power  :                   : 1.2V    :           :                
 GND                          : N13       : gnd    :                   :         :           :                
-var_1[31]                    : N14       : output : 2.5 V             :         : 6         : N              
+botao_pressionado[16]        : N14       : output : 2.5 V             :         : 6         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : N15       :        :                   :         : 6         :                
 VCCIO5                       : N16       : power  :                   : 2.5V    : 5         :                
 VCCIO6                       : N17       : power  :                   : 2.5V    : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N18       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N19       :        :                   :         : 6         :                
-var_1[4]                     : N20       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : N21       :        :                   :         : 5         :                
-var_5[10]                    : N22       : output : 2.5 V             :         : 5         : N              
-teste[27]                    : P1        : output : 2.5 V             :         : 2         : N              
+botao_pressionado[22]        : N18       : output : 2.5 V             :         : 6         : N              
+trava_leitura_botao[9]       : N19       : output : 2.5 V             :         : 6         : N              
+contador_entrada[9]          : N20       : output : 2.5 V             :         : 6         : N              
+trava_leitura_botao[2]       : N21       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N22       :        :                   :         : 5         :                
+contagem_errada[9]           : P1        : output : 2.5 V             :         : 2         : N              
 GND                          : P2        : gnd    :                   :         :           :                
-var_3[25]                    : P3        : output : 2.5 V             :         : 2         : N              
-var_3[24]                    : P4        : output : 2.5 V             :         : 2         : N              
-var_5[4]                     : P5        : output : 2.5 V             :         : 2         : N              
+contador_jogada[6]           : P3        : output : 2.5 V             :         : 2         : N              
+teste[19]                    : P4        : output : 2.5 V             :         : 2         : N              
+estado_fsm[20]               : P5        : output : 2.5 V             :         : 2         : N              
 GND                          : P6        : gnd    :                   :         :           :                
 VCCIO2                       : P7        : power  :                   : 2.5V    : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P8        :        :                   :         : 2         :                
-teste[0]                     : P9        : output : 2.5 V             :         : 3         : N              
-teste2[3]                    : P10       : output : 2.5 V             :         : 3         : N              
-var_2[2]                     : P11       : output : 2.5 V             :         : 3         : N              
-var_2[3]                     : P12       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : P13       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P14       :        :                   :         : 5         :                
-teste2[28]                   : P15       : output : 2.5 V             :         : 5         : N              
+rodada[7]                    : P8        : output : 2.5 V             :         : 2         : N              
+contador_jogada[16]          : P9        : output : 2.5 V             :         : 3         : N              
+contagem_certa[15]           : P10       : output : 2.5 V             :         : 3         : N              
+botao_pressionado[2]         : P11       : output : 2.5 V             :         : 3         : N              
+contador_jogada[1]           : P12       : output : 2.5 V             :         : 4         : N              
+trava_leitura_botao[17]      : P13       : output : 2.5 V             :         : 4         : N              
+contagem_certa[5]            : P14       : output : 2.5 V             :         : 5         : N              
+estado_fsm[13]               : P15       : output : 2.5 V             :         : 5         : N              
 VCCIO5                       : P16       : power  :                   : 2.5V    : 5         :                
 GND                          : P17       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P18       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P19       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P20       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P21       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P22       :        :                   :         : 5         :                
-var_4[27]                    : R1        : output : 2.5 V             :         : 2         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : R2        :        :                   :         : 2         :                
-var_4[20]                    : R3        : output : 2.5 V             :         : 2         : N              
+contador_jogada[7]           : P18       : output : 2.5 V             :         : 5         : N              
+contagem_certa[6]            : P19       : output : 2.5 V             :         : 5         : N              
+trava_leitura_botao[22]      : P20       : output : 2.5 V             :         : 5         : N              
+trava_leitura_botao[29]      : P21       : output : 2.5 V             :         : 5         : N              
+botao_pressionado[23]        : P22       : output : 2.5 V             :         : 5         : N              
+botao_pressionado[12]        : R1        : output : 2.5 V             :         : 2         : N              
+contagem_errada[20]          : R2        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R3        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R4        :        :                   :         : 2         :                
-var_3[3]                     : R5        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R5        :        :                   :         : 2         :                
 VCCIO2                       : R6        : power  :                   : 2.5V    : 2         :                
-var_2[25]                    : R7        : output : 2.5 V             :         : 2         : N              
+teste[3]                     : R7        : output : 2.5 V             :         : 2         : N              
 VCCA1                        : R8        : power  :                   : 2.5V    :           :                
-teste[17]                    : R9        : output : 2.5 V             :         : 3         : N              
-teste2[2]                    : R10       : output : 2.5 V             :         : 3         : N              
-var_4[1]                     : R11       : output : 2.5 V             :         : 3         : N              
-teste2[16]                   : R12       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : R13       :        :                   :         : 4         :                
-teste[29]                    : R14       : output : 2.5 V             :         : 5         : N              
-var_1[6]                     : R15       : output : 2.5 V             :         : 5         : N              
+botao_pressionado[6]         : R9        : output : 2.5 V             :         : 3         : N              
+contador_entrada[3]          : R10       : output : 2.5 V             :         : 3         : N              
+CLOCK                        : R11       : input  : 2.5 V             :         : 3         : N              
+modo_facil                   : R12       : input  : 2.5 V             :         : 4         : N              
+estado_fsm[1]                : R13       : output : 2.5 V             :         : 4         : N              
+estado_fsm[11]               : R14       : output : 2.5 V             :         : 5         : N              
+contagem_certa[10]           : R15       : output : 2.5 V             :         : 5         : N              
 VCCIO5                       : R16       : power  :                   : 2.5V    : 5         :                
 VCCIO5                       : R17       : power  :                   : 2.5V    : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R18       :        :                   :         : 5         :                
+rodada[28]                   : R18       : output : 2.5 V             :         : 5         : N              
 GND                          : R19       : gnd    :                   :         :           :                
-var_2[12]                    : R20       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R20       :        :                   :         : 5         :                
 GND                          : R21       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R22       :        :                   :         : 5         :                
-var_2[20]                    : T1        : output : 2.5 V             :         : 2         : N              
-var_3[29]                    : T2        : output : 2.5 V             :         : 2         : N              
-var_3[4]                     : T3        : output : 2.5 V             :         : 2         : N              
+contagem_certa[11]           : R22       : output : 2.5 V             :         : 5         : N              
+estado_fsm[26]               : T1        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T2        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T3        :        :                   :         : 2         :                
 GND                          : T4        : gnd    :                   :         :           :                
-var_4[17]                    : T5        : output : 2.5 V             :         : 2         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : T6        :        :                   :         : 2         :                
+contagem_certa[27]           : T5        : output : 2.5 V             :         : 2         : N              
+teste[6]                     : T6        : output : 2.5 V             :         : 2         : N              
 VCCD_PLL1                    : T7        : power  :                   : 1.2V    :           :                
 GND                          : T8        : gnd    :                   :         :           :                
 VCCIO3                       : T9        : power  :                   : 2.5V    : 3         :                
@@ -461,18 +461,18 @@ GND                          : T14       : gnd    :                   :         
 VCCA4                        : T15       : power  :                   : 2.5V    :           :                
 GND                          : T16       : gnd    :                   :         :           :                
 VCCIO5                       : T17       : power  :                   : 2.5V    : 5         :                
-var_5[26]                    : T18       : output : 2.5 V             :         : 5         : N              
-teste2[4]                    : T19       : output : 2.5 V             :         : 5         : N              
-var_3[12]                    : T20       : output : 2.5 V             :         : 5         : N              
-teste[7]                     : T21       : output : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : T22       :        :                   :         : 5         :                
-var_1[20]                    : U1        : output : 2.5 V             :         : 2         : N              
-var_1[17]                    : U2        : output : 2.5 V             :         : 2         : N              
-teste[24]                    : U3        : output : 2.5 V             :         : 2         : N              
-var_1[25]                    : U4        : output : 2.5 V             :         : 2         : N              
+contador_jogada[19]          : T18       : output : 2.5 V             :         : 5         : N              
+contagem_errada[16]          : T19       : output : 2.5 V             :         : 5         : N              
+contador_jogada[21]          : T20       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T21       :        :                   :         : 5         :                
+contador_jogada[13]          : T22       : output : 2.5 V             :         : 5         : N              
+contagem_certa[17]           : U1        : output : 2.5 V             :         : 2         : N              
+rodada[26]                   : U2        : output : 2.5 V             :         : 2         : N              
+rodada[27]                   : U3        : output : 2.5 V             :         : 2         : N              
+botao_pressionado[27]        : U4        : output : 2.5 V             :         : 2         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : U5        :        :                   :         : 2         :                
-var_4[15]                    : U6        : output : 2.5 V             :         : 3         : N              
-var_5[13]                    : U7        : output : 2.5 V             :         : 3         : N              
+estado_fsm[24]               : U6        : output : 2.5 V             :         : 3         : N              
+contagem_certa[9]            : U7        : output : 2.5 V             :         : 3         : N              
 VCCIO3                       : U8        : power  :                   : 2.5V    : 3         :                
 VCCIO3                       : U9        : power  :                   : 2.5V    : 3         :                
 GND                          : U10       : gnd    :                   :         :           :                
@@ -480,77 +480,77 @@ VCCIO4                       : U11       : power  :                   : 2.5V    
 VCCIO4                       : U12       : power  :                   : 2.5V    : 4         :                
 GND                          : U13       : gnd    :                   :         :           :                
 VCCIO4                       : U14       : power  :                   : 2.5V    : 4         :                
-teste2[17]                   : U15       : output : 2.5 V             :         : 4         : N              
+botao_pressionado[28]        : U15       : output : 2.5 V             :         : 4         : N              
 VCCD_PLL4                    : U16       : power  :                   : 1.2V    :           :                
-var_2[21]                    : U17       : output : 2.5 V             :         : 5         : N              
-teste[8]                     : U18       : output : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : U19       :        :                   :         : 5         :                
-var_5[17]                    : U20       : output : 2.5 V             :         : 5         : N              
-var_5[25]                    : U21       : output : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : U22       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V1        :        :                   :         : 2         :                
+trava_leitura_botao[6]       : U17       : output : 2.5 V             :         : 5         : N              
+contador_jogada[22]          : U18       : output : 2.5 V             :         : 5         : N              
+trava_leitura_botao[24]      : U19       : output : 2.5 V             :         : 5         : N              
+estado_fsm[15]               : U20       : output : 2.5 V             :         : 5         : N              
+contagem_errada[4]           : U21       : output : 2.5 V             :         : 5         : N              
+contador_entrada[24]         : U22       : output : 2.5 V             :         : 5         : N              
+contagem_certa[4]            : V1        : output : 2.5 V             :         : 2         : N              
 GND                          : V2        : gnd    :                   :         :           :                
-var_5[7]                     : V3        : output : 2.5 V             :         : 2         : N              
-teste2[22]                   : V4        : output : 2.5 V             :         : 3         : N              
-var_2[19]                    : V5        : output : 2.5 V             :         : 3         : N              
+trava_leitura_botao[28]      : V3        : output : 2.5 V             :         : 2         : N              
+contador_jogada[25]          : V4        : output : 2.5 V             :         : 3         : N              
+contagem_errada[28]          : V5        : output : 2.5 V             :         : 3         : N              
 GND                          : V6        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V7        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V8        :        :                   :         : 3         :                
-var_3[0]                     : V9        : output : 2.5 V             :         : 3         : N              
-var_1[0]                     : V10       : output : 2.5 V             :         : 3         : N              
-var_2[29]                    : V11       : output : 2.5 V             :         : 4         : N              
-var_5[29]                    : V12       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : V13       :        :                   :         : 4         :                
-var_2[30]                    : V14       : output : 2.5 V             :         : 4         : N              
-teste[26]                    : V15       : output : 2.5 V             :         : 4         : N              
-teste2[15]                   : V16       : output : 2.5 V             :         : 4         : N              
-teste[4]                     : V17       : output : 2.5 V             :         : 4         : N              
-var_4[11]                    : V18       : output : 2.5 V             :         : 5         : N              
+contador_jogada[20]          : V8        : output : 2.5 V             :         : 3         : N              
+contador_entrada[0]          : V9        : output : 2.5 V             :         : 3         : N              
+contador_entrada[4]          : V10       : output : 2.5 V             :         : 3         : N              
+contador_jogada[3]           : V11       : output : 2.5 V             :         : 4         : N              
+rodada[2]                    : V12       : output : 2.5 V             :         : 4         : N              
+teste[0]                     : V13       : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V14       :        :                   :         : 4         :                
+trava_leitura_botao[13]      : V15       : output : 2.5 V             :         : 4         : N              
+contagem_certa[25]           : V16       : output : 2.5 V             :         : 4         : N              
+rodada[13]                   : V17       : output : 2.5 V             :         : 4         : N              
+trava_leitura_botao[10]      : V18       : output : 2.5 V             :         : 5         : N              
 GND                          : V19       : gnd    :                   :         :           :                
-var_5[9]                     : V20       : output : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : V21       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V22       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W1        :        :                   :         : 2         :                
-teste2[30]                   : W2        : output : 2.5 V             :         : 2         : N              
-var_2[17]                    : W3        : output : 2.5 V             :         : 3         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : W4        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W5        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W6        :        :                   :         : 3         :                
-var_5[1]                     : W7        : output : 2.5 V             :         : 3         : N              
-teste2[1]                    : W8        : output : 2.5 V             :         : 3         : N              
-var_5[24]                    : W9        : output : 2.5 V             :         : 3         : N              
-var_2[0]                     : W10       : output : 2.5 V             :         : 3         : N              
-var_4[2]                     : W11       : output : 2.5 V             :         : 4         : N              
-teste2[27]                   : W12       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : W13       :        :                   :         : 4         :                
-teste2[31]                   : W14       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : W15       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W16       :        :                   :         : 4         :                
-teste2[24]                   : W17       : output : 2.5 V             :         : 4         : N              
-var_1[29]                    : W18       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : W19       :        :                   :         : 5         :                
-var_5[8]                     : W20       : output : 2.5 V             :         : 5         : N              
+rodada[31]                   : V20       : output : 2.5 V             :         : 5         : N              
+teste[16]                    : V21       : output : 2.5 V             :         : 5         : N              
+contagem_certa[13]           : V22       : output : 2.5 V             :         : 5         : N              
+contagem_certa[30]           : W1        : output : 2.5 V             :         : 2         : N              
+rodada[25]                   : W2        : output : 2.5 V             :         : 2         : N              
+rodada[29]                   : W3        : output : 2.5 V             :         : 3         : N              
+contagem_errada[18]          : W4        : output : 2.5 V             :         : 3         : N              
+contagem_errada[31]          : W5        : output : 2.5 V             :         : 3         : N              
+botao_pressionado[29]        : W6        : output : 2.5 V             :         : 3         : N              
+teste[11]                    : W7        : output : 2.5 V             :         : 3         : N              
+contador_entrada[19]         : W8        : output : 2.5 V             :         : 3         : N              
+botao_pressionado[24]        : W9        : output : 2.5 V             :         : 3         : N              
+trava_leitura_botao[12]      : W10       : output : 2.5 V             :         : 3         : N              
+rodada[1]                    : W11       : output : 2.5 V             :         : 4         : N              
+contagem_errada[1]           : W12       : output : 2.5 V             :         : 4         : N              
+estado_fsm[2]                : W13       : output : 2.5 V             :         : 4         : N              
+estado_fsm[0]                : W14       : output : 2.5 V             :         : 4         : N              
+contagem_errada[21]          : W15       : output : 2.5 V             :         : 4         : N              
+contagem_certa[8]            : W16       : output : 2.5 V             :         : 4         : N              
+contagem_certa[7]            : W17       : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W18       :        :                   :         : 4         :                
+contagem_errada[13]          : W19       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W20       :        :                   :         : 5         :                
 GND                          : W21       : gnd    :                   :         :           :                
-var_3[11]                    : W22       : output : 2.5 V             :         : 5         : N              
-var_3[28]                    : Y1        : output : 2.5 V             :         : 3         : N              
-teste2[18]                   : Y2        : output : 2.5 V             :         : 3         : N              
-var_5[0]                     : Y3        : output : 2.5 V             :         : 3         : N              
-var_2[1]                     : Y4        : output : 2.5 V             :         : 3         : N              
-var_5[21]                    : Y5        : output : 2.5 V             :         : 3         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y6        :        :                   :         : 3         :                
-var_2[31]                    : Y7        : output : 2.5 V             :         : 3         : N              
-teste2[26]                   : Y8        : output : 2.5 V             :         : 3         : N              
+trava_leitura_botao[27]      : W22       : output : 2.5 V             :         : 5         : N              
+teste[1]                     : Y1        : output : 2.5 V             :         : 3         : N              
+trava_leitura_botao[21]      : Y2        : output : 2.5 V             :         : 3         : N              
+contagem_errada[6]           : Y3        : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y4        :        :                   :         : 3         :                
+rodada[21]                   : Y5        : output : 2.5 V             :         : 3         : N              
+contador_entrada[8]          : Y6        : output : 2.5 V             :         : 3         : N              
+contador_entrada[27]         : Y7        : output : 2.5 V             :         : 3         : N              
+teste[24]                    : Y8        : output : 2.5 V             :         : 3         : N              
 GND                          : Y9        : gnd    :                   :         :           :                
-var_1[1]                     : Y10       : output : 2.5 V             :         : 3         : N              
-var_3[6]                     : Y11       : output : 2.5 V             :         : 4         : N              
+estado_fsm[3]                : Y10       : output : 2.5 V             :         : 3         : N              
+contador_entrada[2]          : Y11       : output : 2.5 V             :         : 4         : N              
 GND                          : Y12       : gnd    :                   :         :           :                
-var_5[12]                    : Y13       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y14       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y13       :        :                   :         : 4         :                
+estado_fsm[22]               : Y14       : output : 2.5 V             :         : 4         : N              
 GND                          : Y15       : gnd    :                   :         :           :                
-var_3[8]                     : Y16       : output : 2.5 V             :         : 4         : N              
-teste[30]                    : Y17       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y18       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y16       :        :                   :         : 4         :                
+contagem_certa[22]           : Y17       : output : 2.5 V             :         : 4         : N              
+contador_jogada[10]          : Y18       : output : 2.5 V             :         : 4         : N              
 led_azul                     : Y19       : output : 2.5 V             :         : 4         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y20       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y21       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y22       :        :                   :         : 5         :                
+contagem_certa[20]           : Y20       : output : 2.5 V             :         : 5         : N              
+rodada[12]                   : Y21       : output : 2.5 V             :         : 5         : N              
+botao_pressionado[26]        : Y22       : output : 2.5 V             :         : 5         : N              

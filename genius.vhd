@@ -84,6 +84,8 @@ signal trava_leitura_bot : integer range 0 to 1 := 0;
 
 signal comeca_jogo : integer range 0 to 1 := 0;
 
+signal CLOCK_1Hz : std_logic := '0';
+
 --signal trava_comeca_jogo : integer range 0 to 1 := 0;
 
 begin
@@ -100,6 +102,24 @@ begin
 	trava_leitura_botao <= trava_leitura_bot;
 	
 	rodada <= cont_rodada;
+	
+	
+	
+	divisor_clock : process(CLOCK)
+			variable cnt: integer range 0 to 25000000;
+			variable clk: std_logic := '0';
+		begin 
+			if(rising_edge(CLOCK)) then
+				if(cnt = 25000000) then	
+					clk := not clk;
+					cnt := 0;
+				else 
+					cnt := cnt + 1;
+				end if;
+			end if;
+		CLOCK_1Hz <= clk;
+	end process;
+	
 
 	statemachine_seq :process(CLOCK, entrada_ligado)
 		begin
@@ -189,7 +209,8 @@ begin
 				
 					led_ligado <= '1';
 				
-					if (modo_facil = 1) then
+					if (modo_facil = '1') then
+					
 						sequencia_facil_fpga(1) <= 1;
 						sequencia_facil_fpga(2) <= 2;
 						sequencia_facil_fpga(3) <= 3;
@@ -198,8 +219,26 @@ begin
 						sequencia_facil_fpga(6) <= 2;
 						sequencia_facil_fpga(7) <= 3;
 						sequencia_facil_fpga(8) <= 4;
-					elsif (modo_dificil = 1) then
 						
+					elsif (modo_dificil = '1') then
+					
+						sequencia_dificil_fpga(1) <= 1;
+						sequencia_dificil_fpga(2) <= 2;
+						sequencia_dificil_fpga(3) <= 3;
+						sequencia_dificil_fpga(4) <= 4;
+						sequencia_dificil_fpga(5) <= 1;
+						sequencia_dificil_fpga(6) <= 2;
+						sequencia_dificil_fpga(7) <= 3;
+						sequencia_dificil_fpga(8) <= 4;
+						sequencia_dificil_fpga(9) <= 1;
+						sequencia_dificil_fpga(10) <= 2;
+						sequencia_dificil_fpga(11) <= 3;
+						sequencia_dificil_fpga(12) <= 4;
+						sequencia_dificil_fpga(13) <= 1;
+						sequencia_dificil_fpga(14) <= 2;
+						sequencia_dificil_fpga(15) <= 3;
+					
+					end if;
 					
 --					cont_rodada <= cont_rodada + 1;
 					

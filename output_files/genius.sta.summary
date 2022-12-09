@@ -2,40 +2,220 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Setup 'state.FINALIZA_JOGO'
+Slack : -12.375
+TNS   : -82.653
+
+Type  : Slow 1200mV 85C Model Setup 'state.CONTINUA_JOGO'
+Slack : -11.584
+TNS   : -233.983
+
 Type  : Slow 1200mV 85C Model Setup 'entrada_amarelo'
-Slack : -2.775
-TNS   : -30.261
+Slack : -7.344
+TNS   : -94.657
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK'
+Slack : -2.841
+TNS   : -49.605
+
+Type  : Slow 1200mV 85C Model Setup 'modo_facil'
+Slack : -2.382
+TNS   : -2.382
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -1.864
+TNS   : -13.468
 
 Type  : Slow 1200mV 85C Model Hold 'entrada_amarelo'
-Slack : -0.359
-TNS   : -0.540
+Slack : -2.604
+TNS   : -11.157
+
+Type  : Slow 1200mV 85C Model Hold 'state.CONTINUA_JOGO'
+Slack : -1.949
+TNS   : -4.318
+
+Type  : Slow 1200mV 85C Model Hold 'state.FINALIZA_JOGO'
+Slack : -1.403
+TNS   : -2.120
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK'
+Slack : 0.291
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.340
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'modo_facil'
+Slack : 0.782
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK'
+Slack : -3.000
+TNS   : -39.478
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'entrada_amarelo'
 Slack : -3.000
 TNS   : -3.000
 
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'modo_facil'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -1.403
+TNS   : -16.836
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'state.CONTINUA_JOGO'
+Slack : 0.287
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'state.FINALIZA_JOGO'
+Slack : 0.291
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'state.FINALIZA_JOGO'
+Slack : -11.472
+TNS   : -76.829
+
+Type  : Slow 1200mV 0C Model Setup 'state.CONTINUA_JOGO'
+Slack : -10.787
+TNS   : -217.048
+
 Type  : Slow 1200mV 0C Model Setup 'entrada_amarelo'
-Slack : -2.476
-TNS   : -28.269
+Slack : -6.867
+TNS   : -90.336
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK'
+Slack : -2.543
+TNS   : -43.219
+
+Type  : Slow 1200mV 0C Model Setup 'modo_facil'
+Slack : -2.265
+TNS   : -2.265
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -1.602
+TNS   : -11.331
 
 Type  : Slow 1200mV 0C Model Hold 'entrada_amarelo'
-Slack : -0.323
-TNS   : -0.417
+Slack : -2.442
+TNS   : -10.274
+
+Type  : Slow 1200mV 0C Model Hold 'state.CONTINUA_JOGO'
+Slack : -1.633
+TNS   : -3.451
+
+Type  : Slow 1200mV 0C Model Hold 'state.FINALIZA_JOGO'
+Slack : -1.247
+TNS   : -1.785
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.305
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK'
+Slack : 0.341
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'modo_facil'
+Slack : 0.705
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK'
+Slack : -3.000
+TNS   : -39.478
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'entrada_amarelo'
 Slack : -3.000
 TNS   : -3.000
 
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'modo_facil'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -1.403
+TNS   : -16.836
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'state.FINALIZA_JOGO'
+Slack : 0.135
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'state.CONTINUA_JOGO'
+Slack : 0.384
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'state.FINALIZA_JOGO'
+Slack : -5.143
+TNS   : -31.810
+
+Type  : Fast 1200mV 0C Model Setup 'state.CONTINUA_JOGO'
+Slack : -4.381
+TNS   : -86.661
+
 Type  : Fast 1200mV 0C Model Setup 'entrada_amarelo'
-Slack : -0.908
-TNS   : -7.942
+Slack : -3.329
+TNS   : -32.283
+
+Type  : Fast 1200mV 0C Model Setup 'modo_facil'
+Slack : -0.632
+TNS   : -0.632
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK'
+Slack : -0.628
+TNS   : -6.772
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -0.416
+TNS   : -1.672
 
 Type  : Fast 1200mV 0C Model Hold 'entrada_amarelo'
-Slack : -0.214
-TNS   : -0.850
+Slack : -1.441
+TNS   : -7.153
+
+Type  : Fast 1200mV 0C Model Hold 'state.CONTINUA_JOGO'
+Slack : -1.013
+TNS   : -3.964
+
+Type  : Fast 1200mV 0C Model Hold 'state.FINALIZA_JOGO'
+Slack : -0.808
+TNS   : -1.631
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK'
+Slack : -0.151
+TNS   : -0.151
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.147
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'modo_facil'
+Slack : 0.330
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK'
+Slack : -3.000
+TNS   : -29.986
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'entrada_amarelo'
 Slack : -3.000
-TNS   : -3.120
+TNS   : -3.193
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'modo_facil'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -1.000
+TNS   : -12.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'state.CONTINUA_JOGO'
+Slack : 0.268
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'state.FINALIZA_JOGO'
+Slack : 0.338
+TNS   : 0.000
 
 ------------------------------------------------------------
