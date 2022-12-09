@@ -12,7 +12,7 @@
 # 
 # vcom -93 -work work {C:/tp-labsd-genius/genius.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 08:51:55 on Dec 09,2022
+# Start time: 10:29:57 on Dec 09,2022
 # vcom -reportprogress 300 -93 -work work C:/tp-labsd-genius/genius.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -20,37 +20,39 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity genius
 # -- Compiling architecture arch of genius
-# ** Warning: C:/tp-labsd-genius/genius.vhd(51): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: C:/tp-labsd-genius/genius.vhd(252): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: C:/tp-labsd-genius/genius.vhd(267): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: C:/tp-labsd-genius/genius.vhd(277): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: C:/tp-labsd-genius/genius.vhd(287): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# End time: 08:51:55 on Dec 09,2022, Elapsed time: 0:00:00
+# ** Warning: C:/tp-labsd-genius/genius.vhd(48): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: C:/tp-labsd-genius/genius.vhd(278): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: C:/tp-labsd-genius/genius.vhd(293): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: C:/tp-labsd-genius/genius.vhd(303): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: C:/tp-labsd-genius/genius.vhd(313): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# End time: 10:29:57 on Dec 09,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 5
 # 
 # vcom -93 -work work {C:/tp-labsd-genius/tb_genius.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 08:51:56 on Dec 09,2022
+# Start time: 10:29:57 on Dec 09,2022
 # vcom -reportprogress 300 -93 -work work C:/tp-labsd-genius/tb_genius.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity tb_genius
 # -- Compiling architecture teste of tb_genius
-# ** Warning: C:/tp-labsd-genius/tb_genius.vhd(62): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: C:/tp-labsd-genius/tb_genius.vhd(64): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: C:/tp-labsd-genius/tb_genius.vhd(97): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: C:/tp-labsd-genius/tb_genius.vhd(97): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: C:/tp-labsd-genius/tb_genius.vhd(105): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: C:/tp-labsd-genius/tb_genius.vhd(70): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: C:/tp-labsd-genius/tb_genius.vhd(72): (vcom-1207) An abstract literal and an identifier must have a separator between them.
 # ** Warning: C:/tp-labsd-genius/tb_genius.vhd(108): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: C:/tp-labsd-genius/tb_genius.vhd(112): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: C:/tp-labsd-genius/tb_genius.vhd(108): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: C:/tp-labsd-genius/tb_genius.vhd(108): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: C:/tp-labsd-genius/tb_genius.vhd(108): (vcom-1207) An abstract literal and an identifier must have a separator between them.
 # ** Warning: C:/tp-labsd-genius/tb_genius.vhd(116): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# End time: 08:51:56 on Dec 09,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 8
+# ** Warning: C:/tp-labsd-genius/tb_genius.vhd(119): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: C:/tp-labsd-genius/tb_genius.vhd(123): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: C:/tp-labsd-genius/tb_genius.vhd(127): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# End time: 10:29:57 on Dec 09,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 10
 # 
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  tb_genius
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs=""+acc"" tb_genius 
-# Start time: 08:51:56 on Dec 09,2022
+# Start time: 10:29:58 on Dec 09,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -63,6 +65,6 @@
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
-# run 50 ns
-# End time: 08:52:48 on Dec 09,2022, Elapsed time: 0:00:52
+# run 100 ns
+# End time: 10:30:39 on Dec 09,2022, Elapsed time: 0:00:41
 # Errors: 0, Warnings: 0

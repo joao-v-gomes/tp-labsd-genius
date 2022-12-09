@@ -2,15 +2,19 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-
-
 entity genius is
    
     port (
+			
+		  CLOCK : in std_logic;
+		  
+		  RESET : in std_logic;
 		  
 		  botao_pressionado : out integer  := 0;
 		  contador_jogada : out integer  := 0;
 		  estado_fsm : out integer  := 0;
+		  
+		  teste : out integer := 0;
 		  
 		  trava_leitura_botao : out integer := 0;
 		  
@@ -20,14 +24,6 @@ entity genius is
 		  
 		  contagem_certa : out integer := 0;
 		  contagem_errada : out integer := 0;
-		  
---		  var_1 : out integer := 0;
---		  var_2 : out integer := 0;
---		  var_3 : out integer := 0;
---		  var_4 : out integer := 0;
---		  var_5 : out integer := 0;
-		  
-		  CLOCK : in std_logic;
 		  
 		  entrada_azul : in std_logic := '0';
 		  entrada_amarelo : in std_logic  := '0';
@@ -43,6 +39,7 @@ entity genius is
 		  led_verde : out std_logic  := '0'; -- Numero da Sequencia: 3
 		  led_vermelho : out std_logic  := '0'; -- Numero da Sequencia: 4
 		  led_ligado : out std_logic  := '0'
+		  
     );
 end genius;
 
@@ -53,7 +50,7 @@ constant c_CLK_PERIOD : time := 1ns;
 type array_facil is array (8 downto 0) of integer range 0  to 5;
 type array_dificil is array (15 downto 0) of integer range 0  to 5;
 
-type statetype is ( INIT, PREPARA_JOGO, MOSTRA_COR, VERIFICA_MOSTRA_COR, AGUARDA_ENTRADA, LE_UMA_ENTRADA, NAO_LEU_NADA, VERIFICA_ENTRADA, CONTINUA_JOGO, FINALIZA_JOGO) ;
+type statetype is ( INIT, PREPARA_JOGO, AGUARDA_PREPARA_JOGO, MOSTRA_COR, VERIFICA_MOSTRA_COR, AGUARDA_ENTRADA, LE_UMA_ENTRADA, NAO_LEU_NADA, VERIFICA_ENTRADA, CONTINUA_JOGO, FINALIZA_JOGO) ;
 signal state, nextstate : statetype := INIT;
 
 --signal jogo_ligado : std_logic := '0';
@@ -67,7 +64,7 @@ signal 	sequencia_dificil_usuario : array_dificil := (others => 0);
 
 signal qual_botao : integer := 0;
 
-signal var1 : array_facil := (others => 0);
+--signal var1 : array_facil := (others => 0);
 
 --signal cont : integer range 0 to 16 := 1;
 signal cont_entrada : integer range 0 to 16 := 1;
@@ -78,23 +75,27 @@ signal cont_errado : integer range 0 to 16 := 0;
 signal cont_facil : integer range 0 to 9 := 0;
 signal cont_dificil : integer range 0 to 16 := 0;
 
-signal flag_reset : std_logic := '0';
+--signal flag_reset : std_logic := '0';
 
 signal cont_jogada : integer range 0 to 9 := 1;
 signal cont_rodada : integer range 0 to 9 := 1;
 
 signal trava_leitura_bot : integer range 0 to 1 := 0;
 
-signal comeca_jogo : std_logic := '1';
+signal comeca_jogo : integer range 0 to 1 := 0;
+
+--signal trava_comeca_jogo : integer range 0 to 1 := 0;
 
 begin
+
+	teste <= comeca_jogo;
 
 	contador_entrada <= cont_entrada;
 	contagem_certa <= cont_certo;
 	contagem_errada <= cont_errado;
 	
 	botao_pressionado <= qual_botao;
-		contador_jogada <= cont_jogada;
+	contador_jogada <= cont_jogada;
 	
 	trava_leitura_botao <= trava_leitura_bot;
 	
@@ -103,11 +104,27 @@ begin
 	statemachine_seq :process(CLOCK, entrada_ligado)
 		begin
 			if ( entrada_ligado = '1' and rising_edge(CLOCK) ) then
+			
 				state <= INIT;
---				comeca_jogo <= '0';
+--				comeca_jogo <= 0;
+				
+--				if (trava_comeca_jogo = 0) then
+					comeca_jogo <= 1;
+--					trava_comeca_jogo <= 1;
+--				else
+--					comeca_jogo <= 0;
+--					trava_comeca_jogo <= 0;
+--				end if;
+--				comeca_jogo <= 1;
+				
 			elsif (rising_edge(CLOCK)) then
+			
 				state <= nextstate;
---				comeca_jogo <= '1';
+				
+--				comeca_jogo <= 0;
+--				trava_comeca_jogo <= 0;
+--				comeca_jogo <= 0;
+
 			end if;
 	end process;
 
@@ -149,29 +166,40 @@ begin
 					cont_rodada <= 1;
 					cont_jogada <= 0;
 					
-					if (comeca_jogo = '1') then 
-						nextstate <= PREPARA_JOGO;
---						comeca_jogo <= '0';
-					else
-						nextstate <= INIT;
---						comeca_jogo <= '1';
-					end if;
+--					if (comeca_jogo = 1) then 
+--						nextstate <= PREPARA_JOGO;
+--					else
+--						nextstate <= INIT;
+--					end if;
+
+					nextstate <= AGUARDA_PREPARA_JOGO;
 					
 					estado_fsm <= 1;
+					
+				when AGUARDA_PREPARA_JOGO =>
+					if (comeca_jogo = 1) then 
+						nextstate <= PREPARA_JOGO;
+					else
+						nextstate <= INIT;
+					end if;
+					
+					estado_fsm <= 11;
 					
 				when PREPARA_JOGO =>
 				
 					led_ligado <= '1';
 				
-					-- LER AS ENTRADAS DO ARQUIVO
-					sequencia_facil_fpga(1) <= 1;
-					sequencia_facil_fpga(2) <= 2;
-					sequencia_facil_fpga(3) <= 3;
-					sequencia_facil_fpga(4) <= 4;
-					sequencia_facil_fpga(5) <= 1;
-					sequencia_facil_fpga(6) <= 2;
-					sequencia_facil_fpga(7) <= 3;
-					sequencia_facil_fpga(8) <= 4;
+					if (modo_facil = 1) then
+						sequencia_facil_fpga(1) <= 1;
+						sequencia_facil_fpga(2) <= 2;
+						sequencia_facil_fpga(3) <= 3;
+						sequencia_facil_fpga(4) <= 4;
+						sequencia_facil_fpga(5) <= 1;
+						sequencia_facil_fpga(6) <= 2;
+						sequencia_facil_fpga(7) <= 3;
+						sequencia_facil_fpga(8) <= 4;
+					elsif (modo_dificil = 1) then
+						
 					
 --					cont_rodada <= cont_rodada + 1;
 					
@@ -249,7 +277,7 @@ begin
 								led_vermelho <= '0';
 								
 								cont_entrada <= cont_entrada + 1;
-								nextstate <= LE_UMA_ENTRADA after 5ns;
+								nextstate <= LE_UMA_ENTRADA after (c_CLK_PERIOD*5);
 								
 								trava_leitura_bot <= 1;
 							else
@@ -264,7 +292,7 @@ begin
 							led_vermelho <= '0';
 							
 							cont_entrada <= cont_entrada + 1;
-							nextstate <= LE_UMA_ENTRADA after 5ns;
+							nextstate <= LE_UMA_ENTRADA after (c_CLK_PERIOD*5);
 						when 3 =>
 							sequencia_facil_usuario(cont_entrada) <= 3;
 							
@@ -274,7 +302,7 @@ begin
 							led_vermelho <= '0';
 							
 							cont_entrada <= cont_entrada + 1;
-							nextstate <= LE_UMA_ENTRADA after 5ns;
+							nextstate <= LE_UMA_ENTRADA after (c_CLK_PERIOD*5);
 						when 4 =>
 							sequencia_facil_usuario(cont_entrada) <= 4;
 							
@@ -284,7 +312,7 @@ begin
 							led_verde <= '0';
 							
 							cont_entrada <= cont_entrada + 1;
-							nextstate <= LE_UMA_ENTRADA after 5ns;
+							nextstate <= LE_UMA_ENTRADA after (c_CLK_PERIOD*5);
 						when others =>
 							nextstate <= NAO_LEU_NADA;
 --							nextstate <= NAO_LEU_NADA after (c_CLK_PERIOD*10);
@@ -397,7 +425,7 @@ begin
 					
 					
 --	process de teste das entradas e saídas do jogo
-	process(entrada_azul,entrada_amarelo,entrada_verde, entrada_vermelho)
+	process(entrada_azul, entrada_amarelo, entrada_verde, entrada_vermelho)
 		
 		begin
 			
@@ -413,10 +441,12 @@ begin
 				elsif (entrada_vermelho = '1') then
 					qual_botao <= 4;
 
-				elsif (entrada_ligado = '1') then
-					qual_botao <= 5;
+--				elsif (entrada_ligado = '1') then
+--					qual_botao <= 5;
+--					comeca_jogo <= 1;
 				else
 					qual_botao <= 0;
+--					comeca_jogo <= '0';
 					
 				end if;
 				

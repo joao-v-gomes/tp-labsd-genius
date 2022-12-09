@@ -15,6 +15,8 @@ component genius is
 		  
 		  trava_leitura_botao : out integer := 0;
 		  
+		  teste : out integer := 0;
+		  
 		  contador_entrada : out integer := 0;
 		  
 		  rodada : out integer := 0;
@@ -23,6 +25,8 @@ component genius is
 		  contagem_errada : out integer := 0;
 		  
 		  CLOCK : in std_logic := '0';
+		  
+		  RESET : in std_logic;
 		  
 		  entrada_azul : in std_logic := '0';
 		  entrada_amarelo : in std_logic := '0';
@@ -40,6 +44,8 @@ end component;
 
 signal clock : std_logic;
 
+signal reset : std_logic;
+
 signal e_azul, e_amarelo, e_verde, e_vermelho, e_ligado : std_logic;
 signal l_azul, l_amarelo, l_verde, l_vermelho, l_ligado : std_logic;
 
@@ -54,6 +60,8 @@ signal trava_leitura_bot : integer;
 signal cont_certa : integer;
 signal cont_errada : integer;
 
+signal comeca : integer;
+
 begin
 
 clockprcss: process
@@ -67,6 +75,9 @@ clockprcss: process
 
 instance_genius: genius port map(
 		CLOCK => clock,
+		RESET => reset,
+		
+		teste => comeca,
 
 		botao_pressionado => bot_pressionado,
 		contador_jogada => cont_jogada,
@@ -94,7 +105,7 @@ instance_genius: genius port map(
 		led_ligado => l_ligado
 );
 
-	e_ligado <= '0', '1' after 10ns, '0' after 15ns;
+	e_ligado <= '0', '1' after 10ns, '0' after 12ns, '1' after 42ns, '0' after 45ns;
 
 	teste_tb: process(est_fsm)
 		begin

@@ -56,6 +56,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "teste[0]",
+					"strict" : false
+				},
+				{
 					"name" : "trava_leitura_botao[0]",
 					"strict" : false
 				},
@@ -156,7 +160,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "entrada_ligado",
+					"name" : "entrada_amarelo",
 					"strict" : false
 				},
 				{
@@ -164,7 +168,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "entrada_amarelo",
+					"name" : "entrada_ligado",
 					"strict" : false
 				},
 				{
