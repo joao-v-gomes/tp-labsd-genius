@@ -66,10 +66,10 @@ contador_jogada[28] << <GND>
 contador_jogada[29] << <GND>
 contador_jogada[30] << <GND>
 contador_jogada[31] << <GND>
-estado_fsm[0] << WideOr24.DB_MAX_OUTPUT_PORT_TYPE
-estado_fsm[1] << WideOr23.DB_MAX_OUTPUT_PORT_TYPE
-estado_fsm[2] << WideOr22.DB_MAX_OUTPUT_PORT_TYPE
-estado_fsm[3] << WideOr21.DB_MAX_OUTPUT_PORT_TYPE
+estado_fsm[0] << WideOr19.DB_MAX_OUTPUT_PORT_TYPE
+estado_fsm[1] << WideOr18.DB_MAX_OUTPUT_PORT_TYPE
+estado_fsm[2] << WideOr17.DB_MAX_OUTPUT_PORT_TYPE
+estado_fsm[3] << WideOr16.DB_MAX_OUTPUT_PORT_TYPE
 estado_fsm[4] << estado_fsm.DB_MAX_OUTPUT_PORT_TYPE
 estado_fsm[5] << estado_fsm.DB_MAX_OUTPUT_PORT_TYPE
 estado_fsm[6] << <GND>
@@ -300,6 +300,7 @@ entrada_verde => qual_botao.OUTPUTSELECT
 entrada_verde => qual_botao.DATAA
 entrada_verde => qual_botao.DATAA
 entrada_vermelho => qual_botao.DATAA
+entrada_ligado => comeca_jogo.OUTPUTSELECT
 entrada_ligado => state.FINALIZA_JOGO.OUTPUTSELECT
 entrada_ligado => state.CONTINUA_JOGO.OUTPUTSELECT
 entrada_ligado => state.VERIFICA_ENTRADA.OUTPUTSELECT
@@ -311,7 +312,6 @@ entrada_ligado => state.MOSTRA_COR.OUTPUTSELECT
 entrada_ligado => state.AGUARDA_PREPARA_JOGO.OUTPUTSELECT
 entrada_ligado => state.PREPARA_JOGO.OUTPUTSELECT
 entrada_ligado => state.INIT.OUTPUTSELECT
-entrada_ligado => comeca_jogo.ENA
 led_azul << led_azul$latch.DB_MAX_OUTPUT_PORT_TYPE
 led_amarelo << led_amarelo$latch.DB_MAX_OUTPUT_PORT_TYPE
 led_verde << led_verde$latch.DB_MAX_OUTPUT_PORT_TYPE

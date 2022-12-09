@@ -44,10 +44,10 @@ end component;
 
 signal clock : std_logic;
 
-signal reset : std_logic;
+signal reset : std_logic := '0';
 
-signal e_azul, e_amarelo, e_verde, e_vermelho, e_ligado : std_logic;
-signal l_azul, l_amarelo, l_verde, l_vermelho, l_ligado : std_logic;
+signal e_azul, e_amarelo, e_verde, e_vermelho, e_ligado : std_logic := '0';
+signal l_azul, l_amarelo, l_verde, l_vermelho, l_ligado : std_logic := '0';
 
 signal bot_pressionado : integer;
 signal cont_jogada : integer;
@@ -105,7 +105,7 @@ instance_genius: genius port map(
 		led_ligado => l_ligado
 );
 
-	e_ligado <= '0', '1' after 10ns, '0' after 12ns, '1' after 42ns, '0' after 45ns;
+	e_ligado <= '0', '1' after 10ns, '0' after 15ns, '1' after 700ns, '0' after 750ns;
 
 	teste_tb: process(est_fsm)
 		begin
