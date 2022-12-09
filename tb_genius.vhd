@@ -112,18 +112,18 @@ instance_genius: genius port map(
 			if (est_fsm = 5) then
 				case cont_entrada is
 				
-					when 1 | 5 | 9 | 13=>
+					when 1 | 5 =>
 						e_azul <= '1','0' after 3ns;
 					
-					when 2 | 6 | 10 |14=>
+					when 2 | 6 =>
 						e_amarelo <= '1','0' after 3ns;
 --						e_azul <= '1','0' after 3ns;
 					
-					when 3 | 7 | 11 | 15=>
+					when 3 | 7 =>
 						e_verde <= '1','0' after 3ns;
 --						e_azul <= '1','0' after 3ns;
 					
-					when 4 | 8 | 12=>
+					when 4 | 8 =>
 						e_vermelho <= '1','0' after 3ns;
 					
 					when others =>

@@ -31,8 +31,8 @@ entity genius is
 		  entrada_vermelho : in std_logic  := '0';
 		  entrada_ligado : in std_logic := '0';
 		  
-		  modo_facil : in std_logic := '1';
-		  modo_dificil : in std_logic := '0';
+--		  modo_facil : in std_logic := '1';
+--		  modo_dificil : in std_logic := '0';
 		
 		  led_azul : out std_logic  := '0'; -- Numero da Sequencia: 1
 		  led_amarelo : out std_logic  := '0'; -- Numero da Sequencia: 2
@@ -48,7 +48,7 @@ architecture arch of genius is
 constant c_CLK_PERIOD : time := 1ns;
 
 type array_facil is array (8 downto 0) of integer range 0  to 5;
-type array_dificil is array (15 downto 0) of integer range 0  to 5;
+--type array_dificil is array (15 downto 0) of integer range 0  to 5;
 
 type statetype is ( INIT, PREPARA_JOGO, AGUARDA_PREPARA_JOGO, MOSTRA_COR, VERIFICA_MOSTRA_COR, AGUARDA_ENTRADA, LE_UMA_ENTRADA, NAO_LEU_NADA, VERIFICA_ENTRADA, CONTINUA_JOGO, FINALIZA_JOGO) ;
 signal state, nextstate : statetype := INIT;
@@ -57,10 +57,10 @@ signal state, nextstate : statetype := INIT;
 --signal 	var1 : array1Dc;
 
 signal 	sequencia_facil_fpga : array_facil := (others => 0);
-signal 	sequencia_dificil_fpga : array_dificil := (others => 0);
+--signal 	sequencia_dificil_fpga : array_dificil := (others => 0);
 
 signal 	sequencia_facil_usuario : array_facil := (others => 0);
-signal 	sequencia_dificil_usuario : array_dificil := (others => 0);
+--signal 	sequencia_dificil_usuario : array_dificil := (others => 0);
 
 signal qual_botao : integer := 0;
 
@@ -72,8 +72,8 @@ signal cont_entrada : integer range 0 to 16 := 1;
 signal cont_certo : integer range 0 to 16 := 0;
 signal cont_errado : integer range 0 to 16 := 0;
 
-signal cont_facil : integer range 0 to 9 := 0;
-signal cont_dificil : integer range 0 to 16 := 0;
+--signal cont_facil : integer range 0 to 9 := 0;
+--signal cont_dificil : integer range 0 to 16 := 0;
 
 --signal flag_reset : std_logic := '0';
 
@@ -102,8 +102,6 @@ begin
 	trava_leitura_botao <= trava_leitura_bot;
 	
 	rodada <= cont_rodada;
-	
-	
 	
 	divisor_clock : process(CLOCK)
 			variable cnt: integer range 0 to 25000000;
@@ -165,8 +163,8 @@ begin
 					led_verde <= '0';
 					led_vermelho <= '0';
 					
-					cont_facil <= 1;
-					cont_dificil <= 1;
+--					cont_facil <= 1;
+--					cont_dificil <= 1;
 					
 					cont_certo <= 0;
 					cont_errado <= 0;
@@ -177,9 +175,9 @@ begin
 --					cont <= 0;
 					
 					sequencia_facil_fpga <= (others => 0);
-					sequencia_dificil_fpga <= (others => 0);
+--					sequencia_dificil_fpga <= (others => 0);
 					sequencia_facil_usuario <= (others => 0);
-					sequencia_dificil_usuario <= (others => 0);
+--					sequencia_dificil_usuario <= (others => 0);
 					
 					cont_entrada <= 1;
 					
@@ -209,7 +207,7 @@ begin
 				
 					led_ligado <= '1';
 				
-					if (modo_facil = '1') then
+--					if (modo_facil = '1') then
 					
 						sequencia_facil_fpga(1) <= 1;
 						sequencia_facil_fpga(2) <= 2;
@@ -220,25 +218,25 @@ begin
 						sequencia_facil_fpga(7) <= 3;
 						sequencia_facil_fpga(8) <= 4;
 						
-					elsif (modo_dificil = '1') then
+--					elsif (modo_dificil = '1') then
 					
-						sequencia_dificil_fpga(1) <= 1;
-						sequencia_dificil_fpga(2) <= 2;
-						sequencia_dificil_fpga(3) <= 3;
-						sequencia_dificil_fpga(4) <= 4;
-						sequencia_dificil_fpga(5) <= 1;
-						sequencia_dificil_fpga(6) <= 2;
-						sequencia_dificil_fpga(7) <= 3;
-						sequencia_dificil_fpga(8) <= 4;
-						sequencia_dificil_fpga(9) <= 1;
-						sequencia_dificil_fpga(10) <= 2;
-						sequencia_dificil_fpga(11) <= 3;
-						sequencia_dificil_fpga(12) <= 4;
-						sequencia_dificil_fpga(13) <= 1;
-						sequencia_dificil_fpga(14) <= 2;
-						sequencia_dificil_fpga(15) <= 3;
-					
-					end if;
+--						sequencia_dificil_fpga(1) <= 1;
+--						sequencia_dificil_fpga(2) <= 2;
+--						sequencia_dificil_fpga(3) <= 3;
+--						sequencia_dificil_fpga(4) <= 4;
+--						sequencia_dificil_fpga(5) <= 1;
+--						sequencia_dificil_fpga(6) <= 2;
+--						sequencia_dificil_fpga(7) <= 3;
+--						sequencia_dificil_fpga(8) <= 4;
+--						sequencia_dificil_fpga(9) <= 1;
+--						sequencia_dificil_fpga(10) <= 2;
+--						sequencia_dificil_fpga(11) <= 3;
+--						sequencia_dificil_fpga(12) <= 4;
+--						sequencia_dificil_fpga(13) <= 1;
+--						sequencia_dificil_fpga(14) <= 2;
+--						sequencia_dificil_fpga(15) <= 3;
+--					
+--					end if;
 					
 --					cont_rodada <= cont_rodada + 1;
 					

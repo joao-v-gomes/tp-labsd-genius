@@ -1,5 +1,5 @@
 Analysis & Synthesis report for genius
-Fri Dec 09 14:59:10 2022
+Fri Dec 09 18:17:55 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -46,16 +46,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 09 14:59:10 2022       ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec 09 18:17:55 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; genius                                      ;
 ; Top-level Entity Name              ; genius                                      ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 377                                         ;
-;     Total combinational functions  ; 377                                         ;
+; Total logic elements               ; 375                                         ;
+;     Total combinational functions  ; 375                                         ;
 ;     Dedicated logic registers      ; 12                                          ;
 ; Total registers                    ; 12                                          ;
-; Total pins                         ; 302                                         ;
+; Total pins                         ; 300                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -165,7 +165,7 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 3-4         ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -178,36 +178,36 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+-------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 377            ;
-;                                             ;                ;
-; Total combinational functions               ; 377            ;
-; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 199            ;
-;     -- 3 input functions                    ; 125            ;
-;     -- <=2 input functions                  ; 53             ;
-;                                             ;                ;
-; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 373            ;
-;     -- arithmetic mode                      ; 4              ;
-;                                             ;                ;
-; Total registers                             ; 12             ;
-;     -- Dedicated logic registers            ; 12             ;
-;     -- I/O registers                        ; 0              ;
-;                                             ;                ;
-; I/O pins                                    ; 302            ;
-;                                             ;                ;
-; Embedded Multiplier 9-bit elements          ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; cont_rodada[3] ;
-; Maximum fan-out                             ; 27             ;
-; Total fan-out                               ; 1639           ;
-; Average fan-out                             ; 1.65           ;
-+---------------------------------------------+----------------+
++----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                          ;
++---------------------------------------------+------------------------+
+; Resource                                    ; Usage                  ;
++---------------------------------------------+------------------------+
+; Estimated Total logic elements              ; 375                    ;
+;                                             ;                        ;
+; Total combinational functions               ; 375                    ;
+; Logic element usage by number of LUT inputs ;                        ;
+;     -- 4 input functions                    ; 196                    ;
+;     -- 3 input functions                    ; 123                    ;
+;     -- <=2 input functions                  ; 56                     ;
+;                                             ;                        ;
+; Logic elements by mode                      ;                        ;
+;     -- normal mode                          ; 371                    ;
+;     -- arithmetic mode                      ; 4                      ;
+;                                             ;                        ;
+; Total registers                             ; 12                     ;
+;     -- Dedicated logic registers            ; 12                     ;
+;     -- I/O registers                        ; 0                      ;
+;                                             ;                        ;
+; I/O pins                                    ; 300                    ;
+;                                             ;                        ;
+; Embedded Multiplier 9-bit elements          ; 0                      ;
+;                                             ;                        ;
+; Maximum fan-out node                        ; state.VERIFICA_ENTRADA ;
+; Maximum fan-out                             ; 26                     ;
+; Total fan-out                               ; 1625                   ;
+; Average fan-out                             ; 1.65                   ;
++---------------------------------------------+------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -215,7 +215,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |genius                    ; 377 (377)           ; 12 (12)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 302  ; 0            ; 0          ; |genius             ; genius      ; work         ;
+; |genius                    ; 375 (375)           ; 12 (12)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 300  ; 0            ; 0          ; |genius             ; genius      ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -245,16 +245,16 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------+------------------------+
-; cont_jogada[0]                                      ; Selector49          ; yes                    ;
-; cont_jogada[1]                                      ; Selector49          ; yes                    ;
-; cont_jogada[2]                                      ; Selector49          ; yes                    ;
-; cont_jogada[3]                                      ; Selector49          ; yes                    ;
-; trava_leitura_bot                                   ; Selector74          ; yes                    ;
-; cont_entrada[0]                                     ; Selector28          ; yes                    ;
-; cont_entrada[1]                                     ; Selector28          ; yes                    ;
-; cont_entrada[2]                                     ; Selector28          ; yes                    ;
-; cont_entrada[3]                                     ; Selector28          ; yes                    ;
-; cont_entrada[4]                                     ; Selector28          ; yes                    ;
+; cont_jogada[0]                                      ; Selector22          ; yes                    ;
+; cont_jogada[1]                                      ; Selector22          ; yes                    ;
+; cont_jogada[2]                                      ; Selector22          ; yes                    ;
+; cont_jogada[3]                                      ; Selector22          ; yes                    ;
+; trava_leitura_bot                                   ; Selector52          ; yes                    ;
+; cont_entrada[0]                                     ; Selector5           ; yes                    ;
+; cont_entrada[1]                                     ; Selector5           ; yes                    ;
+; cont_entrada[2]                                     ; Selector5           ; yes                    ;
+; cont_entrada[3]                                     ; Selector5           ; yes                    ;
+; cont_entrada[4]                                     ; Selector5           ; yes                    ;
 ; cont_rodada[0]                                      ; cont_jogada         ; yes                    ;
 ; cont_rodada[1]                                      ; cont_jogada         ; yes                    ;
 ; cont_rodada[2]                                      ; cont_jogada         ; yes                    ;
@@ -267,64 +267,64 @@ Encoding Type:  One-Hot
 ; cont_errado[1]                                      ; WideOr6             ; yes                    ;
 ; cont_errado[2]                                      ; WideOr6             ; yes                    ;
 ; cont_errado[3]                                      ; WideOr6             ; yes                    ;
-; led_azul$latch                                      ; Selector107         ; yes                    ;
-; led_amarelo$latch                                   ; Selector104         ; yes                    ;
-; led_verde$latch                                     ; Selector104         ; yes                    ;
-; led_vermelho$latch                                  ; Selector104         ; yes                    ;
+; led_azul$latch                                      ; Selector106         ; yes                    ;
+; led_amarelo$latch                                   ; Selector103         ; yes                    ;
+; led_verde$latch                                     ; Selector103         ; yes                    ;
+; led_vermelho$latch                                  ; Selector103         ; yes                    ;
 ; led_ligado$latch                                    ; WideOr2             ; yes                    ;
-; nextstate.PREPARA_JOGO_1985                         ; state.FINALIZA_JOGO ; yes                    ;
-; nextstate.VERIFICA_MOSTRA_COR_1961                  ; state.FINALIZA_JOGO ; yes                    ;
-; nextstate.LE_UMA_ENTRADA_1945                       ; state.FINALIZA_JOGO ; yes                    ;
-; nextstate.CONTINUA_JOGO_1921                        ; state.FINALIZA_JOGO ; yes                    ;
-; nextstate.AGUARDA_PREPARA_JOGO_1977                 ; state.FINALIZA_JOGO ; yes                    ;
-; nextstate.MOSTRA_COR_1969                           ; state.FINALIZA_JOGO ; yes                    ;
-; nextstate.VERIFICA_ENTRADA_1929                     ; state.FINALIZA_JOGO ; yes                    ;
-; nextstate.AGUARDA_ENTRADA_1953                      ; state.FINALIZA_JOGO ; yes                    ;
-; nextstate.NAO_LEU_NADA_1937                         ; state.FINALIZA_JOGO ; yes                    ;
-; nextstate.FINALIZA_JOGO_1913                        ; state.FINALIZA_JOGO ; yes                    ;
-; sequencia_facil_usuario[7][2]                       ; Selector14          ; yes                    ;
-; sequencia_facil_fpga[7][0]                          ; Selector2           ; yes                    ;
-; sequencia_facil_usuario[7][0]                       ; Selector14          ; yes                    ;
-; sequencia_facil_fpga[7][1]                          ; Selector2           ; yes                    ;
-; sequencia_facil_usuario[7][1]                       ; Selector14          ; yes                    ;
-; sequencia_facil_usuario[8][1]                       ; Selector5           ; yes                    ;
-; sequencia_facil_usuario[8][0]                       ; Selector5           ; yes                    ;
-; sequencia_facil_fpga[8][2]                          ; Selector2           ; yes                    ;
-; sequencia_facil_usuario[8][2]                       ; Selector5           ; yes                    ;
-; \statemachine_comb:cont_c[0]                        ; Selector82          ; yes                    ;
-; sequencia_facil_usuario[1][2]                       ; Selector26          ; yes                    ;
-; sequencia_facil_usuario[1][1]                       ; Selector26          ; yes                    ;
-; sequencia_facil_fpga[1][0]                          ; Selector2           ; yes                    ;
-; sequencia_facil_usuario[1][0]                       ; Selector26          ; yes                    ;
-; sequencia_facil_usuario[2][2]                       ; Selector24          ; yes                    ;
-; sequencia_facil_usuario[2][0]                       ; Selector24          ; yes                    ;
-; sequencia_facil_fpga[2][1]                          ; Selector2           ; yes                    ;
-; sequencia_facil_usuario[2][1]                       ; Selector24          ; yes                    ;
-; sequencia_facil_usuario[3][2]                       ; Selector22          ; yes                    ;
-; sequencia_facil_fpga[3][0]                          ; Selector2           ; yes                    ;
-; sequencia_facil_usuario[3][0]                       ; Selector22          ; yes                    ;
-; sequencia_facil_fpga[3][1]                          ; Selector2           ; yes                    ;
-; sequencia_facil_usuario[3][1]                       ; Selector22          ; yes                    ;
-; sequencia_facil_usuario[4][1]                       ; Selector20          ; yes                    ;
-; sequencia_facil_usuario[4][0]                       ; Selector20          ; yes                    ;
-; sequencia_facil_fpga[4][2]                          ; Selector2           ; yes                    ;
-; sequencia_facil_usuario[4][2]                       ; Selector20          ; yes                    ;
-; sequencia_facil_usuario[5][2]                       ; Selector18          ; yes                    ;
-; sequencia_facil_usuario[5][1]                       ; Selector18          ; yes                    ;
-; sequencia_facil_fpga[5][0]                          ; Selector2           ; yes                    ;
-; sequencia_facil_usuario[5][0]                       ; Selector18          ; yes                    ;
-; sequencia_facil_usuario[6][2]                       ; Selector16          ; yes                    ;
-; sequencia_facil_usuario[6][0]                       ; Selector16          ; yes                    ;
-; sequencia_facil_fpga[6][1]                          ; Selector2           ; yes                    ;
-; sequencia_facil_usuario[6][1]                       ; Selector16          ; yes                    ;
-; \statemachine_comb:cont_c[1]                        ; Selector82          ; yes                    ;
-; \statemachine_comb:cont_c[2]                        ; Selector82          ; yes                    ;
-; \statemachine_comb:cont_c[3]                        ; Selector82          ; yes                    ;
-; \statemachine_comb:cont_e[0]                        ; Selector78          ; yes                    ;
-; \statemachine_comb:cont_e[1]                        ; Selector78          ; yes                    ;
-; \statemachine_comb:cont_e[2]                        ; Selector78          ; yes                    ;
-; \statemachine_comb:cont_e[3]                        ; Selector78          ; yes                    ;
-; nextstate.INIT_1993                                 ; state.FINALIZA_JOGO ; yes                    ;
+; nextstate.PREPARA_JOGO_1568                         ; state.FINALIZA_JOGO ; yes                    ;
+; nextstate.VERIFICA_MOSTRA_COR_1544                  ; state.FINALIZA_JOGO ; yes                    ;
+; nextstate.LE_UMA_ENTRADA_1528                       ; state.FINALIZA_JOGO ; yes                    ;
+; nextstate.CONTINUA_JOGO_1504                        ; state.FINALIZA_JOGO ; yes                    ;
+; nextstate.AGUARDA_PREPARA_JOGO_1560                 ; state.FINALIZA_JOGO ; yes                    ;
+; nextstate.MOSTRA_COR_1552                           ; state.FINALIZA_JOGO ; yes                    ;
+; nextstate.VERIFICA_ENTRADA_1512                     ; state.FINALIZA_JOGO ; yes                    ;
+; nextstate.AGUARDA_ENTRADA_1536                      ; state.FINALIZA_JOGO ; yes                    ;
+; nextstate.NAO_LEU_NADA_1520                         ; state.FINALIZA_JOGO ; yes                    ;
+; nextstate.FINALIZA_JOGO_1496                        ; state.FINALIZA_JOGO ; yes                    ;
+; sequencia_facil_usuario[7][2]                       ; Selector71          ; yes                    ;
+; sequencia_facil_usuario[7][0]                       ; Selector71          ; yes                    ;
+; sequencia_facil_fpga[7][0]                          ; WideOr7             ; yes                    ;
+; sequencia_facil_usuario[7][1]                       ; Selector71          ; yes                    ;
+; sequencia_facil_fpga[7][1]                          ; WideOr7             ; yes                    ;
+; sequencia_facil_usuario[8][0]                       ; Selector73          ; yes                    ;
+; sequencia_facil_usuario[8][1]                       ; Selector73          ; yes                    ;
+; sequencia_facil_usuario[8][2]                       ; Selector73          ; yes                    ;
+; sequencia_facil_fpga[8][2]                          ; WideOr7             ; yes                    ;
+; \statemachine_comb:cont_c[0]                        ; Selector81          ; yes                    ;
+; sequencia_facil_usuario[1][1]                       ; Selector1           ; yes                    ;
+; sequencia_facil_usuario[1][2]                       ; Selector1           ; yes                    ;
+; sequencia_facil_usuario[1][0]                       ; Selector1           ; yes                    ;
+; sequencia_facil_fpga[1][0]                          ; WideOr7             ; yes                    ;
+; sequencia_facil_usuario[4][0]                       ; Selector65          ; yes                    ;
+; sequencia_facil_usuario[4][1]                       ; Selector65          ; yes                    ;
+; sequencia_facil_usuario[4][2]                       ; Selector65          ; yes                    ;
+; sequencia_facil_fpga[4][2]                          ; WideOr7             ; yes                    ;
+; sequencia_facil_usuario[5][1]                       ; Selector67          ; yes                    ;
+; sequencia_facil_usuario[5][2]                       ; Selector67          ; yes                    ;
+; sequencia_facil_usuario[5][0]                       ; Selector67          ; yes                    ;
+; sequencia_facil_fpga[5][0]                          ; WideOr7             ; yes                    ;
+; sequencia_facil_usuario[6][0]                       ; Selector69          ; yes                    ;
+; sequencia_facil_usuario[6][2]                       ; Selector69          ; yes                    ;
+; sequencia_facil_usuario[6][1]                       ; Selector69          ; yes                    ;
+; sequencia_facil_fpga[6][1]                          ; WideOr7             ; yes                    ;
+; sequencia_facil_usuario[2][0]                       ; Selector61          ; yes                    ;
+; sequencia_facil_usuario[2][2]                       ; Selector61          ; yes                    ;
+; sequencia_facil_usuario[2][1]                       ; Selector61          ; yes                    ;
+; sequencia_facil_fpga[2][1]                          ; WideOr7             ; yes                    ;
+; sequencia_facil_usuario[3][2]                       ; Selector63          ; yes                    ;
+; sequencia_facil_usuario[3][0]                       ; Selector63          ; yes                    ;
+; sequencia_facil_fpga[3][0]                          ; WideOr7             ; yes                    ;
+; sequencia_facil_usuario[3][1]                       ; Selector63          ; yes                    ;
+; sequencia_facil_fpga[3][1]                          ; WideOr7             ; yes                    ;
+; \statemachine_comb:cont_c[1]                        ; Selector81          ; yes                    ;
+; \statemachine_comb:cont_c[2]                        ; Selector81          ; yes                    ;
+; \statemachine_comb:cont_c[3]                        ; Selector81          ; yes                    ;
+; \statemachine_comb:cont_e[0]                        ; Selector76          ; yes                    ;
+; \statemachine_comb:cont_e[1]                        ; Selector76          ; yes                    ;
+; \statemachine_comb:cont_e[2]                        ; Selector76          ; yes                    ;
+; \statemachine_comb:cont_e[3]                        ; Selector76          ; yes                    ;
+; nextstate.INIT_1576                                 ; state.FINALIZA_JOGO ; yes                    ;
 ; Number of user-specified and inferred latches = 80  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -351,9 +351,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |genius|qual_botao                   ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; No         ; |genius|Selector19                   ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |genius|Selector46                   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |genius|Selector107                  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; No         ; |genius|Selector66                   ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |genius|Selector58                   ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |genius|Selector106                  ;
 ; 8:1                ; 4 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |genius|\statemachine_comb:cont_c[1] ;
 ; 8:1                ; 3 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |genius|\statemachine_comb:cont_e[2] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
@@ -364,18 +364,18 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 302                         ;
+; boundary_port         ; 300                         ;
 ; cycloneiii_ff         ; 12                          ;
 ;     plain             ; 12                          ;
-; cycloneiii_lcell_comb ; 381                         ;
+; cycloneiii_lcell_comb ; 379                         ;
 ;     arith             ; 4                           ;
 ;         2 data inputs ; 4                           ;
-;     normal            ; 377                         ;
+;     normal            ; 375                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 4                           ;
-;         2 data inputs ; 48                          ;
-;         3 data inputs ; 125                         ;
-;         4 data inputs ; 199                         ;
+;         2 data inputs ; 51                          ;
+;         3 data inputs ; 123                         ;
+;         4 data inputs ; 196                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 12.00                       ;
 ; Average LUT depth     ; 5.99                        ;
@@ -397,7 +397,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Dec 09 14:59:01 2022
+    Info: Processing started: Fri Dec 09 18:17:46 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off genius -c genius
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -408,14 +408,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file tb_geni
     Info (12022): Found design unit 1: tb_genius-teste File: C:/tp-labsd-genius/tb_genius.vhd Line: 7
     Info (12023): Found entity 1: tb_genius File: C:/tp-labsd-genius/tb_genius.vhd Line: 4
 Info (12127): Elaborating entity "genius" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at genius.vhd(60): object "sequencia_dificil_fpga" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 60
-Warning (10036): Verilog HDL or VHDL warning at genius.vhd(63): object "sequencia_dificil_usuario" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 63
-Warning (10036): Verilog HDL or VHDL warning at genius.vhd(75): object "cont_facil" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 75
-Warning (10036): Verilog HDL or VHDL warning at genius.vhd(76): object "cont_dificil" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 76
 Warning (10036): Verilog HDL or VHDL warning at genius.vhd(87): object "CLOCK_1Hz" assigned a value but never read File: C:/tp-labsd-genius/genius.vhd Line: 87
 Warning (10492): VHDL Process Statement warning at genius.vhd(200): signal "comeca_jogo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 200
-Warning (10492): VHDL Process Statement warning at genius.vhd(212): signal "modo_facil" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 212
-Warning (10492): VHDL Process Statement warning at genius.vhd(223): signal "modo_dificil" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 223
 Warning (10492): VHDL Process Statement warning at genius.vhd(258): signal "sequencia_facil_fpga" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 258
 Warning (10492): VHDL Process Statement warning at genius.vhd(258): signal "cont_jogada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 258
 Warning (10492): VHDL Process Statement warning at genius.vhd(281): signal "cont_jogada" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/tp-labsd-genius/genius.vhd Line: 281
@@ -554,15 +548,15 @@ Info (10041): Inferred latch for "led_amarelo" at genius.vhd(151) File: C:/tp-la
 Info (10041): Inferred latch for "led_azul" at genius.vhd(151) File: C:/tp-labsd-genius/genius.vhd Line: 151
 Info (10041): Inferred latch for "led_ligado" at genius.vhd(151) File: C:/tp-labsd-genius/genius.vhd Line: 151
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[8][2]" merged with LATCH primitive "sequencia_facil_fpga[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[7][1]" merged with LATCH primitive "sequencia_facil_fpga[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[6][1]" merged with LATCH primitive "sequencia_facil_fpga[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[5][0]" merged with LATCH primitive "sequencia_facil_fpga[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[4][2]" merged with LATCH primitive "sequencia_facil_fpga[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[3][1]" merged with LATCH primitive "sequencia_facil_fpga[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[3][0]" merged with LATCH primitive "sequencia_facil_fpga[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[2][1]" merged with LATCH primitive "sequencia_facil_fpga[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 151
     Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[1][0]" merged with LATCH primitive "sequencia_facil_fpga[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[2][1]" merged with LATCH primitive "sequencia_facil_fpga[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[3][0]" merged with LATCH primitive "sequencia_facil_fpga[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[3][1]" merged with LATCH primitive "sequencia_facil_fpga[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[4][2]" merged with LATCH primitive "sequencia_facil_fpga[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[5][0]" merged with LATCH primitive "sequencia_facil_fpga[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[6][1]" merged with LATCH primitive "sequencia_facil_fpga[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[7][1]" merged with LATCH primitive "sequencia_facil_fpga[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Info (13026): Duplicate LATCH primitive "sequencia_facil_fpga[8][2]" merged with LATCH primitive "sequencia_facil_fpga[7][0]" File: C:/tp-labsd-genius/genius.vhd Line: 151
 Warning (13012): Latch cont_jogada[0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.VERIFICA_MOSTRA_COR File: C:/tp-labsd-genius/genius.vhd Line: 54
 Warning (13012): Latch cont_jogada[1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
@@ -619,29 +613,47 @@ Warning (13012): Latch led_ligado$latch has unsafe behavior File: C:/tp-labsd-ge
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.PREPARA_JOGO File: C:/tp-labsd-genius/genius.vhd Line: 54
 Warning (13012): Latch sequencia_facil_usuario[7][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
-Warning (13012): Latch sequencia_facil_fpga[7][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.PREPARA_JOGO File: C:/tp-labsd-genius/genius.vhd Line: 54
 Warning (13012): Latch sequencia_facil_usuario[7][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
+Warning (13012): Latch sequencia_facil_fpga[7][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.PREPARA_JOGO File: C:/tp-labsd-genius/genius.vhd Line: 54
 Warning (13012): Latch sequencia_facil_usuario[7][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
-Warning (13012): Latch sequencia_facil_usuario[8][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
 Warning (13012): Latch sequencia_facil_usuario[8][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
+Warning (13012): Latch sequencia_facil_usuario[8][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
 Warning (13012): Latch sequencia_facil_usuario[8][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
 Warning (13012): Latch \statemachine_comb:cont_c[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.VERIFICA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
-Warning (13012): Latch sequencia_facil_usuario[1][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
 Warning (13012): Latch sequencia_facil_usuario[1][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
+Warning (13012): Latch sequencia_facil_usuario[1][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
 Warning (13012): Latch sequencia_facil_usuario[1][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
-Warning (13012): Latch sequencia_facil_usuario[2][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
+Warning (13012): Latch sequencia_facil_usuario[4][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
+Warning (13012): Latch sequencia_facil_usuario[4][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
+Warning (13012): Latch sequencia_facil_usuario[4][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
+Warning (13012): Latch sequencia_facil_usuario[5][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
+Warning (13012): Latch sequencia_facil_usuario[5][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
+Warning (13012): Latch sequencia_facil_usuario[5][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
+Warning (13012): Latch sequencia_facil_usuario[6][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
+Warning (13012): Latch sequencia_facil_usuario[6][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
+Warning (13012): Latch sequencia_facil_usuario[6][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
 Warning (13012): Latch sequencia_facil_usuario[2][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
+Warning (13012): Latch sequencia_facil_usuario[2][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
 Warning (13012): Latch sequencia_facil_usuario[2][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
@@ -650,24 +662,6 @@ Warning (13012): Latch sequencia_facil_usuario[3][2] has unsafe behavior File: C
 Warning (13012): Latch sequencia_facil_usuario[3][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
 Warning (13012): Latch sequencia_facil_usuario[3][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
-Warning (13012): Latch sequencia_facil_usuario[4][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
-Warning (13012): Latch sequencia_facil_usuario[4][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
-Warning (13012): Latch sequencia_facil_usuario[4][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
-Warning (13012): Latch sequencia_facil_usuario[5][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
-Warning (13012): Latch sequencia_facil_usuario[5][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
-Warning (13012): Latch sequencia_facil_usuario[5][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
-Warning (13012): Latch sequencia_facil_usuario[6][2] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
-Warning (13012): Latch sequencia_facil_usuario[6][0] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
-Warning (13012): Latch sequencia_facil_usuario[6][1] has unsafe behavior File: C:/tp-labsd-genius/genius.vhd Line: 151
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.AGUARDA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
 Warning (13012): Latch \statemachine_comb:cont_c[1] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state.VERIFICA_ENTRADA File: C:/tp-labsd-genius/genius.vhd Line: 54
@@ -943,17 +937,16 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "RESET" File: C:/tp-labsd-genius/genius.vhd Line: 11
-    Warning (15610): No output dependent on input pin "modo_dificil" File: C:/tp-labsd-genius/genius.vhd Line: 35
-Info (21057): Implemented 679 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 9 input pins
+Info (21057): Implemented 675 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
     Info (21059): Implemented 293 output pins
-    Info (21061): Implemented 377 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 427 warnings
-    Info: Peak virtual memory: 4801 megabytes
-    Info: Processing ended: Fri Dec 09 14:59:10 2022
+    Info (21061): Implemented 375 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 420 warnings
+    Info: Peak virtual memory: 4804 megabytes
+    Info: Processing ended: Fri Dec 09 18:17:55 2022
     Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Total CPU time (on all processors): 00:00:21
 
 

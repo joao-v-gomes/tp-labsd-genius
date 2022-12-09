@@ -174,10 +174,6 @@
 				{
 					"name" : "CLOCK",
 					"strict" : false
-				},
-				{
-					"name" : "modo_facil",
-					"strict" : false
 				}
 			]
 		}
