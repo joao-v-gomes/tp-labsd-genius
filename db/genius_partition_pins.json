@@ -16,23 +16,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "valor_contador[0]",
+					"name" : "contador_jogada[0]",
 					"strict" : false
 				},
 				{
-					"name" : "valor_contador[1]",
+					"name" : "contador_jogada[1]",
 					"strict" : false
 				},
 				{
-					"name" : "valor_contador[2]",
+					"name" : "contador_jogada[2]",
 					"strict" : false
 				},
 				{
-					"name" : "valor_contador[3]",
-					"strict" : false
-				},
-				{
-					"name" : "valor_contador[4]",
+					"name" : "contador_jogada[3]",
 					"strict" : false
 				},
 				{

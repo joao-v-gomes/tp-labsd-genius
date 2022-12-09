@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Fri Dec 09 07:48:27 2022
+Analysis & Synthesis Status : Successful - Fri Dec 09 08:51:45 2022
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : genius
 Top-level Entity Name : genius
 Family : MAX 10
-Total logic elements : 374
-    Total combinational functions : 374
+Total logic elements : 370
+    Total combinational functions : 370
     Dedicated logic registers : 10
 Total registers : 10
 Total pins : 269

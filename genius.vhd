@@ -9,7 +9,7 @@ entity genius is
     port (
 		  
 		  botao_pressionado : out integer  := 0;
-		  valor_contador : out integer  := 0;
+		  contador_jogada : out integer  := 0;
 		  estado_fsm : out integer  := 0;
 		  
 		  trava_leitura_botao : out integer := 0;
@@ -65,13 +65,11 @@ signal 	sequencia_dificil_fpga : array_dificil := (others => 0);
 signal 	sequencia_facil_usuario : array_facil := (others => 0);
 signal 	sequencia_dificil_usuario : array_dificil := (others => 0);
 
-
 signal qual_botao : integer := 0;
-
 
 signal var1 : array_facil := (others => 0);
 
-signal cont : integer range 0 to 16 := 1;
+--signal cont : integer range 0 to 16 := 1;
 signal cont_entrada : integer range 0 to 16 := 1;
 
 signal cont_certo : integer range 0 to 16 := 0;
@@ -87,11 +85,16 @@ signal cont_rodada : integer range 0 to 9 := 1;
 
 signal trava_leitura_bot : integer range 0 to 1 := 0;
 
+signal comeca_jogo : std_logic := '1';
+
 begin
 
 	contador_entrada <= cont_entrada;
 	contagem_certa <= cont_certo;
 	contagem_errada <= cont_errado;
+	
+	botao_pressionado <= qual_botao;
+		contador_jogada <= cont_jogada;
 	
 	trava_leitura_botao <= trava_leitura_bot;
 	
@@ -101,8 +104,10 @@ begin
 		begin
 			if ( entrada_ligado = '1' and rising_edge(CLOCK) ) then
 				state <= INIT;
+--				comeca_jogo <= '0';
 			elsif (rising_edge(CLOCK)) then
 				state <= nextstate;
+--				comeca_jogo <= '1';
 			end if;
 	end process;
 
@@ -118,8 +123,21 @@ begin
 				
 					led_ligado <= '0';
 					
+					led_azul <= '0';
+					led_amarelo <= '0';
+					led_verde <= '0';
+					led_vermelho <= '0';
+					
 					cont_facil <= 1;
 					cont_dificil <= 1;
+					
+					cont_certo <= 0;
+					cont_errado <= 0;
+					
+					cont_c := 0;
+					cont_e := 0;
+					
+--					cont <= 0;
 					
 					sequencia_facil_fpga <= (others => 0);
 					sequencia_dificil_fpga <= (others => 0);
@@ -129,9 +147,15 @@ begin
 					cont_entrada <= 1;
 					
 					cont_rodada <= 1;
-					cont_jogada <= 1;
+					cont_jogada <= 0;
 					
-					nextstate <= PREPARA_JOGO;
+					if (comeca_jogo = '1') then 
+						nextstate <= PREPARA_JOGO;
+--						comeca_jogo <= '0';
+					else
+						nextstate <= INIT;
+--						comeca_jogo <= '1';
+					end if;
 					
 					estado_fsm <= 1;
 					
@@ -164,7 +188,7 @@ begin
 					led_verde <= '0';
 					led_vermelho <= '0';
 				
-					case sequencia_facil_fpga(cont) is
+					case sequencia_facil_fpga(cont_jogada) is
 						when 1 =>
 							led_azul <= '1';
 						when 2 =>
@@ -187,8 +211,8 @@ begin
 					estado_fsm <= 3;
 					
 				when VERIFICA_MOSTRA_COR =>
-					if (cont < cont_rodada ) then
-						cont <= cont + 1;
+					if (cont_jogada < cont_rodada ) then
+						cont_jogada <= cont_jogada + 1;
 						nextstate <= MOSTRA_COR;
 					else
 						
@@ -344,7 +368,7 @@ begin
 					
 					cont_entrada <= 1;
 					
-					cont <= 0;
+					cont_jogada <= 0;
 					
 					if(cont_rodada < 8) then
 						nextstate <= MOSTRA_COR;
@@ -397,15 +421,15 @@ begin
 				end if;
 				
 	end process;
-	
-	process(qual_botao,cont)
-		begin
-			botao_pressionado <= qual_botao;
-			valor_contador <= cont;
-			
---			var1(cont) <= qual_botao;
-			
-	end process;
+
+--	process(qual_botao,cont)
+--		begin
+--			botao_pressionado <= qual_botao;
+--			contador_jogada <= cont_jogada;
+--			
+----			var1(cont) <= qual_botao;
+--			
+--	end process;
 	
 --	process(var1(1),var1(2),var1(3),var1(4),var1(5))
 --		begin
